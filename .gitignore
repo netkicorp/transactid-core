@@ -24,6 +24,7 @@
 .idea/**/gradle.xml
 .idea/**/libraries
 .gradle
+.gradle/
 /build
 /buildSrc/build
 /buildSrc/subprojects/*/build

@@ -75,7 +75,11 @@ object Encryption {
     }
 
     @Throws(EncryptionException::class)
-    fun decrypt(encryptedMsg: String, privateKeyReceiverPem: String, publicKeySenderPem: String): String {
+    fun decrypt(
+        encryptedMsg: String,
+        privateKeyReceiverPem: String,
+        publicKeySenderPem: String
+    ): String {
         try {
             val privateKeyReceiver = privateKeyReceiverPem.toPrivateKey()
             val publicKeySender = publicKeySenderPem.toPublicKey() as ECPublicKey

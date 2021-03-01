@@ -20,7 +20,9 @@ internal fun InvoiceRequestParameters.toMessageInvoiceRequestBuilderUnsigned(
         .setMemo(this.memo)
         .setNotificationUrl(this.notificationUrl)
         .setSenderPkiType(senderParameters.pkiDataParameters?.type?.value ?: PkiType.NONE.value)
-        .setSenderPkiData(senderParameters.pkiDataParameters?.certificatePem?.toByteString() ?: "".toByteString())
+        .setSenderPkiData(
+            senderParameters.pkiDataParameters?.certificatePem?.toByteString() ?: "".toByteString()
+        )
         .setSenderSignature("".toByteString())
         .setSenderEvCert(senderParameters.evCertificatePem?.toByteString() ?: "".toByteString())
 

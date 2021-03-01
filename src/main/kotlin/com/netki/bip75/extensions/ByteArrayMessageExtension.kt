@@ -9,8 +9,8 @@ import com.netki.model.MessageType
 import com.netki.model.RecipientParameters
 import com.netki.model.SenderParameters
 import com.netki.security.Encryption
-import com.netki.security.Util
 import com.netki.security.Signature
+import com.netki.security.Util
 import com.netki.security.isECDSAKey
 import java.util.*
 
@@ -81,7 +81,8 @@ internal fun ByteArray.toProtocolMessageEncrypted(
         )
         .setStatusMessage(messageInformation.statusMessage)
         .setIdentifier(
-            identifier?.let { identifier.toByteString() } ?: Util.generateIdentifier(this).toByteString()
+            identifier?.let { identifier.toByteString() } ?: Util.generateIdentifier(this)
+                .toByteString()
         )
         .setReceiverPublicKey(recipientParameters.encryptionParameters.publicKeyPem.toByteString())
         .setSenderPublicKey(senderParameters.encryptionParameters.publicKeyPem.toByteString())
@@ -91,7 +92,8 @@ internal fun ByteArray.toProtocolMessageEncrypted(
         .build()
 
     val hash = Util.getHash256(encryptedMessageUnsigned.toByteArray())
-    val signature = Signature.signStringECDSA(hash, senderParameters.encryptionParameters.privateKeyPem)
+    val signature =
+        Signature.signStringECDSA(hash, senderParameters.encryptionParameters.privateKeyPem)
 
     return Messages.EncryptedProtocolMessage.newBuilder()
         .mergeFrom(encryptedMessageUnsigned)
@@ -122,7 +124,8 @@ internal fun ByteArray.toProtocolMessageUnencrypted(
     .setSerializedMessage(this.toByteString())
     .setStatusMessage(messageInformation.statusMessage)
     .setIdentifier(
-        identifier?.let { identifier.toByteString() } ?: Util.generateIdentifier(this).toByteString()
+        identifier?.let { identifier.toByteString() } ?: Util.generateIdentifier(this)
+            .toByteString()
     )
     .build()
     .toByteArray()

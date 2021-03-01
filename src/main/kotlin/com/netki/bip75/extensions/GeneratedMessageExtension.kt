@@ -4,8 +4,8 @@ import com.google.protobuf.GeneratedMessageV3
 import com.netki.bip75.protocol.Messages
 import com.netki.model.PkiType
 import com.netki.model.SenderParameters
-import com.netki.security.Util
 import com.netki.security.Signature
+import com.netki.security.Util
 
 /**
  * Sign the Hash256 value of a Messages object.

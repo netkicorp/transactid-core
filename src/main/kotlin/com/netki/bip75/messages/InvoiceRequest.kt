@@ -1,10 +1,6 @@
 package com.netki.bip75.messages
 
 import com.netki.bip75.extensions.*
-import com.netki.bip75.extensions.toMessageAttestation
-import com.netki.bip75.extensions.toMessageBeneficiaryBuilderWithoutAttestations
-import com.netki.bip75.extensions.toMessageOriginatorBuilderWithoutAttestations
-import com.netki.bip75.extensions.validate
 import com.netki.model.InvoiceRequestParameters
 import com.netki.model.MessageType
 import com.netki.model.OwnerType
@@ -13,7 +9,8 @@ import com.netki.model.ProtocolMessageParameters
 class InvoiceRequest {
 
     fun create(
-        protocolMessageParameters: ProtocolMessageParameters): ByteArray {
+        protocolMessageParameters: ProtocolMessageParameters
+    ): ByteArray {
         val invoiceRequestParameters = protocolMessageParameters as InvoiceRequestParameters
         invoiceRequestParameters.originatorParameters.validate(true, OwnerType.ORIGINATOR)
         invoiceRequestParameters.beneficiaryParameters?.validate(false, OwnerType.BENEFICIARY)

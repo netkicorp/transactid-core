@@ -132,7 +132,6 @@ internal fun ByteArray.toProtocolMessageUnencrypted(
     .build()
     .toByteArray()
 
-
 /**
  * Method to extract the ProtocolMessageMetadata from a Messages.ProtocolMessage
  */
@@ -195,7 +194,6 @@ internal fun ByteArray.getSerializedMessage(
         true -> this.getSerializedMessageEncryptedProtocolMessage(recipientParameters)
         false -> this.getSerializedProtocolMessage()
     }
-
 
 /**
  * Method to extract serialized message from Messages.ProtocolMessage

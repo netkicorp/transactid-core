@@ -156,7 +156,6 @@ object Certificate {
         return true
     }
 
-
     /**
      * Method to validate if a certificates is not revoked.
      *
@@ -266,7 +265,6 @@ object Certificate {
         }
     }
 
-
     /**
      * Extract client certificate from Certificates in PEM format.
      *
@@ -278,7 +276,6 @@ object Certificate {
         return getClientCertificate(certificates)
     }
 }
-
 
 /**
  * Determine if a X509Certificate is root certificate.
@@ -297,7 +294,6 @@ internal fun X509Certificate.isIntermediateCertificate() =
  */
 internal fun X509Certificate.isClientCertificate() =
     !this.isSelfSigned() && (this.keyUsage == null || !this.keyUsage[5]) && this.basicConstraints == -1
-
 
 /**
  * Validate if a X509Certificate is self signed or not.

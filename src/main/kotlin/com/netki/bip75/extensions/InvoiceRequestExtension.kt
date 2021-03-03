@@ -23,7 +23,6 @@ internal fun Messages.InvoiceRequest.signWithSender(senderParameters: SenderPara
         .build()
 }
 
-
 /**
  * Transform binary InvoiceRequest to Messages.InvoiceRequest.
  *

@@ -73,7 +73,6 @@ object Signature {
             exception.printStackTrace()
             false
         }
-
     }
 
     /**

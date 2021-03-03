@@ -6,7 +6,6 @@ import com.netki.extensions.toStringLocal
 import com.netki.security.Signature
 import com.netki.security.Util
 
-
 /**
  * Remove sender signature of a Messages.PaymentRequest.
  *
@@ -17,7 +16,6 @@ internal fun Messages.PaymentRequest.removeSenderSignature(): Messages.PaymentRe
         .mergeFrom(this)
         .setSenderSignature("".toByteString())
         .build()
-
 
 /**
  * Validate that a signature corresponds to a Messages.PaymentRequest.

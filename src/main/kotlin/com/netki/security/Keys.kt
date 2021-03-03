@@ -1,7 +1,5 @@
 package com.netki.security
 
-import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_CLIENT_CERTIFICATE_NOT_FOUND
-import com.netki.exceptions.InvalidCertificateException
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo
 import org.bouncycastle.cert.X509CertificateHolder
@@ -18,7 +16,6 @@ import java.security.cert.Certificate
 import java.security.cert.CertificateFactory
 import java.security.cert.X509Certificate
 import java.util.*
-
 
 /**
  * Transform PrivateKey in PEM format to object.
@@ -78,29 +75,4 @@ fun String.toCertificates(): List<X509Certificate> {
 fun String.isECDSAKey(): Boolean {
     val key = this.toPrivateKey()
     return key.algorithm == "ECDSA"
-}
-
-
-/**
- * Extract client certificate from Certificates in PEM format.
- *
- * @param certificatesPem string.
- * @return Client certificate.
- */
-fun certificatePemToClientCertificate(certificatesPem: String): X509Certificate {
-    val certificates = certificatesPem.toCertificates()
-    return getClientCertificate(certificates)
-}
-
-/**
- * Extract client certificate from a list of certificates.
- *
- * @param certificates including the client certificate.
- * @return Client certificate.
- * @throws InvalidCertificateException if the client certificate is not found
- */
-fun getClientCertificate(certificates: List<X509Certificate>) = try {
-    certificates.first { it.isClientCertificate() }
-} catch (exception: NoSuchElementException) {
-    throw InvalidCertificateException(CERTIFICATE_VALIDATION_CLIENT_CERTIFICATE_NOT_FOUND)
 }

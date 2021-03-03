@@ -3,9 +3,7 @@ package com.netki.bip75.extensions
 import com.netki.bip75.protocol.Messages
 import com.netki.exceptions.ExceptionInformation
 import com.netki.exceptions.InvalidOwnersException
-import com.netki.model.OriginatorParameters
-import com.netki.model.OwnerParameters
-import com.netki.model.OwnerType
+import com.netki.model.*
 
 /**
  * Validate that a List<Owners> is valid.
@@ -62,3 +60,28 @@ internal fun OwnerParameters.toMessageBeneficiaryBuilderWithoutAttestations(): M
 internal fun OriginatorParameters.toMessageOriginatorBuilderWithoutAttestations(): Messages.Originator.Builder =
     Messages.Originator.newBuilder().setPrimaryForTransaction(this.isPrimaryForTransaction)
 
+/**
+ * Transform Messages.Beneficiary to Beneficiary object.
+ *
+ * @return Beneficiary.
+ */
+internal fun Messages.Beneficiary.toBeneficiary(): Beneficiary {
+    val pkiDataSets = mutableListOf<PkiData>()
+    this.attestationsList.forEach { messageAttestation ->
+        pkiDataSets.add(messageAttestation.toPkiData())
+    }
+    return Beneficiary(this.primaryForTransaction, pkiDataSets)
+}
+
+/**
+ * Transform Messages.Originator to Originator object.
+ *
+ * @return Originator.
+ */
+internal fun Messages.Originator.toOriginator(): Originator {
+    val pkiDataSets = mutableListOf<PkiData>()
+    this.attestationsList.forEach { messageAttestation ->
+        pkiDataSets.add(messageAttestation.toPkiData())
+    }
+    return Originator(this.primaryForTransaction, pkiDataSets)
+}

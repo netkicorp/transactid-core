@@ -99,3 +99,47 @@ internal fun Messages.InvoiceRequest.validateSignature(signature: String): Boole
     val bytesHash = Util.getHash256(this.toByteArray())
     return Signature.validateSignature(signature, bytesHash, this.senderPkiData.toStringLocal())
 }
+
+/**
+ * Transform Messages.InvoiceRequest to InvoiceRequest object.
+ *
+ * @return InvoiceRequest.
+ */
+internal fun Messages.InvoiceRequest.toInvoiceRequest(protocolMessageMetadata: ProtocolMessageMetadata): InvoiceRequest {
+    val beneficiaries = mutableListOf<Beneficiary>()
+    this.beneficiariesList.forEach { messageBeneficiary ->
+        beneficiaries.add(messageBeneficiary.toBeneficiary())
+    }
+
+    val originators = mutableListOf<Originator>()
+    this.originatorsList.forEach { messageOriginator ->
+        originators.add(messageOriginator.toOriginator())
+    }
+
+    val originatorsAddresses = mutableListOf<Output>()
+    this.originatorsAddressesList.forEach { messageOutput ->
+        originatorsAddresses.add(messageOutput.toOutput())
+    }
+
+    val attestationsRequested = mutableListOf<Attestation>()
+    this.attestationsRequestedList.forEach { attestationType ->
+        attestationsRequested.add(attestationType.toAttestation())
+    }
+
+    return InvoiceRequest(
+        amount = this.amount,
+        memo = this.memo,
+        notificationUrl = this.notificationUrl,
+        originators = originators,
+        beneficiaries = beneficiaries,
+        originatorsAddresses = originatorsAddresses,
+        attestationsRequested = attestationsRequested,
+        senderPkiType = this.senderPkiType.getType(),
+        senderPkiData = this.senderPkiData.toStringLocal(),
+        senderSignature = this.senderSignature.toStringLocal(),
+        senderEvCert = this.senderEvCert.toStringLocal(),
+        recipientVaspName = this.recipientVaspName,
+        recipientChainAddress = this.recipientChainAddress,
+        protocolMessageMetadata = protocolMessageMetadata
+    )
+}

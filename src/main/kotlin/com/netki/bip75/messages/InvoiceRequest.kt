@@ -12,6 +12,7 @@ import com.netki.exceptions.InvalidCertificateException
 import com.netki.exceptions.InvalidSignatureException
 import com.netki.extensions.toStringLocal
 import com.netki.model.*
+import com.netki.model.InvoiceRequest
 import com.netki.security.Certificate
 
 class InvoiceRequest {
@@ -148,5 +149,19 @@ class InvoiceRequest {
         }
 
         return true
+    }
+
+    private fun parseInvoiceRequestBinary(
+        invoiceRequestBinary: ByteArray,
+        recipientParameters: RecipientParameters?
+    ): InvoiceRequest {
+        val protocolMessageMetadata = invoiceRequestBinary.extractProtocolMessageMetadata()
+        val messageInvoiceRequest =
+            invoiceRequestBinary.getSerializedMessage(
+                protocolMessageMetadata.encrypted,
+                recipientParameters
+            )
+                .toMessageInvoiceRequest()
+        return messageInvoiceRequest.toInvoiceRequest(protocolMessageMetadata)
     }
 }

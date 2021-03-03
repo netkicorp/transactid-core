@@ -57,3 +57,35 @@ internal fun String.getType(): PkiType = requireNotNull(PkiType.values().find {
 }) {
     "No PkiType found for: ${this.javaClass}"
 }
+
+/**
+ * Remove sender signature of a GeneratedMessageV3.
+ *
+ * @return Unsigned message.
+ */
+internal fun GeneratedMessageV3.removeMessageSenderSignature(): GeneratedMessageV3 {
+    return when (this.getMessagePkiType()) {
+        PkiType.NONE -> this
+        PkiType.X509SHA256 -> when (this) {
+            is Messages.InvoiceRequest -> this.removeSenderSignature()
+            is Messages.PaymentRequest -> this.removeSenderSignature()
+            else -> throw IllegalArgumentException("Message: ${this.javaClass}, not supported to remove sender signature")
+        }
+    }
+}
+
+/**
+ * Validate if sender signature of a GeneratedMessageV3 is valid.
+ *
+ * @return true if yes, false otherwise.
+ */
+internal fun GeneratedMessageV3.validateMessageSignature(signature: String): Boolean {
+    return when (this.getMessagePkiType()) {
+        PkiType.NONE -> true
+        PkiType.X509SHA256 -> when (this) {
+            is Messages.InvoiceRequest -> this.validateSignature(signature)
+            is Messages.PaymentRequest -> this.validateSignature(signature)
+            else -> throw IllegalArgumentException("Message: ${this.javaClass}, not supported to validate sender signature")
+        }
+    }
+}

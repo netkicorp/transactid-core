@@ -1,7 +1,13 @@
 package com.netki.bip75.extensions
 
 import com.netki.bip75.protocol.Messages
+import com.netki.extensions.toByteString
+import com.netki.extensions.toStringLocal
 import com.netki.model.Attestation
+import com.netki.model.PkiType
+import com.netki.security.Certificate
+import com.netki.security.Signature
+import com.netki.security.Util
 
 /**
  * Transform Attestation to Messages.AttestationType.
@@ -38,4 +44,46 @@ internal fun Attestation.toAttestationType(): Messages.AttestationType {
         Attestation.CUSTOMER_IDENTIFICATION -> Messages.AttestationType.CUSTOMER_IDENTIFICATION
         Attestation.REGISTRATION_AUTHORITY -> Messages.AttestationType.REGISTRATION_AUTHORITY
     }
+}
+
+
+/**
+ * Validate if the signature of a Messages.Attestation is valid.
+ *
+ * @return true if yes, false otherwise.
+ */
+internal fun Messages.Attestation.validateMessageSignature(requireSignature: Boolean): Boolean = when {
+    this.getMessagePkiType() == PkiType.X509SHA256 && requireSignature -> {
+        val unsignedMessage = this.removeSignature()
+        val bytesHash = Util.getHash256(unsignedMessage.toByteArray())
+        Signature.validateSignature(
+            this.signature.toStringLocal(),
+            bytesHash,
+            Certificate.certificatePemToClientCertificate(this.pkiData.toStringLocal())
+        )
+    }
+    else -> true
+}
+
+
+/**
+ * Remove the signature from Messages.Attestation object.
+ *
+ * @return Messages.Attestation.
+ */
+internal fun Messages.Attestation.removeSignature(): Messages.Attestation = Messages.Attestation.newBuilder()
+    .mergeFrom(this)
+    .setSignature("".toByteString())
+    .build()
+
+/**
+ * Get owners's pkiData of an attestation.
+ *
+ * @return PkiData.
+ */
+@Throws(IllegalArgumentException::class)
+internal fun Messages.Attestation.getAttestationPkiType(): PkiType = requireNotNull(PkiType.values().find {
+    it.value == this.pkiType
+}) {
+    "No PkiType found for: ${this.javaClass}"
 }

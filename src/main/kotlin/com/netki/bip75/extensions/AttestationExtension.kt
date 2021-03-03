@@ -46,35 +46,35 @@ internal fun Attestation.toAttestationType(): Messages.AttestationType {
     }
 }
 
-
 /**
  * Validate if the signature of a Messages.Attestation is valid.
  *
  * @return true if yes, false otherwise.
  */
-internal fun Messages.Attestation.validateMessageSignature(requireSignature: Boolean): Boolean = when {
-    this.getMessagePkiType() == PkiType.X509SHA256 && requireSignature -> {
-        val unsignedMessage = this.removeSignature()
-        val bytesHash = Util.getHash256(unsignedMessage.toByteArray())
-        Signature.validateSignature(
-            this.signature.toStringLocal(),
-            bytesHash,
-            Certificate.certificatePemToClientCertificate(this.pkiData.toStringLocal())
-        )
+internal fun Messages.Attestation.validateMessageSignature(requireSignature: Boolean): Boolean =
+    when {
+        this.getMessagePkiType() == PkiType.X509SHA256 && requireSignature -> {
+            val unsignedMessage = this.removeSignature()
+            val bytesHash = Util.getHash256(unsignedMessage.toByteArray())
+            Signature.validateSignature(
+                this.signature.toStringLocal(),
+                bytesHash,
+                Certificate.certificatePemToClientCertificate(this.pkiData.toStringLocal())
+            )
+        }
+        else -> true
     }
-    else -> true
-}
-
 
 /**
  * Remove the signature from Messages.Attestation object.
  *
  * @return Messages.Attestation.
  */
-internal fun Messages.Attestation.removeSignature(): Messages.Attestation = Messages.Attestation.newBuilder()
-    .mergeFrom(this)
-    .setSignature("".toByteString())
-    .build()
+internal fun Messages.Attestation.removeSignature(): Messages.Attestation =
+    Messages.Attestation.newBuilder()
+        .mergeFrom(this)
+        .setSignature("".toByteString())
+        .build()
 
 /**
  * Get owners's pkiData of an attestation.
@@ -82,8 +82,9 @@ internal fun Messages.Attestation.removeSignature(): Messages.Attestation = Mess
  * @return PkiData.
  */
 @Throws(IllegalArgumentException::class)
-internal fun Messages.Attestation.getAttestationPkiType(): PkiType = requireNotNull(PkiType.values().find {
-    it.value == this.pkiType
-}) {
-    "No PkiType found for: ${this.javaClass}"
-}
+internal fun Messages.Attestation.getAttestationPkiType(): PkiType =
+    requireNotNull(PkiType.values().find {
+        it.value == this.pkiType
+    }) {
+        "No PkiType found for: ${this.javaClass}"
+    }

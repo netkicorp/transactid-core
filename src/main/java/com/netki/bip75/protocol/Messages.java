@@ -4,7 +4,227 @@
 package com.netki.bip75.protocol;
 
 public final class Messages {
-  private Messages() {}
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_InvoiceRequest_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_InvoiceRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_PaymentRequest_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_PaymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_Payment_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_Payment_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_PaymentACK_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_PaymentACK_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_Beneficiary_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_Beneficiary_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_Originator_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_Originator_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_Attestation_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_Attestation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_PaymentDetails_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_PaymentDetails_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_Output_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_Output_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_ProtocolMessage_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_ProtocolMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_payments_EncryptedProtocolMessage_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+
+  static {
+    java.lang.String[] descriptorData = {
+        "\n\rpayment.proto\022\010payments\"\266\003\n\016InvoiceReq" +
+            "uest\022\021\n\006amount\030\001 \001(\004:\0010\022\014\n\004memo\030\002 \001(\t\022\030\n" +
+            "\020notification_url\030\003 \001(\t\022)\n\013originators\030\004" +
+            " \003(\0132\024.payments.Originator\022,\n\rbeneficiar" +
+            "ies\030\005 \003(\0132\025.payments.Beneficiary\022.\n\024orig" +
+            "inatorsAddresses\030\006 \003(\0132\020.payments.Output" +
+            "\0228\n\025attestationsRequested\030\007 \003(\0162\031.paymen" +
+            "ts.AttestationType\022\035\n\017sender_pki_type\030\010 " +
+            "\001(\t:\004none\022\027\n\017sender_pki_data\030\t \001(\014\022\030\n\020se" +
+            "nder_signature\030\n \001(\014\022\026\n\016sender_ev_cert\030\013" +
+            " \001(\014\022\033\n\023recipient_vasp_name\030\014 \001(\t\022\037\n\027rec" +
+            "ipient_chain_address\030\r \001(\t\"\222\002\n\016PaymentRe" +
+            "quest\022\"\n\027payment_details_version\030\001 \001(\r:\001" +
+            "1\022\"\n\032serialized_payment_details\030\002 \002(\014\022,\n" +
+            "\rbeneficiaries\030\003 \003(\0132\025.payments.Benefici" +
+            "ary\0228\n\025attestationsRequested\030\004 \003(\0162\031.pay" +
+            "ments.AttestationType\022\035\n\017sender_pki_type" +
+            "\030\005 \002(\t:\004none\022\027\n\017sender_pki_data\030\006 \001(\014\022\030\n" +
+            "\020sender_signature\030\007 \001(\014\"\302\001\n\007Payment\022\025\n\rm" +
+            "erchant_data\030\001 \001(\014\022\024\n\014transactions\030\002 \003(\014" +
+            "\022#\n\trefund_to\030\003 \003(\0132\020.payments.Output\022\014\n" +
+            "\004memo\030\004 \001(\t\022)\n\013originators\030\005 \003(\0132\024.payme" +
+            "nts.Originator\022,\n\rbeneficiaries\030\006 \003(\0132\025." +
+            "payments.Beneficiary\">\n\nPaymentACK\022\"\n\007pa" +
+            "yment\030\001 \002(\0132\021.payments.Payment\022\014\n\004memo\030\002" +
+            " \001(\t\"a\n\013Beneficiary\022%\n\027primary_for_trans" +
+            "action\030\001 \002(\010:\004true\022+\n\014attestations\030\002 \003(\013" +
+            "2\025.payments.Attestation\"`\n\nOriginator\022%\n" +
+            "\027primary_for_transaction\030\001 \002(\010:\004true\022+\n\014" +
+            "attestations\030\002 \003(\0132\025.payments.Attestatio" +
+            "n\"z\n\013Attestation\022.\n\013attestation\030\001 \001(\0162\031." +
+            "payments.AttestationType\022\026\n\010pki_type\030\002 \001" +
+            "(\t:\004none\022\020\n\010pki_data\030\003 \001(\014\022\021\n\tsignature\030" +
+            "\004 \001(\014\"\262\001\n\016PaymentDetails\022\025\n\007network\030\001 \001(" +
+            "\t:\004main\0220\n\026beneficiariesAddresses\030\002 \003(\0132" +
+            "\020.payments.Output\022\014\n\004time\030\003 \002(\004\022\017\n\007expir" +
+            "es\030\004 \001(\004\022\014\n\004memo\030\005 \001(\t\022\023\n\013payment_url\030\006 " +
+            "\001(\t\022\025\n\rmerchant_data\030\007 \001(\014\"U\n\006Output\022\021\n\006" +
+            "amount\030\001 \001(\004:\0010\022\016\n\006script\030\002 \001(\014\022(\n\010curre" +
+            "ncy\030\003 \001(\0162\026.payments.CurrencyType\"\272\001\n\017Pr" +
+            "otocolMessage\022\022\n\007version\030\001 \002(\004:\0011\022\026\n\013sta" +
+            "tus_code\030\002 \002(\004:\0011\0223\n\014message_type\030\003 \002(\0162" +
+            "\035.payments.ProtocolMessageType\022\032\n\022serial" +
+            "ized_message\030\004 \002(\014\022\026\n\016status_message\030\005 \001" +
+            "(\t\022\022\n\nidentifier\030\006 \002(\014\"\234\002\n\030EncryptedProt" +
+            "ocolMessage\022\022\n\007version\030\001 \002(\004:\0011\022\026\n\013statu" +
+            "s_code\030\002 \002(\004:\0011\0223\n\014message_type\030\003 \002(\0162\035." +
+            "payments.ProtocolMessageType\022\031\n\021encrypte" +
+            "d_message\030\004 \002(\014\022\033\n\023receiver_public_key\030\005" +
+            " \002(\014\022\031\n\021sender_public_key\030\006 \002(\014\022\r\n\005nonce" +
+            "\030\007 \002(\004\022\022\n\nidentifier\030\010 \002(\014\022\026\n\016status_mes" +
+            "sage\030\t \001(\t\022\021\n\tsignature\030\n \001(\014*w\n\023Protoco" +
+            "lMessageType\022\030\n\024UNKNOWN_MESSAGE_TYPE\020\000\022\023" +
+            "\n\017INVOICE_REQUEST\020\001\022\023\n\017PAYMENT_REQUEST\020\002" +
+            "\022\013\n\007PAYMENT\020\003\022\017\n\013PAYMENT_ACK\020\004*\242\006\n\017Attes" +
+            "tationType\022\025\n\021LEGAL_PERSON_NAME\020\000\022)\n%LEG" +
+            "AL_PERSON_PHONETIC_NAME_IDENTIFIER\020\001\022\026\n\022" +
+            "ADDRESS_DEPARTMENT\020\002\022\032\n\026ADDRESS_SUB_DEPA" +
+            "RTMENT\020\003\022\027\n\023ADDRESS_STREET_NAME\020\004\022\033\n\027ADD" +
+            "RESS_BUILDING_NUMBER\020\005\022\031\n\025ADDRESS_BUILDI" +
+            "NG_NAME\020\006\022\021\n\rADDRESS_FLOOR\020\007\022\023\n\017ADDRESS_" +
+            "POSTBOX\020\010\022\020\n\014ADDRESS_ROOM\020\t\022\024\n\020ADDRESS_P" +
+            "OSTCODE\020\n\022\025\n\021ADDRESS_TOWN_NAME\020\013\022\036\n\032ADDR" +
+            "ESS_TOWN_LOCATION_NAME\020\014\022\031\n\025ADDRESS_DIST" +
+            "RICT_NAME\020\r\022 \n\034ADDRESS_COUNTRY_SUB_DIVIS" +
+            "ION\020\016\022\030\n\024ADDRESS_ADDRESS_LINE\020\017\022\023\n\017ADDRE" +
+            "SS_COUNTRY\020\020\022%\n!NATURAL_PERSON_PRIMARY_I" +
+            "DENTIFIER\020\021\022\'\n#NATURAL_PERSON_SECONDARY_" +
+            "IDENTIFIER\020\022\022+\n\'NATURAL_PERSON_PHONETIC_" +
+            "NAME_IDENTIFIER\020\023\022\021\n\rDATE_OF_BIRTH\020\025\022\022\n\016" +
+            "PLACE_OF_BIRTH\020\026\022\030\n\024COUNTRY_OF_RESIDENCE" +
+            "\020\027\022\024\n\020COUNTRY_OF_ISSUE\020\030\022\033\n\027COUNTRY_OF_R" +
+            "EGISTRATION\020\031\022\027\n\023NATIONAL_IDENTIFIER\020\032\022\022" +
+            "\n\016ACCOUNT_NUMBER\020\033\022\033\n\027CUSTOMER_IDENTIFIC" +
+            "ATION\020\034\022\032\n\026REGISTRATION_AUTHORITY\020\035*I\n\014C" +
+            "urrencyType\022\013\n\007BITCOIN\020\000\022\014\n\010ETHEREUM\020\001\022\014" +
+            "\n\010LITECOIN\020\002\022\020\n\014BITCOIN_CASH\020\003B$\n\030com.ne" +
+            "tki.bip75.protocolB\010Messages"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+        .internalBuildGeneratedFileFrom(descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[]{
+            });
+    internal_static_payments_InvoiceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_payments_InvoiceRequest_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_InvoiceRequest_descriptor,
+        new java.lang.String[]{"Amount", "Memo", "NotificationUrl", "Originators", "Beneficiaries",
+            "OriginatorsAddresses", "AttestationsRequested", "SenderPkiType", "SenderPkiData", "SenderSignature",
+            "SenderEvCert", "RecipientVaspName", "RecipientChainAddress",});
+    internal_static_payments_PaymentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_payments_PaymentRequest_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_PaymentRequest_descriptor,
+        new java.lang.String[]{"PaymentDetailsVersion", "SerializedPaymentDetails", "Beneficiaries",
+            "AttestationsRequested", "SenderPkiType", "SenderPkiData", "SenderSignature",});
+    internal_static_payments_Payment_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_payments_Payment_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_Payment_descriptor,
+        new java.lang.String[]{"MerchantData", "Transactions", "RefundTo", "Memo", "Originators", "Beneficiaries",});
+    internal_static_payments_PaymentACK_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_payments_PaymentACK_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_PaymentACK_descriptor,
+        new java.lang.String[]{"Payment", "Memo",});
+    internal_static_payments_Beneficiary_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_payments_Beneficiary_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_Beneficiary_descriptor,
+        new java.lang.String[]{"PrimaryForTransaction", "Attestations",});
+    internal_static_payments_Originator_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_payments_Originator_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_Originator_descriptor,
+        new java.lang.String[]{"PrimaryForTransaction", "Attestations",});
+    internal_static_payments_Attestation_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_payments_Attestation_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_Attestation_descriptor,
+        new java.lang.String[]{"Attestation", "PkiType", "PkiData", "Signature",});
+    internal_static_payments_PaymentDetails_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_payments_PaymentDetails_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_PaymentDetails_descriptor,
+        new java.lang.String[]{"Network", "BeneficiariesAddresses", "Time", "Expires", "Memo", "PaymentUrl",
+            "MerchantData",});
+    internal_static_payments_Output_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_payments_Output_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_Output_descriptor,
+        new java.lang.String[]{"Amount", "Script", "Currency",});
+    internal_static_payments_ProtocolMessage_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_payments_ProtocolMessage_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_ProtocolMessage_descriptor,
+        new java.lang.String[]{"Version", "StatusCode", "MessageType", "SerializedMessage", "StatusMessage",
+            "Identifier",});
+    internal_static_payments_EncryptedProtocolMessage_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payments_EncryptedProtocolMessage_descriptor,
+        new java.lang.String[]{"Version", "StatusCode", "MessageType", "EncryptedMessage", "ReceiverPublicKey",
+            "SenderPublicKey", "Nonce", "Identifier", "StatusMessage", "Signature",});
+  }
+
+  private Messages() {
+  }
+
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -14,6 +234,12 @@ public final class Messages {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+  getDescriptor() {
+    return descriptor;
+  }
+
   /**
    * Protobuf enum {@code payments.ProtocolMessageType}
    */
@@ -61,10 +287,18 @@ public final class Messages {
      * <code>PAYMENT_ACK = 4;</code>
      */
     public static final int PAYMENT_ACK_VALUE = 4;
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ProtocolMessageType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ProtocolMessageType>() {
+          public ProtocolMessageType findValueByNumber(int number) {
+            return ProtocolMessageType.forNumber(number);
+          }
+        };
+    private static final ProtocolMessageType[] VALUES = values();
+    private final int value;
 
-
-    public final int getNumber() {
-      return value;
+    private ProtocolMessageType(int value) {
+      this.value = value;
     }
 
     /**
@@ -83,60 +317,56 @@ public final class Messages {
      */
     public static ProtocolMessageType forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN_MESSAGE_TYPE;
-        case 1: return INVOICE_REQUEST;
-        case 2: return PAYMENT_REQUEST;
-        case 3: return PAYMENT;
-        case 4: return PAYMENT_ACK;
-        default: return null;
+        case 0:
+          return UNKNOWN_MESSAGE_TYPE;
+        case 1:
+          return INVOICE_REQUEST;
+        case 2:
+          return PAYMENT_REQUEST;
+        case 3:
+          return PAYMENT;
+        case 4:
+          return PAYMENT_ACK;
+        default:
+          return null;
       }
     }
 
     public static com.google.protobuf.Internal.EnumLiteMap<ProtocolMessageType>
-        internalGetValueMap() {
+    internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ProtocolMessageType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ProtocolMessageType>() {
-            public ProtocolMessageType findValueByNumber(int number) {
-              return ProtocolMessageType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.getDescriptor().getEnumTypes().get(0);
     }
-
-    private static final ProtocolMessageType[] VALUES = values();
 
     public static ProtocolMessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+            "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    public final int getNumber() {
+      return value;
+    }
 
-    private ProtocolMessageType(int value) {
-      this.value = value;
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+    getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
     }
 
     // @@protoc_insertion_point(enum_scope:payments.ProtocolMessageType)
   }
-
   /**
    * Protobuf enum {@code payments.AttestationType}
    */
@@ -376,10 +606,18 @@ public final class Messages {
      * <code>REGISTRATION_AUTHORITY = 29;</code>
      */
     public static final int REGISTRATION_AUTHORITY_VALUE = 29;
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AttestationType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AttestationType>() {
+          public AttestationType findValueByNumber(int number) {
+            return AttestationType.forNumber(number);
+          }
+        };
+    private static final AttestationType[] VALUES = values();
+    private final int value;
 
-
-    public final int getNumber() {
-      return value;
+    private AttestationType(int value) {
+      this.value = value;
     }
 
     /**
@@ -398,84 +636,104 @@ public final class Messages {
      */
     public static AttestationType forNumber(int value) {
       switch (value) {
-        case 0: return LEGAL_PERSON_NAME;
-        case 1: return LEGAL_PERSON_PHONETIC_NAME_IDENTIFIER;
-        case 2: return ADDRESS_DEPARTMENT;
-        case 3: return ADDRESS_SUB_DEPARTMENT;
-        case 4: return ADDRESS_STREET_NAME;
-        case 5: return ADDRESS_BUILDING_NUMBER;
-        case 6: return ADDRESS_BUILDING_NAME;
-        case 7: return ADDRESS_FLOOR;
-        case 8: return ADDRESS_POSTBOX;
-        case 9: return ADDRESS_ROOM;
-        case 10: return ADDRESS_POSTCODE;
-        case 11: return ADDRESS_TOWN_NAME;
-        case 12: return ADDRESS_TOWN_LOCATION_NAME;
-        case 13: return ADDRESS_DISTRICT_NAME;
-        case 14: return ADDRESS_COUNTRY_SUB_DIVISION;
-        case 15: return ADDRESS_ADDRESS_LINE;
-        case 16: return ADDRESS_COUNTRY;
-        case 17: return NATURAL_PERSON_PRIMARY_IDENTIFIER;
-        case 18: return NATURAL_PERSON_SECONDARY_IDENTIFIER;
-        case 19: return NATURAL_PERSON_PHONETIC_NAME_IDENTIFIER;
-        case 21: return DATE_OF_BIRTH;
-        case 22: return PLACE_OF_BIRTH;
-        case 23: return COUNTRY_OF_RESIDENCE;
-        case 24: return COUNTRY_OF_ISSUE;
-        case 25: return COUNTRY_OF_REGISTRATION;
-        case 26: return NATIONAL_IDENTIFIER;
-        case 27: return ACCOUNT_NUMBER;
-        case 28: return CUSTOMER_IDENTIFICATION;
-        case 29: return REGISTRATION_AUTHORITY;
-        default: return null;
+        case 0:
+          return LEGAL_PERSON_NAME;
+        case 1:
+          return LEGAL_PERSON_PHONETIC_NAME_IDENTIFIER;
+        case 2:
+          return ADDRESS_DEPARTMENT;
+        case 3:
+          return ADDRESS_SUB_DEPARTMENT;
+        case 4:
+          return ADDRESS_STREET_NAME;
+        case 5:
+          return ADDRESS_BUILDING_NUMBER;
+        case 6:
+          return ADDRESS_BUILDING_NAME;
+        case 7:
+          return ADDRESS_FLOOR;
+        case 8:
+          return ADDRESS_POSTBOX;
+        case 9:
+          return ADDRESS_ROOM;
+        case 10:
+          return ADDRESS_POSTCODE;
+        case 11:
+          return ADDRESS_TOWN_NAME;
+        case 12:
+          return ADDRESS_TOWN_LOCATION_NAME;
+        case 13:
+          return ADDRESS_DISTRICT_NAME;
+        case 14:
+          return ADDRESS_COUNTRY_SUB_DIVISION;
+        case 15:
+          return ADDRESS_ADDRESS_LINE;
+        case 16:
+          return ADDRESS_COUNTRY;
+        case 17:
+          return NATURAL_PERSON_PRIMARY_IDENTIFIER;
+        case 18:
+          return NATURAL_PERSON_SECONDARY_IDENTIFIER;
+        case 19:
+          return NATURAL_PERSON_PHONETIC_NAME_IDENTIFIER;
+        case 21:
+          return DATE_OF_BIRTH;
+        case 22:
+          return PLACE_OF_BIRTH;
+        case 23:
+          return COUNTRY_OF_RESIDENCE;
+        case 24:
+          return COUNTRY_OF_ISSUE;
+        case 25:
+          return COUNTRY_OF_REGISTRATION;
+        case 26:
+          return NATIONAL_IDENTIFIER;
+        case 27:
+          return ACCOUNT_NUMBER;
+        case 28:
+          return CUSTOMER_IDENTIFICATION;
+        case 29:
+          return REGISTRATION_AUTHORITY;
+        default:
+          return null;
       }
     }
 
     public static com.google.protobuf.Internal.EnumLiteMap<AttestationType>
-        internalGetValueMap() {
+    internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        AttestationType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AttestationType>() {
-            public AttestationType findValueByNumber(int number) {
-              return AttestationType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.getDescriptor().getEnumTypes().get(1);
     }
-
-    private static final AttestationType[] VALUES = values();
 
     public static AttestationType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+            "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    public final int getNumber() {
+      return value;
+    }
 
-    private AttestationType(int value) {
-      this.value = value;
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+    getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
     }
 
     // @@protoc_insertion_point(enum_scope:payments.AttestationType)
   }
-
   /**
    * Protobuf enum {@code payments.CurrencyType}
    */
@@ -515,10 +773,18 @@ public final class Messages {
      * <code>BITCOIN_CASH = 3;</code>
      */
     public static final int BITCOIN_CASH_VALUE = 3;
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CurrencyType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CurrencyType>() {
+          public CurrencyType findValueByNumber(int number) {
+            return CurrencyType.forNumber(number);
+          }
+        };
+    private static final CurrencyType[] VALUES = values();
+    private final int value;
 
-
-    public final int getNumber() {
-      return value;
+    private CurrencyType(int value) {
+      this.value = value;
     }
 
     /**
@@ -537,59 +803,54 @@ public final class Messages {
      */
     public static CurrencyType forNumber(int value) {
       switch (value) {
-        case 0: return BITCOIN;
-        case 1: return ETHEREUM;
-        case 2: return LITECOIN;
-        case 3: return BITCOIN_CASH;
-        default: return null;
+        case 0:
+          return BITCOIN;
+        case 1:
+          return ETHEREUM;
+        case 2:
+          return LITECOIN;
+        case 3:
+          return BITCOIN_CASH;
+        default:
+          return null;
       }
     }
 
     public static com.google.protobuf.Internal.EnumLiteMap<CurrencyType>
-        internalGetValueMap() {
+    internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CurrencyType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CurrencyType>() {
-            public CurrencyType findValueByNumber(int number) {
-              return CurrencyType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.getDescriptor().getEnumTypes().get(2);
     }
-
-    private static final CurrencyType[] VALUES = values();
 
     public static CurrencyType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+            "EnumValueDescriptor is not for this type.");
       }
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    public final int getNumber() {
+      return value;
+    }
 
-    private CurrencyType(int value) {
-      this.value = value;
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+    getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
     }
 
     // @@protoc_insertion_point(enum_scope:payments.CurrencyType)
   }
-
   public interface InvoiceRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:payments.InvoiceRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -600,15 +861,18 @@ public final class Messages {
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
+
     /**
      * <pre>
      * amount is integer-number-of-satoshis
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return The amount.
      */
     long getAmount();
@@ -619,28 +883,33 @@ public final class Messages {
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return Whether the memo field is set.
      */
     boolean hasMemo();
+
     /**
      * <pre>
      * Human-readable description of invoice request for the receiver
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The memo.
      */
     java.lang.String getMemo();
+
     /**
      * <pre>
      * Human-readable description of invoice request for the receiver
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The bytes for memo.
      */
     com.google.protobuf.ByteString
-        getMemoBytes();
+    getMemoBytes();
 
     /**
      * <pre>
@@ -648,28 +917,33 @@ public final class Messages {
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return Whether the notificationUrl field is set.
      */
     boolean hasNotificationUrl();
+
     /**
      * <pre>
      * URL to notify on EncryptedPaymentRequest ready
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return The notificationUrl.
      */
     java.lang.String getNotificationUrl();
+
     /**
      * <pre>
      * URL to notify on EncryptedPaymentRequest ready
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return The bytes for notificationUrl.
      */
     com.google.protobuf.ByteString
-        getNotificationUrlBytes();
+    getNotificationUrlBytes();
 
     /**
      * <pre>
@@ -678,8 +952,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Originator originators = 4;</code>
      */
-    java.util.List<com.netki.bip75.protocol.Messages.Originator> 
-        getOriginatorsList();
+    java.util.List<com.netki.bip75.protocol.Messages.Originator>
+    getOriginatorsList();
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -688,6 +963,7 @@ public final class Messages {
      * <code>repeated .payments.Originator originators = 4;</code>
      */
     com.netki.bip75.protocol.Messages.Originator getOriginators(int index);
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -696,6 +972,7 @@ public final class Messages {
      * <code>repeated .payments.Originator originators = 4;</code>
      */
     int getOriginatorsCount();
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -703,8 +980,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Originator originators = 4;</code>
      */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-        getOriginatorsOrBuilderList();
+    java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+    getOriginatorsOrBuilderList();
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -722,8 +1000,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
      */
-    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> 
-        getBeneficiariesList();
+    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary>
+    getBeneficiariesList();
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -732,6 +1011,7 @@ public final class Messages {
      * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
      */
     com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index);
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -740,6 +1020,7 @@ public final class Messages {
      * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
      */
     int getBeneficiariesCount();
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -747,8 +1028,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
      */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList();
+    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList();
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -766,8 +1048,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Output originatorsAddresses = 6;</code>
      */
-    java.util.List<com.netki.bip75.protocol.Messages.Output> 
-        getOriginatorsAddressesList();
+    java.util.List<com.netki.bip75.protocol.Messages.Output>
+    getOriginatorsAddressesList();
+
     /**
      * <pre>
      * Where the payment comes from
@@ -776,6 +1059,7 @@ public final class Messages {
      * <code>repeated .payments.Output originatorsAddresses = 6;</code>
      */
     com.netki.bip75.protocol.Messages.Output getOriginatorsAddresses(int index);
+
     /**
      * <pre>
      * Where the payment comes from
@@ -784,6 +1068,7 @@ public final class Messages {
      * <code>repeated .payments.Output originatorsAddresses = 6;</code>
      */
     int getOriginatorsAddressesCount();
+
     /**
      * <pre>
      * Where the payment comes from
@@ -791,8 +1076,9 @@ public final class Messages {
      *
      * <code>repeated .payments.Output originatorsAddresses = 6;</code>
      */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getOriginatorsAddressesOrBuilderList();
+    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getOriginatorsAddressesOrBuilderList();
+
     /**
      * <pre>
      * Where the payment comes from
@@ -809,24 +1095,29 @@ public final class Messages {
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @return A list containing the attestationsRequested.
      */
     java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList();
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @return The count of attestationsRequested.
      */
     int getAttestationsRequestedCount();
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @param index The index of the element to return.
      * @return The attestationsRequested at the given index.
      */
@@ -838,28 +1129,33 @@ public final class Messages {
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return Whether the senderPkiType field is set.
      */
     boolean hasSenderPkiType();
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return The senderPkiType.
      */
     java.lang.String getSenderPkiType();
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return The bytes for senderPkiType.
      */
     com.google.protobuf.ByteString
-        getSenderPkiTypeBytes();
+    getSenderPkiTypeBytes();
 
     /**
      * <pre>
@@ -867,15 +1163,18 @@ public final class Messages {
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 9;</code>
+     *
      * @return Whether the senderPkiData field is set.
      */
     boolean hasSenderPkiData();
+
     /**
      * <pre>
      * Sender's pki data, depends on pki_type
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 9;</code>
+     *
      * @return The senderPkiData.
      */
     com.google.protobuf.ByteString getSenderPkiData();
@@ -886,15 +1185,18 @@ public final class Messages {
      * </pre>
      *
      * <code>optional bytes sender_signature = 10;</code>
+     *
      * @return Whether the senderSignature field is set.
      */
     boolean hasSenderSignature();
+
     /**
      * <pre>
      * Sender's Signature of the whole message
      * </pre>
      *
      * <code>optional bytes sender_signature = 10;</code>
+     *
      * @return The senderSignature.
      */
     com.google.protobuf.ByteString getSenderSignature();
@@ -905,15 +1207,18 @@ public final class Messages {
      * </pre>
      *
      * <code>optional bytes sender_ev_cert = 11;</code>
+     *
      * @return Whether the senderEvCert field is set.
      */
     boolean hasSenderEvCert();
+
     /**
      * <pre>
      * Sender's EV cert
      * </pre>
      *
      * <code>optional bytes sender_ev_cert = 11;</code>
+     *
      * @return The senderEvCert.
      */
     com.google.protobuf.ByteString getSenderEvCert();
@@ -924,28 +1229,33 @@ public final class Messages {
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return Whether the recipientVaspName field is set.
      */
     boolean hasRecipientVaspName();
+
     /**
      * <pre>
      * Recipient's vasp name
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return The recipientVaspName.
      */
     java.lang.String getRecipientVaspName();
+
     /**
      * <pre>
      * Recipient's vasp name
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return The bytes for recipientVaspName.
      */
     com.google.protobuf.ByteString
-        getRecipientVaspNameBytes();
+    getRecipientVaspNameBytes();
 
     /**
      * <pre>
@@ -953,41 +1263,1540 @@ public final class Messages {
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return Whether the recipientChainAddress field is set.
      */
     boolean hasRecipientChainAddress();
+
     /**
      * <pre>
      * Recipient's chain address
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return The recipientChainAddress.
      */
     java.lang.String getRecipientChainAddress();
+
     /**
      * <pre>
      * Recipient's chain address
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return The bytes for recipientChainAddress.
      */
     com.google.protobuf.ByteString
-        getRecipientChainAddressBytes();
+    getRecipientChainAddressBytes();
   }
+  public interface PaymentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.PaymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+     *
+     * @return Whether the paymentDetailsVersion field is set.
+     */
+    boolean hasPaymentDetailsVersion();
+
+    /**
+     * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+     *
+     * @return The paymentDetailsVersion.
+     */
+    int getPaymentDetailsVersion();
+
+    /**
+     * <pre>
+     * PaymentDetails
+     * </pre>
+     *
+     * <code>required bytes serialized_payment_details = 2;</code>
+     *
+     * @return Whether the serializedPaymentDetails field is set.
+     */
+    boolean hasSerializedPaymentDetails();
+
+    /**
+     * <pre>
+     * PaymentDetails
+     * </pre>
+     *
+     * <code>required bytes serialized_payment_details = 2;</code>
+     *
+     * @return The serializedPaymentDetails.
+     */
+    com.google.protobuf.ByteString getSerializedPaymentDetails();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary>
+    getBeneficiariesList();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
+     */
+    com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index);
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
+     */
+    int getBeneficiariesCount();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
+     */
+    com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * List of attestations requested
+     * </pre>
+     *
+     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
+     * @return A list containing the attestationsRequested.
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList();
+
+    /**
+     * <pre>
+     * List of attestations requested
+     * </pre>
+     *
+     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
+     * @return The count of attestationsRequested.
+     */
+    int getAttestationsRequestedCount();
+
+    /**
+     * <pre>
+     * List of attestations requested
+     * </pre>
+     *
+     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The attestationsRequested at the given index.
+     */
+    com.netki.bip75.protocol.Messages.AttestationType getAttestationsRequested(int index);
+
+    /**
+     * <pre>
+     * none / x509+sha256
+     * </pre>
+     *
+     * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
+     * @return Whether the senderPkiType field is set.
+     */
+    boolean hasSenderPkiType();
+
+    /**
+     * <pre>
+     * none / x509+sha256
+     * </pre>
+     *
+     * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
+     * @return The senderPkiType.
+     */
+    java.lang.String getSenderPkiType();
+
+    /**
+     * <pre>
+     * none / x509+sha256
+     * </pre>
+     *
+     * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
+     * @return The bytes for senderPkiType.
+     */
+    com.google.protobuf.ByteString
+    getSenderPkiTypeBytes();
+
+    /**
+     * <pre>
+     * Sender's pki data, depends on pki_type
+     * </pre>
+     *
+     * <code>optional bytes sender_pki_data = 6;</code>
+     *
+     * @return Whether the senderPkiData field is set.
+     */
+    boolean hasSenderPkiData();
+
+    /**
+     * <pre>
+     * Sender's pki data, depends on pki_type
+     * </pre>
+     *
+     * <code>optional bytes sender_pki_data = 6;</code>
+     *
+     * @return The senderPkiData.
+     */
+    com.google.protobuf.ByteString getSenderPkiData();
+
+    /**
+     * <pre>
+     * Sender's Signature of the whole message
+     * </pre>
+     *
+     * <code>optional bytes sender_signature = 7;</code>
+     *
+     * @return Whether the senderSignature field is set.
+     */
+    boolean hasSenderSignature();
+
+    /**
+     * <pre>
+     * Sender's Signature of the whole message
+     * </pre>
+     *
+     * <code>optional bytes sender_signature = 7;</code>
+     *
+     * @return The senderSignature.
+     */
+    com.google.protobuf.ByteString getSenderSignature();
+  }
+  public interface PaymentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.Payment)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * From PaymentDetails.merchant_data
+     * </pre>
+     *
+     * <code>optional bytes merchant_data = 1;</code>
+     *
+     * @return Whether the merchantData field is set.
+     */
+    boolean hasMerchantData();
+
+    /**
+     * <pre>
+     * From PaymentDetails.merchant_data
+     * </pre>
+     *
+     * <code>optional bytes merchant_data = 1;</code>
+     *
+     * @return The merchantData.
+     */
+    com.google.protobuf.ByteString getMerchantData();
+
+    /**
+     * <pre>
+     * Signed transactions that satisfy PaymentDetails.outputs
+     * </pre>
+     *
+     * <code>repeated bytes transactions = 2;</code>
+     *
+     * @return A list containing the transactions.
+     */
+    java.util.List<com.google.protobuf.ByteString> getTransactionsList();
+
+    /**
+     * <pre>
+     * Signed transactions that satisfy PaymentDetails.outputs
+     * </pre>
+     *
+     * <code>repeated bytes transactions = 2;</code>
+     *
+     * @return The count of transactions.
+     */
+    int getTransactionsCount();
+
+    /**
+     * <pre>
+     * Signed transactions that satisfy PaymentDetails.outputs
+     * </pre>
+     *
+     * <code>repeated bytes transactions = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The transactions at the given index.
+     */
+    com.google.protobuf.ByteString getTransactions(int index);
+
+    /**
+     * <pre>
+     * Where to send refunds, if a refund is necessary
+     * </pre>
+     *
+     * <code>repeated .payments.Output refund_to = 3;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Output>
+    getRefundToList();
+
+    /**
+     * <pre>
+     * Where to send refunds, if a refund is necessary
+     * </pre>
+     *
+     * <code>repeated .payments.Output refund_to = 3;</code>
+     */
+    com.netki.bip75.protocol.Messages.Output getRefundTo(int index);
+
+    /**
+     * <pre>
+     * Where to send refunds, if a refund is necessary
+     * </pre>
+     *
+     * <code>repeated .payments.Output refund_to = 3;</code>
+     */
+    int getRefundToCount();
+
+    /**
+     * <pre>
+     * Where to send refunds, if a refund is necessary
+     * </pre>
+     *
+     * <code>repeated .payments.Output refund_to = 3;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getRefundToOrBuilderList();
+
+    /**
+     * <pre>
+     * Where to send refunds, if a refund is necessary
+     * </pre>
+     *
+     * <code>repeated .payments.Output refund_to = 3;</code>
+     */
+    com.netki.bip75.protocol.Messages.OutputOrBuilder getRefundToOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Human-readable message for the merchant
+     * </pre>
+     *
+     * <code>optional string memo = 4;</code>
+     *
+     * @return Whether the memo field is set.
+     */
+    boolean hasMemo();
+
+    /**
+     * <pre>
+     * Human-readable message for the merchant
+     * </pre>
+     *
+     * <code>optional string memo = 4;</code>
+     *
+     * @return The memo.
+     */
+    java.lang.String getMemo();
+
+    /**
+     * <pre>
+     * Human-readable message for the merchant
+     * </pre>
+     *
+     * <code>optional string memo = 4;</code>
+     *
+     * @return The bytes for memo.
+     */
+    com.google.protobuf.ByteString
+    getMemoBytes();
+
+    /**
+     * <pre>
+     * Originators of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Originator originators = 5;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Originator>
+    getOriginatorsList();
+
+    /**
+     * <pre>
+     * Originators of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Originator originators = 5;</code>
+     */
+    com.netki.bip75.protocol.Messages.Originator getOriginators(int index);
+
+    /**
+     * <pre>
+     * Originators of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Originator originators = 5;</code>
+     */
+    int getOriginatorsCount();
+
+    /**
+     * <pre>
+     * Originators of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Originator originators = 5;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+    getOriginatorsOrBuilderList();
+
+    /**
+     * <pre>
+     * Originators of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Originator originators = 5;</code>
+     */
+    com.netki.bip75.protocol.Messages.OriginatorOrBuilder getOriginatorsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary>
+    getBeneficiariesList();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
+     */
+    com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index);
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
+     */
+    int getBeneficiariesCount();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList();
+
+    /**
+     * <pre>
+     * Beneficiaries of the InvoiceRequest
+     * </pre>
+     *
+     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
+     */
+    com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
+        int index);
+  }
+  public interface PaymentACKOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.PaymentACK)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Payment message that triggered this ACK
+     * </pre>
+     *
+     * <code>required .payments.Payment payment = 1;</code>
+     *
+     * @return Whether the payment field is set.
+     */
+    boolean hasPayment();
+
+    /**
+     * <pre>
+     * Payment message that triggered this ACK
+     * </pre>
+     *
+     * <code>required .payments.Payment payment = 1;</code>
+     *
+     * @return The payment.
+     */
+    com.netki.bip75.protocol.Messages.Payment getPayment();
+
+    /**
+     * <pre>
+     * Payment message that triggered this ACK
+     * </pre>
+     *
+     * <code>required .payments.Payment payment = 1;</code>
+     */
+    com.netki.bip75.protocol.Messages.PaymentOrBuilder getPaymentOrBuilder();
+
+    /**
+     * <pre>
+     * Human-readable message for customer
+     * </pre>
+     *
+     * <code>optional string memo = 2;</code>
+     *
+     * @return Whether the memo field is set.
+     */
+    boolean hasMemo();
+
+    /**
+     * <pre>
+     * Human-readable message for customer
+     * </pre>
+     *
+     * <code>optional string memo = 2;</code>
+     *
+     * @return The memo.
+     */
+    java.lang.String getMemo();
+
+    /**
+     * <pre>
+     * Human-readable message for customer
+     * </pre>
+     *
+     * <code>optional string memo = 2;</code>
+     *
+     * @return The bytes for memo.
+     */
+    com.google.protobuf.ByteString
+    getMemoBytes();
+  }
+  public interface BeneficiaryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.Beneficiary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
+     * </pre>
+     *
+     * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
+     * @return Whether the primaryForTransaction field is set.
+     */
+    boolean hasPrimaryForTransaction();
+
+    /**
+     * <pre>
+     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
+     * </pre>
+     *
+     * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
+     * @return The primaryForTransaction.
+     */
+    boolean getPrimaryForTransaction();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Attestation>
+    getAttestationsList();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.Attestation getAttestations(int index);
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    int getAttestationsCount();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+    getAttestationsOrBuilderList();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
+        int index);
+  }
+  public interface OriginatorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.Originator)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
+     * </pre>
+     *
+     * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
+     * @return Whether the primaryForTransaction field is set.
+     */
+    boolean hasPrimaryForTransaction();
+
+    /**
+     * <pre>
+     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
+     * </pre>
+     *
+     * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
+     * @return The primaryForTransaction.
+     */
+    boolean getPrimaryForTransaction();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Attestation>
+    getAttestationsList();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.Attestation getAttestations(int index);
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    int getAttestationsCount();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+    getAttestationsOrBuilderList();
+
+    /**
+     * <pre>
+     * All the Beneficiary attestations for the message
+     * </pre>
+     *
+     * <code>repeated .payments.Attestation attestations = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
+        int index);
+  }
+  public interface AttestationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.Attestation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Type of attestation
+     * </pre>
+     *
+     * <code>optional .payments.AttestationType attestation = 1;</code>
+     *
+     * @return Whether the attestation field is set.
+     */
+    boolean hasAttestation();
+
+    /**
+     * <pre>
+     * Type of attestation
+     * </pre>
+     *
+     * <code>optional .payments.AttestationType attestation = 1;</code>
+     *
+     * @return The attestation.
+     */
+    com.netki.bip75.protocol.Messages.AttestationType getAttestation();
+
+    /**
+     * <pre>
+     * none / x509+sha256 / x509+sha1
+     * </pre>
+     *
+     * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
+     * @return Whether the pkiType field is set.
+     */
+    boolean hasPkiType();
+
+    /**
+     * <pre>
+     * none / x509+sha256 / x509+sha1
+     * </pre>
+     *
+     * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
+     * @return The pkiType.
+     */
+    java.lang.String getPkiType();
+
+    /**
+     * <pre>
+     * none / x509+sha256 / x509+sha1
+     * </pre>
+     *
+     * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
+     * @return The bytes for pkiType.
+     */
+    com.google.protobuf.ByteString
+    getPkiTypeBytes();
+
+    /**
+     * <pre>
+     * Depends on pki_type
+     * </pre>
+     *
+     * <code>optional bytes pki_data = 3;</code>
+     *
+     * @return Whether the pkiData field is set.
+     */
+    boolean hasPkiData();
+
+    /**
+     * <pre>
+     * Depends on pki_type
+     * </pre>
+     *
+     * <code>optional bytes pki_data = 3;</code>
+     *
+     * @return The pkiData.
+     */
+    com.google.protobuf.ByteString getPkiData();
+
+    /**
+     * <pre>
+     * PKI-dependent signature
+     * </pre>
+     *
+     * <code>optional bytes signature = 4;</code>
+     *
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+
+    /**
+     * <pre>
+     * PKI-dependent signature
+     * </pre>
+     *
+     * <code>optional bytes signature = 4;</code>
+     *
+     * @return The signature.
+     */
+    com.google.protobuf.ByteString getSignature();
+  }
+  public interface PaymentDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.PaymentDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * "main" or "test"
+     * </pre>
+     *
+     * <code>optional string network = 1 [default = "main"];</code>
+     *
+     * @return Whether the network field is set.
+     */
+    boolean hasNetwork();
+
+    /**
+     * <pre>
+     * "main" or "test"
+     * </pre>
+     *
+     * <code>optional string network = 1 [default = "main"];</code>
+     *
+     * @return The network.
+     */
+    java.lang.String getNetwork();
+
+    /**
+     * <pre>
+     * "main" or "test"
+     * </pre>
+     *
+     * <code>optional string network = 1 [default = "main"];</code>
+     *
+     * @return The bytes for network.
+     */
+    com.google.protobuf.ByteString
+    getNetworkBytes();
+
+    /**
+     * <pre>
+     * Where payment should be sent
+     * </pre>
+     *
+     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
+     */
+    java.util.List<com.netki.bip75.protocol.Messages.Output>
+    getBeneficiariesAddressesList();
+
+    /**
+     * <pre>
+     * Where payment should be sent
+     * </pre>
+     *
+     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.Output getBeneficiariesAddresses(int index);
+
+    /**
+     * <pre>
+     * Where payment should be sent
+     * </pre>
+     *
+     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
+     */
+    int getBeneficiariesAddressesCount();
+
+    /**
+     * <pre>
+     * Where payment should be sent
+     * </pre>
+     *
+     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
+     */
+    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getBeneficiariesAddressesOrBuilderList();
+
+    /**
+     * <pre>
+     * Where payment should be sent
+     * </pre>
+     *
+     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
+     */
+    com.netki.bip75.protocol.Messages.OutputOrBuilder getBeneficiariesAddressesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Timestamp; when payment request created
+     * </pre>
+     *
+     * <code>required uint64 time = 3;</code>
+     *
+     * @return Whether the time field is set.
+     */
+    boolean hasTime();
+
+    /**
+     * <pre>
+     * Timestamp; when payment request created
+     * </pre>
+     *
+     * <code>required uint64 time = 3;</code>
+     *
+     * @return The time.
+     */
+    long getTime();
+
+    /**
+     * <pre>
+     * Timestamp; when this request should be considered invalid
+     * </pre>
+     *
+     * <code>optional uint64 expires = 4;</code>
+     *
+     * @return Whether the expires field is set.
+     */
+    boolean hasExpires();
+
+    /**
+     * <pre>
+     * Timestamp; when this request should be considered invalid
+     * </pre>
+     *
+     * <code>optional uint64 expires = 4;</code>
+     *
+     * @return The expires.
+     */
+    long getExpires();
+
+    /**
+     * <pre>
+     * Human-readable description of request for the customer
+     * </pre>
+     *
+     * <code>optional string memo = 5;</code>
+     *
+     * @return Whether the memo field is set.
+     */
+    boolean hasMemo();
+
+    /**
+     * <pre>
+     * Human-readable description of request for the customer
+     * </pre>
+     *
+     * <code>optional string memo = 5;</code>
+     *
+     * @return The memo.
+     */
+    java.lang.String getMemo();
+
+    /**
+     * <pre>
+     * Human-readable description of request for the customer
+     * </pre>
+     *
+     * <code>optional string memo = 5;</code>
+     *
+     * @return The bytes for memo.
+     */
+    com.google.protobuf.ByteString
+    getMemoBytes();
+
+    /**
+     * <pre>
+     * URL to send Payment and get PaymentACK
+     * </pre>
+     *
+     * <code>optional string payment_url = 6;</code>
+     *
+     * @return Whether the paymentUrl field is set.
+     */
+    boolean hasPaymentUrl();
+
+    /**
+     * <pre>
+     * URL to send Payment and get PaymentACK
+     * </pre>
+     *
+     * <code>optional string payment_url = 6;</code>
+     *
+     * @return The paymentUrl.
+     */
+    java.lang.String getPaymentUrl();
+
+    /**
+     * <pre>
+     * URL to send Payment and get PaymentACK
+     * </pre>
+     *
+     * <code>optional string payment_url = 6;</code>
+     *
+     * @return The bytes for paymentUrl.
+     */
+    com.google.protobuf.ByteString
+    getPaymentUrlBytes();
+
+    /**
+     * <pre>
+     * Arbitrary data to include in the Payment message
+     * </pre>
+     *
+     * <code>optional bytes merchant_data = 7;</code>
+     *
+     * @return Whether the merchantData field is set.
+     */
+    boolean hasMerchantData();
+
+    /**
+     * <pre>
+     * Arbitrary data to include in the Payment message
+     * </pre>
+     *
+     * <code>optional bytes merchant_data = 7;</code>
+     *
+     * @return The merchantData.
+     */
+    com.google.protobuf.ByteString getMerchantData();
+  }
+  public interface OutputOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.Output)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * amount is integer-number-of-satoshis
+     * </pre>
+     *
+     * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+
+    /**
+     * <pre>
+     * amount is integer-number-of-satoshis
+     * </pre>
+     *
+     * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
+     * @return The amount.
+     */
+    long getAmount();
+
+    /**
+     * <pre>
+     * usually one of the standard Script forms
+     * </pre>
+     *
+     * <code>optional bytes script = 2;</code>
+     *
+     * @return Whether the script field is set.
+     */
+    boolean hasScript();
+
+    /**
+     * <pre>
+     * usually one of the standard Script forms
+     * </pre>
+     *
+     * <code>optional bytes script = 2;</code>
+     *
+     * @return The script.
+     */
+    com.google.protobuf.ByteString getScript();
+
+    /**
+     * <pre>
+     * The currency of the provided Script
+     * </pre>
+     *
+     * <code>optional .payments.CurrencyType currency = 3;</code>
+     *
+     * @return Whether the currency field is set.
+     */
+    boolean hasCurrency();
+
+    /**
+     * <pre>
+     * The currency of the provided Script
+     * </pre>
+     *
+     * <code>optional .payments.CurrencyType currency = 3;</code>
+     *
+     * @return The currency.
+     */
+    com.netki.bip75.protocol.Messages.CurrencyType getCurrency();
+  }
+  public interface ProtocolMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.ProtocolMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Protocol version number
+     * </pre>
+     *
+     * <code>required uint64 version = 1 [default = 1];</code>
+     *
+     * @return Whether the version field is set.
+     */
+    boolean hasVersion();
+
+    /**
+     * <pre>
+     * Protocol version number
+     * </pre>
+     *
+     * <code>required uint64 version = 1 [default = 1];</code>
+     *
+     * @return The version.
+     */
+    long getVersion();
+
+    /**
+     * <pre>
+     * Payment Protocol Status Code (Default: 1 "OK")
+     * </pre>
+     *
+     * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
+     * @return Whether the statusCode field is set.
+     */
+    boolean hasStatusCode();
+
+    /**
+     * <pre>
+     * Payment Protocol Status Code (Default: 1 "OK")
+     * </pre>
+     *
+     * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
+     * @return The statusCode.
+     */
+    long getStatusCode();
+
+    /**
+     * <pre>
+     * Message Type of serialized_message
+     * </pre>
+     *
+     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
+     * @return Whether the messageType field is set.
+     */
+    boolean hasMessageType();
+
+    /**
+     * <pre>
+     * Message Type of serialized_message
+     * </pre>
+     *
+     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
+     * @return The messageType.
+     */
+    com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType();
+
+    /**
+     * <pre>
+     * Serialized Payment Protocol Message
+     * </pre>
+     *
+     * <code>required bytes serialized_message = 4;</code>
+     *
+     * @return Whether the serializedMessage field is set.
+     */
+    boolean hasSerializedMessage();
+
+    /**
+     * <pre>
+     * Serialized Payment Protocol Message
+     * </pre>
+     *
+     * <code>required bytes serialized_message = 4;</code>
+     *
+     * @return The serializedMessage.
+     */
+    com.google.protobuf.ByteString getSerializedMessage();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 5;</code>
+     *
+     * @return Whether the statusMessage field is set.
+     */
+    boolean hasStatusMessage();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 5;</code>
+     *
+     * @return The statusMessage.
+     */
+    java.lang.String getStatusMessage();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 5;</code>
+     *
+     * @return The bytes for statusMessage.
+     */
+    com.google.protobuf.ByteString
+    getStatusMessageBytes();
+
+    /**
+     * <pre>
+     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
+     * </pre>
+     *
+     * <code>required bytes identifier = 6;</code>
+     *
+     * @return Whether the identifier field is set.
+     */
+    boolean hasIdentifier();
+
+    /**
+     * <pre>
+     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
+     * </pre>
+     *
+     * <code>required bytes identifier = 6;</code>
+     *
+     * @return The identifier.
+     */
+    com.google.protobuf.ByteString getIdentifier();
+  }
+  public interface EncryptedProtocolMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payments.EncryptedProtocolMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Protocol version number
+     * </pre>
+     *
+     * <code>required uint64 version = 1 [default = 1];</code>
+     *
+     * @return Whether the version field is set.
+     */
+    boolean hasVersion();
+
+    /**
+     * <pre>
+     * Protocol version number
+     * </pre>
+     *
+     * <code>required uint64 version = 1 [default = 1];</code>
+     *
+     * @return The version.
+     */
+    long getVersion();
+
+    /**
+     * <pre>
+     * Payment Protocol Status Code (Default: 1 "OK")
+     * </pre>
+     *
+     * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
+     * @return Whether the statusCode field is set.
+     */
+    boolean hasStatusCode();
+
+    /**
+     * <pre>
+     * Payment Protocol Status Code (Default: 1 "OK")
+     * </pre>
+     *
+     * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
+     * @return The statusCode.
+     */
+    long getStatusCode();
+
+    /**
+     * <pre>
+     * Message Type of Decrypted encrypted_message
+     * </pre>
+     *
+     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
+     * @return Whether the messageType field is set.
+     */
+    boolean hasMessageType();
+
+    /**
+     * <pre>
+     * Message Type of Decrypted encrypted_message
+     * </pre>
+     *
+     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
+     * @return The messageType.
+     */
+    com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType();
+
+    /**
+     * <pre>
+     * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
+     * </pre>
+     *
+     * <code>required bytes encrypted_message = 4;</code>
+     *
+     * @return Whether the encryptedMessage field is set.
+     */
+    boolean hasEncryptedMessage();
+
+    /**
+     * <pre>
+     * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
+     * </pre>
+     *
+     * <code>required bytes encrypted_message = 4;</code>
+     *
+     * @return The encryptedMessage.
+     */
+    com.google.protobuf.ByteString getEncryptedMessage();
+
+    /**
+     * <pre>
+     * Receiver's DER-encoded EC Public Key
+     * </pre>
+     *
+     * <code>required bytes receiver_public_key = 5;</code>
+     *
+     * @return Whether the receiverPublicKey field is set.
+     */
+    boolean hasReceiverPublicKey();
+
+    /**
+     * <pre>
+     * Receiver's DER-encoded EC Public Key
+     * </pre>
+     *
+     * <code>required bytes receiver_public_key = 5;</code>
+     *
+     * @return The receiverPublicKey.
+     */
+    com.google.protobuf.ByteString getReceiverPublicKey();
+
+    /**
+     * <pre>
+     * Sender's DER-encoded EC Public Key
+     * </pre>
+     *
+     * <code>required bytes sender_public_key = 6;</code>
+     *
+     * @return Whether the senderPublicKey field is set.
+     */
+    boolean hasSenderPublicKey();
+
+    /**
+     * <pre>
+     * Sender's DER-encoded EC Public Key
+     * </pre>
+     *
+     * <code>required bytes sender_public_key = 6;</code>
+     *
+     * @return The senderPublicKey.
+     */
+    com.google.protobuf.ByteString getSenderPublicKey();
+
+    /**
+     * <pre>
+     * Microseconds since epoch
+     * </pre>
+     *
+     * <code>required uint64 nonce = 7;</code>
+     *
+     * @return Whether the nonce field is set.
+     */
+    boolean hasNonce();
+
+    /**
+     * <pre>
+     * Microseconds since epoch
+     * </pre>
+     *
+     * <code>required uint64 nonce = 7;</code>
+     *
+     * @return The nonce.
+     */
+    long getNonce();
+
+    /**
+     * <pre>
+     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
+     * </pre>
+     *
+     * <code>required bytes identifier = 8;</code>
+     *
+     * @return Whether the identifier field is set.
+     */
+    boolean hasIdentifier();
+
+    /**
+     * <pre>
+     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
+     * </pre>
+     *
+     * <code>required bytes identifier = 8;</code>
+     *
+     * @return The identifier.
+     */
+    com.google.protobuf.ByteString getIdentifier();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 9;</code>
+     *
+     * @return Whether the statusMessage field is set.
+     */
+    boolean hasStatusMessage();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 9;</code>
+     *
+     * @return The statusMessage.
+     */
+    java.lang.String getStatusMessage();
+
+    /**
+     * <pre>
+     * Human-readable Payment Protocol status message
+     * </pre>
+     *
+     * <code>optional string status_message = 9;</code>
+     *
+     * @return The bytes for statusMessage.
+     */
+    com.google.protobuf.ByteString
+    getStatusMessageBytes();
+
+    /**
+     * <pre>
+     * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
+     * </pre>
+     *
+     * <code>optional bytes signature = 10;</code>
+     *
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+
+    /**
+     * <pre>
+     * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
+     * </pre>
+     *
+     * <code>optional bytes signature = 10;</code>
+     *
+     * @return The signature.
+     */
+    com.google.protobuf.ByteString getSignature();
+  }
+
   /**
    * Protobuf type {@code payments.InvoiceRequest}
    */
-  public  static final class InvoiceRequest extends
+  public static final class InvoiceRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.InvoiceRequest)
       InvoiceRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int AMOUNT_FIELD_NUMBER = 1;
+    public static final int MEMO_FIELD_NUMBER = 2;
+    public static final int NOTIFICATION_URL_FIELD_NUMBER = 3;
+    public static final int ORIGINATORS_FIELD_NUMBER = 4;
+    public static final int BENEFICIARIES_FIELD_NUMBER = 5;
+    public static final int ORIGINATORSADDRESSES_FIELD_NUMBER = 6;
+    public static final int ATTESTATIONSREQUESTED_FIELD_NUMBER = 7;
+    public static final int SENDER_PKI_TYPE_FIELD_NUMBER = 8;
+    public static final int SENDER_PKI_DATA_FIELD_NUMBER = 9;
+    public static final int SENDER_SIGNATURE_FIELD_NUMBER = 10;
+    public static final int SENDER_EV_CERT_FIELD_NUMBER = 11;
+    public static final int RECIPIENT_VASP_NAME_FIELD_NUMBER = 12;
+    public static final int RECIPIENT_CHAIN_ADDRESS_FIELD_NUMBER = 13;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<InvoiceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<InvoiceRequest>() {
+      @java.lang.Override
+      public InvoiceRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InvoiceRequest(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType> attestationsRequested_converter_ =
+        new com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>() {
+          public com.netki.bip75.protocol.Messages.AttestationType convert(java.lang.Integer from) {
+            @SuppressWarnings("deprecation")
+            com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType
+                .valueOf(from);
+            return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
+          }
+        };
+    // @@protoc_insertion_point(class_scope:payments.InvoiceRequest)
+    private static final com.netki.bip75.protocol.Messages.InvoiceRequest DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.InvoiceRequest();
+    }
+
+    private int bitField0_;
+    private long amount_;
+    private volatile java.lang.Object memo_;
+    private volatile java.lang.Object notificationUrl_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Output> originatorsAddresses_;
+    private java.util.List<java.lang.Integer> attestationsRequested_;
+    private volatile java.lang.Object senderPkiType_;
+    private com.google.protobuf.ByteString senderPkiData_;
+    private com.google.protobuf.ByteString senderSignature_;
+    private com.google.protobuf.ByteString senderEvCert_;
+    private volatile java.lang.Object recipientVaspName_;
+    private volatile java.lang.Object recipientChainAddress_;
+    private byte memoizedIsInitialized = -1;
+
     // Use InvoiceRequest.newBuilder() to construct.
     private InvoiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private InvoiceRequest() {
       memo_ = "";
       notificationUrl_ = "";
@@ -1003,18 +2812,6 @@ public final class Messages {
       recipientChainAddress_ = "";
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new InvoiceRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private InvoiceRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1081,7 +2878,8 @@ public final class Messages {
             case 56: {
               int rawValue = input.readEnum();
               @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType.valueOf(rawValue);
+              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
               } else {
@@ -1096,10 +2894,11 @@ public final class Messages {
             case 58: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
+              while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-                com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType.valueOf(rawValue);
+                com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType
+                    .valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(7, rawValue);
                 } else {
@@ -1177,64 +2976,177 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.InvoiceRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.InvoiceRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<InvoiceRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InvoiceRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.InvoiceRequest.class, com.netki.bip75.protocol.Messages.InvoiceRequest.Builder.class);
+              com.netki.bip75.protocol.Messages.InvoiceRequest.class,
+              com.netki.bip75.protocol.Messages.InvoiceRequest.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int AMOUNT_FIELD_NUMBER = 1;
-    private long amount_;
     /**
      * <pre>
      * amount is integer-number-of-satoshis
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * amount is integer-number-of-satoshis
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return The amount.
      */
     public long getAmount() {
       return amount_;
     }
 
-    public static final int MEMO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object memo_;
     /**
      * <pre>
      * Human-readable description of invoice request for the receiver
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return Whether the memo field is set.
      */
     public boolean hasMemo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Human-readable description of invoice request for the receiver
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The memo.
      */
     public java.lang.String getMemo() {
@@ -1242,7 +3154,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -1251,19 +3163,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable description of invoice request for the receiver
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The bytes for memo.
      */
     public com.google.protobuf.ByteString
-        getMemoBytes() {
+    getMemoBytes() {
       java.lang.Object ref = memo_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         memo_ = b;
@@ -1273,25 +3187,26 @@ public final class Messages {
       }
     }
 
-    public static final int NOTIFICATION_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object notificationUrl_;
     /**
      * <pre>
      * URL to notify on EncryptedPaymentRequest ready
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return Whether the notificationUrl field is set.
      */
     public boolean hasNotificationUrl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * URL to notify on EncryptedPaymentRequest ready
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return The notificationUrl.
      */
     public java.lang.String getNotificationUrl() {
@@ -1299,7 +3214,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -1308,19 +3223,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * URL to notify on EncryptedPaymentRequest ready
      * </pre>
      *
      * <code>optional string notification_url = 3;</code>
+     *
      * @return The bytes for notificationUrl.
      */
     public com.google.protobuf.ByteString
-        getNotificationUrlBytes() {
+    getNotificationUrlBytes() {
       java.lang.Object ref = notificationUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         notificationUrl_ = b;
@@ -1330,8 +3247,6 @@ public final class Messages {
       }
     }
 
-    public static final int ORIGINATORS_FIELD_NUMBER = 4;
-    private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_;
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -1342,6 +3257,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Originator> getOriginatorsList() {
       return originators_;
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -1349,10 +3265,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Originator originators = 4;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-        getOriginatorsOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+    getOriginatorsOrBuilderList() {
       return originators_;
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -1363,6 +3280,7 @@ public final class Messages {
     public int getOriginatorsCount() {
       return originators_.size();
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -1373,6 +3291,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Originator getOriginators(int index) {
       return originators_.get(index);
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -1385,8 +3304,6 @@ public final class Messages {
       return originators_.get(index);
     }
 
-    public static final int BENEFICIARIES_FIELD_NUMBER = 5;
-    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -1397,6 +3314,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> getBeneficiariesList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -1404,10 +3322,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -1418,6 +3337,7 @@ public final class Messages {
     public int getBeneficiariesCount() {
       return beneficiaries_.size();
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -1428,6 +3348,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index) {
       return beneficiaries_.get(index);
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -1440,8 +3361,6 @@ public final class Messages {
       return beneficiaries_.get(index);
     }
 
-    public static final int ORIGINATORSADDRESSES_FIELD_NUMBER = 6;
-    private java.util.List<com.netki.bip75.protocol.Messages.Output> originatorsAddresses_;
     /**
      * <pre>
      * Where the payment comes from
@@ -1452,6 +3371,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Output> getOriginatorsAddressesList() {
       return originatorsAddresses_;
     }
+
     /**
      * <pre>
      * Where the payment comes from
@@ -1459,10 +3379,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Output originatorsAddresses = 6;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getOriginatorsAddressesOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getOriginatorsAddressesOrBuilderList() {
       return originatorsAddresses_;
     }
+
     /**
      * <pre>
      * Where the payment comes from
@@ -1473,6 +3394,7 @@ public final class Messages {
     public int getOriginatorsAddressesCount() {
       return originatorsAddresses_.size();
     }
+
     /**
      * <pre>
      * Where the payment comes from
@@ -1483,6 +3405,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Output getOriginatorsAddresses(int index) {
       return originatorsAddresses_.get(index);
     }
+
     /**
      * <pre>
      * Where the payment comes from
@@ -1495,47 +3418,41 @@ public final class Messages {
       return originatorsAddresses_.get(index);
     }
 
-    public static final int ATTESTATIONSREQUESTED_FIELD_NUMBER = 7;
-    private java.util.List<java.lang.Integer> attestationsRequested_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType> attestationsRequested_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>() {
-              public com.netki.bip75.protocol.Messages.AttestationType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType.valueOf(from);
-                return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
-              }
-            };
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @return A list containing the attestationsRequested.
      */
     public java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_, attestationsRequested_converter_);
+          java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_,
+          attestationsRequested_converter_);
     }
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @param value The attestationsRequested to add.
      */
     public int getAttestationsRequestedCount() {
       return attestationsRequested_.size();
     }
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     *
      * @param index The index of the element to return.
      * @return The attestationsRequested at the given index.
      */
@@ -1543,25 +3460,26 @@ public final class Messages {
       return attestationsRequested_converter_.convert(attestationsRequested_.get(index));
     }
 
-    public static final int SENDER_PKI_TYPE_FIELD_NUMBER = 8;
-    private volatile java.lang.Object senderPkiType_;
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return Whether the senderPkiType field is set.
      */
     public boolean hasSenderPkiType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return The senderPkiType.
      */
     public java.lang.String getSenderPkiType() {
@@ -1569,7 +3487,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -1578,19 +3496,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+     *
      * @return The bytes for senderPkiType.
      */
     public com.google.protobuf.ByteString
-        getSenderPkiTypeBytes() {
+    getSenderPkiTypeBytes() {
       java.lang.Object ref = senderPkiType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         senderPkiType_ = b;
@@ -1600,100 +3520,104 @@ public final class Messages {
       }
     }
 
-    public static final int SENDER_PKI_DATA_FIELD_NUMBER = 9;
-    private com.google.protobuf.ByteString senderPkiData_;
     /**
      * <pre>
      * Sender's pki data, depends on pki_type
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 9;</code>
+     *
      * @return Whether the senderPkiData field is set.
      */
     public boolean hasSenderPkiData() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <pre>
      * Sender's pki data, depends on pki_type
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 9;</code>
+     *
      * @return The senderPkiData.
      */
     public com.google.protobuf.ByteString getSenderPkiData() {
       return senderPkiData_;
     }
 
-    public static final int SENDER_SIGNATURE_FIELD_NUMBER = 10;
-    private com.google.protobuf.ByteString senderSignature_;
     /**
      * <pre>
      * Sender's Signature of the whole message
      * </pre>
      *
      * <code>optional bytes sender_signature = 10;</code>
+     *
      * @return Whether the senderSignature field is set.
      */
     public boolean hasSenderSignature() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      * <pre>
      * Sender's Signature of the whole message
      * </pre>
      *
      * <code>optional bytes sender_signature = 10;</code>
+     *
      * @return The senderSignature.
      */
     public com.google.protobuf.ByteString getSenderSignature() {
       return senderSignature_;
     }
 
-    public static final int SENDER_EV_CERT_FIELD_NUMBER = 11;
-    private com.google.protobuf.ByteString senderEvCert_;
     /**
      * <pre>
      * Sender's EV cert
      * </pre>
      *
      * <code>optional bytes sender_ev_cert = 11;</code>
+     *
      * @return Whether the senderEvCert field is set.
      */
     public boolean hasSenderEvCert() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      * <pre>
      * Sender's EV cert
      * </pre>
      *
      * <code>optional bytes sender_ev_cert = 11;</code>
+     *
      * @return The senderEvCert.
      */
     public com.google.protobuf.ByteString getSenderEvCert() {
       return senderEvCert_;
     }
 
-    public static final int RECIPIENT_VASP_NAME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object recipientVaspName_;
     /**
      * <pre>
      * Recipient's vasp name
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return Whether the recipientVaspName field is set.
      */
     public boolean hasRecipientVaspName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      * <pre>
      * Recipient's vasp name
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return The recipientVaspName.
      */
     public java.lang.String getRecipientVaspName() {
@@ -1701,7 +3625,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -1710,19 +3634,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Recipient's vasp name
      * </pre>
      *
      * <code>optional string recipient_vasp_name = 12;</code>
+     *
      * @return The bytes for recipientVaspName.
      */
     public com.google.protobuf.ByteString
-        getRecipientVaspNameBytes() {
+    getRecipientVaspNameBytes() {
       java.lang.Object ref = recipientVaspName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         recipientVaspName_ = b;
@@ -1732,25 +3658,26 @@ public final class Messages {
       }
     }
 
-    public static final int RECIPIENT_CHAIN_ADDRESS_FIELD_NUMBER = 13;
-    private volatile java.lang.Object recipientChainAddress_;
     /**
      * <pre>
      * Recipient's chain address
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return Whether the recipientChainAddress field is set.
      */
     public boolean hasRecipientChainAddress() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      * <pre>
      * Recipient's chain address
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return The recipientChainAddress.
      */
     public java.lang.String getRecipientChainAddress() {
@@ -1758,7 +3685,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -1767,19 +3694,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Recipient's chain address
      * </pre>
      *
      * <code>optional string recipient_chain_address = 13;</code>
+     *
      * @return The bytes for recipientChainAddress.
      */
     public com.google.protobuf.ByteString
-        getRecipientChainAddressBytes() {
+    getRecipientChainAddressBytes() {
       java.lang.Object ref = recipientChainAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         recipientChainAddress_ = b;
@@ -1789,12 +3718,15 @@ public final class Messages {
       }
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       for (int i = 0; i < getOriginatorsCount(); i++) {
         if (!getOriginators(i).isInitialized()) {
@@ -1814,7 +3746,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt64(1, amount_);
       }
@@ -1860,12 +3792,14 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, amount_);
+            .computeUInt64Size(1, amount_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memo_);
@@ -1875,21 +3809,21 @@ public final class Messages {
       }
       for (int i = 0; i < originators_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, originators_.get(i));
+            .computeMessageSize(4, originators_.get(i));
       }
       for (int i = 0; i < beneficiaries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, beneficiaries_.get(i));
+            .computeMessageSize(5, beneficiaries_.get(i));
       }
       for (int i = 0; i < originatorsAddresses_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, originatorsAddresses_.get(i));
+            .computeMessageSize(6, originatorsAddresses_.get(i));
       }
       {
         int dataSize = 0;
         for (int i = 0; i < attestationsRequested_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(attestationsRequested_.get(i));
+              .computeEnumSizeNoTag(attestationsRequested_.get(i));
         }
         size += dataSize;
         size += 1 * attestationsRequested_.size();
@@ -1899,15 +3833,15 @@ public final class Messages {
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, senderPkiData_);
+            .computeBytesSize(9, senderPkiData_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, senderSignature_);
+            .computeBytesSize(10, senderSignature_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, senderEvCert_);
+            .computeBytesSize(11, senderEvCert_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, recipientVaspName_);
@@ -1923,66 +3857,112 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.InvoiceRequest)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.InvoiceRequest other = (com.netki.bip75.protocol.Messages.InvoiceRequest) obj;
 
-      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount() != other.hasAmount()) {
+        return false;
+      }
       if (hasAmount()) {
         if (getAmount()
-            != other.getAmount()) return false;
+            != other.getAmount()) {
+          return false;
+        }
       }
-      if (hasMemo() != other.hasMemo()) return false;
+      if (hasMemo() != other.hasMemo()) {
+        return false;
+      }
       if (hasMemo()) {
         if (!getMemo()
-            .equals(other.getMemo())) return false;
+            .equals(other.getMemo())) {
+          return false;
+        }
       }
-      if (hasNotificationUrl() != other.hasNotificationUrl()) return false;
+      if (hasNotificationUrl() != other.hasNotificationUrl()) {
+        return false;
+      }
       if (hasNotificationUrl()) {
         if (!getNotificationUrl()
-            .equals(other.getNotificationUrl())) return false;
+            .equals(other.getNotificationUrl())) {
+          return false;
+        }
       }
       if (!getOriginatorsList()
-          .equals(other.getOriginatorsList())) return false;
+          .equals(other.getOriginatorsList())) {
+        return false;
+      }
       if (!getBeneficiariesList()
-          .equals(other.getBeneficiariesList())) return false;
+          .equals(other.getBeneficiariesList())) {
+        return false;
+      }
       if (!getOriginatorsAddressesList()
-          .equals(other.getOriginatorsAddressesList())) return false;
-      if (!attestationsRequested_.equals(other.attestationsRequested_)) return false;
-      if (hasSenderPkiType() != other.hasSenderPkiType()) return false;
+          .equals(other.getOriginatorsAddressesList())) {
+        return false;
+      }
+      if (!attestationsRequested_.equals(other.attestationsRequested_)) {
+        return false;
+      }
+      if (hasSenderPkiType() != other.hasSenderPkiType()) {
+        return false;
+      }
       if (hasSenderPkiType()) {
         if (!getSenderPkiType()
-            .equals(other.getSenderPkiType())) return false;
+            .equals(other.getSenderPkiType())) {
+          return false;
+        }
       }
-      if (hasSenderPkiData() != other.hasSenderPkiData()) return false;
+      if (hasSenderPkiData() != other.hasSenderPkiData()) {
+        return false;
+      }
       if (hasSenderPkiData()) {
         if (!getSenderPkiData()
-            .equals(other.getSenderPkiData())) return false;
+            .equals(other.getSenderPkiData())) {
+          return false;
+        }
       }
-      if (hasSenderSignature() != other.hasSenderSignature()) return false;
+      if (hasSenderSignature() != other.hasSenderSignature()) {
+        return false;
+      }
       if (hasSenderSignature()) {
         if (!getSenderSignature()
-            .equals(other.getSenderSignature())) return false;
+            .equals(other.getSenderSignature())) {
+          return false;
+        }
       }
-      if (hasSenderEvCert() != other.hasSenderEvCert()) return false;
+      if (hasSenderEvCert() != other.hasSenderEvCert()) {
+        return false;
+      }
       if (hasSenderEvCert()) {
         if (!getSenderEvCert()
-            .equals(other.getSenderEvCert())) return false;
+            .equals(other.getSenderEvCert())) {
+          return false;
+        }
       }
-      if (hasRecipientVaspName() != other.hasRecipientVaspName()) return false;
+      if (hasRecipientVaspName() != other.hasRecipientVaspName()) {
+        return false;
+      }
       if (hasRecipientVaspName()) {
         if (!getRecipientVaspName()
-            .equals(other.getRecipientVaspName())) return false;
+            .equals(other.getRecipientVaspName())) {
+          return false;
+        }
       }
-      if (hasRecipientChainAddress() != other.hasRecipientChainAddress()) return false;
+      if (hasRecipientChainAddress() != other.hasRecipientChainAddress()) {
+        return false;
+      }
       if (hasRecipientChainAddress()) {
         if (!getRecipientChainAddress()
-            .equals(other.getRecipientChainAddress())) return false;
+            .equals(other.getRecipientChainAddress())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -2051,84 +4031,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.InvoiceRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -2141,6 +4048,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InvoiceRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.InvoiceRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.InvoiceRequest}
      */
@@ -2148,18 +4066,31 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.InvoiceRequest)
         com.netki.bip75.protocol.Messages.InvoiceRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.InvoiceRequest.class, com.netki.bip75.protocol.Messages.InvoiceRequest.Builder.class);
-      }
+      private int bitField0_;
+      private long amount_;
+      private java.lang.Object memo_ = "";
+      private java.lang.Object notificationUrl_ = "";
+      private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> originatorsBuilder_;
+      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
+      private java.util.List<com.netki.bip75.protocol.Messages.Output> originatorsAddresses_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> originatorsAddressesBuilder_;
+      private java.util.List<java.lang.Integer> attestationsRequested_ =
+          java.util.Collections.emptyList();
+      private java.lang.Object senderPkiType_ = "none";
+      private com.google.protobuf.ByteString senderPkiData_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString senderSignature_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString senderEvCert_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object recipientVaspName_ = "";
+      private java.lang.Object recipientChainAddress_ = "";
 
       // Construct using com.netki.bip75.protocol.Messages.InvoiceRequest.newBuilder()
       private Builder() {
@@ -2171,14 +4102,30 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.InvoiceRequest.class,
+                com.netki.bip75.protocol.Messages.InvoiceRequest.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getOriginatorsFieldBuilder();
           getBeneficiariesFieldBuilder();
           getOriginatorsAddressesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2225,7 +4172,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_InvoiceRequest_descriptor;
       }
 
@@ -2245,7 +4192,8 @@ public final class Messages {
 
       @java.lang.Override
       public com.netki.bip75.protocol.Messages.InvoiceRequest buildPartial() {
-        com.netki.bip75.protocol.Messages.InvoiceRequest result = new com.netki.bip75.protocol.Messages.InvoiceRequest(this);
+        com.netki.bip75.protocol.Messages.InvoiceRequest result = new com.netki.bip75.protocol.Messages.InvoiceRequest(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -2325,38 +4273,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.InvoiceRequest) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.InvoiceRequest)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.InvoiceRequest) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2364,7 +4318,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.InvoiceRequest other) {
-        if (other == com.netki.bip75.protocol.Messages.InvoiceRequest.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.InvoiceRequest.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasAmount()) {
           setAmount(other.getAmount());
         }
@@ -2396,9 +4352,9 @@ public final class Messages {
               originatorsBuilder_ = null;
               originators_ = other.originators_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              originatorsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOriginatorsFieldBuilder() : null;
+              originatorsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getOriginatorsFieldBuilder() : null;
             } else {
               originatorsBuilder_.addAllMessages(other.originators_);
             }
@@ -2422,9 +4378,9 @@ public final class Messages {
               beneficiariesBuilder_ = null;
               beneficiaries_ = other.beneficiaries_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              beneficiariesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBeneficiariesFieldBuilder() : null;
+              beneficiariesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getBeneficiariesFieldBuilder() : null;
             } else {
               beneficiariesBuilder_.addAllMessages(other.beneficiaries_);
             }
@@ -2448,9 +4404,9 @@ public final class Messages {
               originatorsAddressesBuilder_ = null;
               originatorsAddresses_ = other.originatorsAddresses_;
               bitField0_ = (bitField0_ & ~0x00000020);
-              originatorsAddressesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOriginatorsAddressesFieldBuilder() : null;
+              originatorsAddressesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getOriginatorsAddressesFieldBuilder() : null;
             } else {
               originatorsAddressesBuilder_.addAllMessages(other.originatorsAddresses_);
             }
@@ -2528,37 +4484,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private long amount_ ;
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return The amount.
        */
       public long getAmount() {
         return amount_;
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -2568,12 +4527,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -2583,24 +4544,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object memo_ = "";
       /**
        * <pre>
        * Human-readable description of invoice request for the receiver
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return Whether the memo field is set.
        */
       public boolean hasMemo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * Human-readable description of invoice request for the receiver
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return The memo.
        */
       public java.lang.String getMemo() {
@@ -2617,19 +4580,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable description of invoice request for the receiver
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable description of invoice request for the receiver
+       * </pre>
+       *
+       * <code>optional string memo = 2;</code>
+       *
        * @return The bytes for memo.
        */
       public com.google.protobuf.ByteString
-          getMemoBytes() {
+      getMemoBytes() {
         java.lang.Object ref = memo_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           memo_ = b;
@@ -2638,31 +4624,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable description of invoice request for the receiver
        * </pre>
        *
        * <code>optional string memo = 2;</code>
-       * @param value The memo to set.
+       *
+       * @param value The bytes for memo to set.
        * @return This builder for chaining.
        */
-      public Builder setMemo(
-          java.lang.String value) {
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         memo_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable description of invoice request for the receiver
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMemo() {
@@ -2671,44 +4661,27 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable description of invoice request for the receiver
-       * </pre>
-       *
-       * <code>optional string memo = 2;</code>
-       * @param value The bytes for memo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object notificationUrl_ = "";
       /**
        * <pre>
        * URL to notify on EncryptedPaymentRequest ready
        * </pre>
        *
        * <code>optional string notification_url = 3;</code>
+       *
        * @return Whether the notificationUrl field is set.
        */
       public boolean hasNotificationUrl() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * URL to notify on EncryptedPaymentRequest ready
        * </pre>
        *
        * <code>optional string notification_url = 3;</code>
+       *
        * @return The notificationUrl.
        */
       public java.lang.String getNotificationUrl() {
@@ -2725,19 +4698,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * URL to notify on EncryptedPaymentRequest ready
        * </pre>
        *
        * <code>optional string notification_url = 3;</code>
+       *
+       * @param value The notificationUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationUrl(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        notificationUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * URL to notify on EncryptedPaymentRequest ready
+       * </pre>
+       *
+       * <code>optional string notification_url = 3;</code>
+       *
        * @return The bytes for notificationUrl.
        */
       public com.google.protobuf.ByteString
-          getNotificationUrlBytes() {
+      getNotificationUrlBytes() {
         java.lang.Object ref = notificationUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           notificationUrl_ = b;
@@ -2746,31 +4742,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * URL to notify on EncryptedPaymentRequest ready
        * </pre>
        *
        * <code>optional string notification_url = 3;</code>
-       * @param value The notificationUrl to set.
+       *
+       * @param value The bytes for notificationUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setNotificationUrl(
-          java.lang.String value) {
+      public Builder setNotificationUrlBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         notificationUrl_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * URL to notify on EncryptedPaymentRequest ready
        * </pre>
        *
        * <code>optional string notification_url = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearNotificationUrl() {
@@ -2779,37 +4779,13 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * URL to notify on EncryptedPaymentRequest ready
-       * </pre>
-       *
-       * <code>optional string notification_url = 3;</code>
-       * @param value The bytes for notificationUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNotificationUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        notificationUrl_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_ =
-        java.util.Collections.emptyList();
       private void ensureOriginatorsIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
           originators_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Originator>(originators_);
           bitField0_ |= 0x00000008;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> originatorsBuilder_;
 
       /**
        * <pre>
@@ -2825,6 +4801,7 @@ public final class Messages {
           return originatorsBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2839,6 +4816,7 @@ public final class Messages {
           return originatorsBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2853,6 +4831,7 @@ public final class Messages {
           return originatorsBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2874,6 +4853,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2892,6 +4872,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2912,6 +4893,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2933,6 +4915,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2951,6 +4934,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2969,6 +4953,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -2988,6 +4973,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3005,6 +4991,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3022,6 +5009,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3033,6 +5021,7 @@ public final class Messages {
           int index) {
         return getOriginatorsFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3043,10 +5032,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.OriginatorOrBuilder getOriginatorsOrBuilder(
           int index) {
         if (originatorsBuilder_ == null) {
-          return originators_.get(index);  } else {
+          return originators_.get(index);
+        } else {
           return originatorsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3054,14 +5045,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Originator originators = 4;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-           getOriginatorsOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+      getOriginatorsOrBuilderList() {
         if (originatorsBuilder_ != null) {
           return originatorsBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(originators_);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3073,6 +5065,7 @@ public final class Messages {
         return getOriginatorsFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Originator.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3085,6 +5078,7 @@ public final class Messages {
         return getOriginatorsFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Originator.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -3092,36 +5086,32 @@ public final class Messages {
        *
        * <code>repeated .payments.Originator originators = 4;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Originator.Builder> 
-           getOriginatorsBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Originator.Builder>
+      getOriginatorsBuilderList() {
         return getOriginatorsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-          getOriginatorsFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+      getOriginatorsFieldBuilder() {
         if (originatorsBuilder_ == null) {
           originatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder>(
-                  originators_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
+              originators_,
+              ((bitField0_ & 0x00000008) != 0),
+              getParentForChildren(),
+              isClean());
           originators_ = null;
         }
         return originatorsBuilder_;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
-        java.util.Collections.emptyList();
       private void ensureBeneficiariesIsMutable() {
         if (!((bitField0_ & 0x00000010) != 0)) {
           beneficiaries_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Beneficiary>(beneficiaries_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
 
       /**
        * <pre>
@@ -3137,6 +5127,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3151,6 +5142,7 @@ public final class Messages {
           return beneficiariesBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3165,6 +5157,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3186,6 +5179,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3204,6 +5198,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3224,6 +5219,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3245,6 +5241,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3263,6 +5260,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3281,6 +5279,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3300,6 +5299,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3317,6 +5317,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3334,6 +5335,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3345,6 +5347,7 @@ public final class Messages {
           int index) {
         return getBeneficiariesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3355,10 +5358,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
           int index) {
         if (beneficiariesBuilder_ == null) {
-          return beneficiaries_.get(index);  } else {
+          return beneficiaries_.get(index);
+        } else {
           return beneficiariesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3366,14 +5371,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-           getBeneficiariesOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesOrBuilderList() {
         if (beneficiariesBuilder_ != null) {
           return beneficiariesBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(beneficiaries_);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3385,6 +5391,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3397,6 +5404,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -3404,36 +5412,33 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 5;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder> 
-           getBeneficiariesBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder>
+      getBeneficiariesBuilderList() {
         return getBeneficiariesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-          getBeneficiariesFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesFieldBuilder() {
         if (beneficiariesBuilder_ == null) {
           beneficiariesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>(
-                  beneficiaries_,
-                  ((bitField0_ & 0x00000010) != 0),
-                  getParentForChildren(),
-                  isClean());
+              beneficiaries_,
+              ((bitField0_ & 0x00000010) != 0),
+              getParentForChildren(),
+              isClean());
           beneficiaries_ = null;
         }
         return beneficiariesBuilder_;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Output> originatorsAddresses_ =
-        java.util.Collections.emptyList();
       private void ensureOriginatorsAddressesIsMutable() {
         if (!((bitField0_ & 0x00000020) != 0)) {
-          originatorsAddresses_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Output>(originatorsAddresses_);
+          originatorsAddresses_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Output>(
+              originatorsAddresses_);
           bitField0_ |= 0x00000020;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> originatorsAddressesBuilder_;
 
       /**
        * <pre>
@@ -3449,6 +5454,7 @@ public final class Messages {
           return originatorsAddressesBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3463,6 +5469,7 @@ public final class Messages {
           return originatorsAddressesBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3477,6 +5484,7 @@ public final class Messages {
           return originatorsAddressesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3498,6 +5506,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3516,6 +5525,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3536,6 +5546,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3557,6 +5568,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3575,6 +5587,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3593,6 +5606,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3612,6 +5626,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3629,6 +5644,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3646,6 +5662,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3657,6 +5674,7 @@ public final class Messages {
           int index) {
         return getOriginatorsAddressesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3667,10 +5685,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.OutputOrBuilder getOriginatorsAddressesOrBuilder(
           int index) {
         if (originatorsAddressesBuilder_ == null) {
-          return originatorsAddresses_.get(index);  } else {
+          return originatorsAddresses_.get(index);
+        } else {
           return originatorsAddressesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3678,14 +5698,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Output originatorsAddresses = 6;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-           getOriginatorsAddressesOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getOriginatorsAddressesOrBuilderList() {
         if (originatorsAddressesBuilder_ != null) {
           return originatorsAddressesBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(originatorsAddresses_);
         }
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3697,6 +5718,7 @@ public final class Messages {
         return getOriginatorsAddressesFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3709,6 +5731,7 @@ public final class Messages {
         return getOriginatorsAddressesFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where the payment comes from
@@ -3716,74 +5739,82 @@ public final class Messages {
        *
        * <code>repeated .payments.Output originatorsAddresses = 6;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder> 
-           getOriginatorsAddressesBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder>
+      getOriginatorsAddressesBuilderList() {
         return getOriginatorsAddressesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-          getOriginatorsAddressesFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getOriginatorsAddressesFieldBuilder() {
         if (originatorsAddressesBuilder_ == null) {
           originatorsAddressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>(
-                  originatorsAddresses_,
-                  ((bitField0_ & 0x00000020) != 0),
-                  getParentForChildren(),
-                  isClean());
+              originatorsAddresses_,
+              ((bitField0_ & 0x00000020) != 0),
+              getParentForChildren(),
+              isClean());
           originatorsAddresses_ = null;
         }
         return originatorsAddressesBuilder_;
       }
 
-      private java.util.List<java.lang.Integer> attestationsRequested_ =
-        java.util.Collections.emptyList();
       private void ensureAttestationsRequestedIsMutable() {
         if (!((bitField0_ & 0x00000040) != 0)) {
           attestationsRequested_ = new java.util.ArrayList<java.lang.Integer>(attestationsRequested_);
           bitField0_ |= 0x00000040;
         }
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @return A list containing the attestationsRequested.
        */
       public java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList() {
         return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_, attestationsRequested_converter_);
+            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_,
+            attestationsRequested_converter_);
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @return The count of attestationsRequested.
        */
       public int getAttestationsRequestedCount() {
         return attestationsRequested_.size();
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @param index The index of the element to return.
        * @return The attestationsRequested at the given index.
        */
       public com.netki.bip75.protocol.Messages.AttestationType getAttestationsRequested(int index) {
         return attestationsRequested_converter_.convert(attestationsRequested_.get(index));
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @param index The index to set the value at.
        * @param value The attestationsRequested to set.
        * @return This builder for chaining.
@@ -3798,12 +5829,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @param value The attestationsRequested to add.
        * @return This builder for chaining.
        */
@@ -3816,12 +5849,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @param values The attestationsRequested to add.
        * @return This builder for chaining.
        */
@@ -3834,12 +5869,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearAttestationsRequested() {
@@ -3849,24 +5886,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object senderPkiType_ = "none";
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+       *
        * @return Whether the senderPkiType field is set.
        */
       public boolean hasSenderPkiType() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+       *
        * @return The senderPkiType.
        */
       public java.lang.String getSenderPkiType() {
@@ -3883,19 +5922,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+       *
+       * @param value The senderPkiType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderPkiType(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        senderPkiType_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * none / x509+sha256
+       * </pre>
+       *
+       * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+       *
        * @return The bytes for senderPkiType.
        */
       public com.google.protobuf.ByteString
-          getSenderPkiTypeBytes() {
+      getSenderPkiTypeBytes() {
         java.lang.Object ref = senderPkiType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           senderPkiType_ = b;
@@ -3904,31 +5966,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>optional string sender_pki_type = 8 [default = "none"];</code>
-       * @param value The senderPkiType to set.
+       *
+       * @param value The bytes for senderPkiType to set.
        * @return This builder for chaining.
        */
-      public Builder setSenderPkiType(
-          java.lang.String value) {
+      public Builder setSenderPkiTypeBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
         senderPkiType_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>optional string sender_pki_type = 8 [default = "none"];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderPkiType() {
@@ -3937,73 +6003,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * none / x509+sha256
-       * </pre>
-       *
-       * <code>optional string sender_pki_type = 8 [default = "none"];</code>
-       * @param value The bytes for senderPkiType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSenderPkiTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        senderPkiType_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString senderPkiData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 9;</code>
+       *
        * @return Whether the senderPkiData field is set.
        */
       public boolean hasSenderPkiData() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 9;</code>
+       *
        * @return The senderPkiData.
        */
       public com.google.protobuf.ByteString getSenderPkiData() {
         return senderPkiData_;
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 9;</code>
+       *
        * @param value The senderPkiData to set.
        * @return This builder for chaining.
        */
       public Builder setSenderPkiData(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
         senderPkiData_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 9;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderPkiData() {
@@ -4013,53 +6066,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString senderSignature_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 10;</code>
+       *
        * @return Whether the senderSignature field is set.
        */
       public boolean hasSenderSignature() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 10;</code>
+       *
        * @return The senderSignature.
        */
       public com.google.protobuf.ByteString getSenderSignature() {
         return senderSignature_;
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 10;</code>
+       *
        * @param value The senderSignature to set.
        * @return This builder for chaining.
        */
       public Builder setSenderSignature(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
         senderSignature_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 10;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderSignature() {
@@ -4069,53 +6128,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString senderEvCert_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's EV cert
        * </pre>
        *
        * <code>optional bytes sender_ev_cert = 11;</code>
+       *
        * @return Whether the senderEvCert field is set.
        */
       public boolean hasSenderEvCert() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        * <pre>
        * Sender's EV cert
        * </pre>
        *
        * <code>optional bytes sender_ev_cert = 11;</code>
+       *
        * @return The senderEvCert.
        */
       public com.google.protobuf.ByteString getSenderEvCert() {
         return senderEvCert_;
       }
+
       /**
        * <pre>
        * Sender's EV cert
        * </pre>
        *
        * <code>optional bytes sender_ev_cert = 11;</code>
+       *
        * @param value The senderEvCert to set.
        * @return This builder for chaining.
        */
       public Builder setSenderEvCert(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000400;
         senderEvCert_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's EV cert
        * </pre>
        *
        * <code>optional bytes sender_ev_cert = 11;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderEvCert() {
@@ -4125,24 +6190,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object recipientVaspName_ = "";
       /**
        * <pre>
        * Recipient's vasp name
        * </pre>
        *
        * <code>optional string recipient_vasp_name = 12;</code>
+       *
        * @return Whether the recipientVaspName field is set.
        */
       public boolean hasRecipientVaspName() {
         return ((bitField0_ & 0x00000800) != 0);
       }
+
       /**
        * <pre>
        * Recipient's vasp name
        * </pre>
        *
        * <code>optional string recipient_vasp_name = 12;</code>
+       *
        * @return The recipientVaspName.
        */
       public java.lang.String getRecipientVaspName() {
@@ -4159,19 +6226,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Recipient's vasp name
        * </pre>
        *
        * <code>optional string recipient_vasp_name = 12;</code>
+       *
+       * @param value The recipientVaspName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecipientVaspName(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000800;
+        recipientVaspName_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Recipient's vasp name
+       * </pre>
+       *
+       * <code>optional string recipient_vasp_name = 12;</code>
+       *
        * @return The bytes for recipientVaspName.
        */
       public com.google.protobuf.ByteString
-          getRecipientVaspNameBytes() {
+      getRecipientVaspNameBytes() {
         java.lang.Object ref = recipientVaspName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           recipientVaspName_ = b;
@@ -4180,31 +6270,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Recipient's vasp name
        * </pre>
        *
        * <code>optional string recipient_vasp_name = 12;</code>
-       * @param value The recipientVaspName to set.
+       *
+       * @param value The bytes for recipientVaspName to set.
        * @return This builder for chaining.
        */
-      public Builder setRecipientVaspName(
-          java.lang.String value) {
+      public Builder setRecipientVaspNameBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000800;
         recipientVaspName_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Recipient's vasp name
        * </pre>
        *
        * <code>optional string recipient_vasp_name = 12;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearRecipientVaspName() {
@@ -4213,44 +6307,27 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Recipient's vasp name
-       * </pre>
-       *
-       * <code>optional string recipient_vasp_name = 12;</code>
-       * @param value The bytes for recipientVaspName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecipientVaspNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        recipientVaspName_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object recipientChainAddress_ = "";
       /**
        * <pre>
        * Recipient's chain address
        * </pre>
        *
        * <code>optional string recipient_chain_address = 13;</code>
+       *
        * @return Whether the recipientChainAddress field is set.
        */
       public boolean hasRecipientChainAddress() {
         return ((bitField0_ & 0x00001000) != 0);
       }
+
       /**
        * <pre>
        * Recipient's chain address
        * </pre>
        *
        * <code>optional string recipient_chain_address = 13;</code>
+       *
        * @return The recipientChainAddress.
        */
       public java.lang.String getRecipientChainAddress() {
@@ -4267,19 +6344,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Recipient's chain address
        * </pre>
        *
        * <code>optional string recipient_chain_address = 13;</code>
+       *
+       * @param value The recipientChainAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecipientChainAddress(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        recipientChainAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Recipient's chain address
+       * </pre>
+       *
+       * <code>optional string recipient_chain_address = 13;</code>
+       *
        * @return The bytes for recipientChainAddress.
        */
       public com.google.protobuf.ByteString
-          getRecipientChainAddressBytes() {
+      getRecipientChainAddressBytes() {
         java.lang.Object ref = recipientChainAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           recipientChainAddress_ = b;
@@ -4288,31 +6388,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Recipient's chain address
        * </pre>
        *
        * <code>optional string recipient_chain_address = 13;</code>
-       * @param value The recipientChainAddress to set.
+       *
+       * @param value The bytes for recipientChainAddress to set.
        * @return This builder for chaining.
        */
-      public Builder setRecipientChainAddress(
-          java.lang.String value) {
+      public Builder setRecipientChainAddressBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
         recipientChainAddress_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Recipient's chain address
        * </pre>
        *
        * <code>optional string recipient_chain_address = 13;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearRecipientChainAddress() {
@@ -4321,25 +6425,7 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Recipient's chain address
-       * </pre>
-       *
-       * <code>optional string recipient_chain_address = 13;</code>
-       * @param value The bytes for recipientChainAddress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecipientChainAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        recipientChainAddress_ = value;
-        onChanged();
-        return this;
-      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4352,233 +6438,71 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.InvoiceRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.InvoiceRequest)
-    private static final com.netki.bip75.protocol.Messages.InvoiceRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.InvoiceRequest();
-    }
-
-    public static com.netki.bip75.protocol.Messages.InvoiceRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<InvoiceRequest>
-        PARSER = new com.google.protobuf.AbstractParser<InvoiceRequest>() {
-      @java.lang.Override
-      public InvoiceRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InvoiceRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<InvoiceRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InvoiceRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.InvoiceRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface PaymentRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.PaymentRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
-     * @return Whether the paymentDetailsVersion field is set.
-     */
-    boolean hasPaymentDetailsVersion();
-    /**
-     * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
-     * @return The paymentDetailsVersion.
-     */
-    int getPaymentDetailsVersion();
-
-    /**
-     * <pre>
-     * PaymentDetails
-     * </pre>
-     *
-     * <code>required bytes serialized_payment_details = 2;</code>
-     * @return Whether the serializedPaymentDetails field is set.
-     */
-    boolean hasSerializedPaymentDetails();
-    /**
-     * <pre>
-     * PaymentDetails
-     * </pre>
-     *
-     * <code>required bytes serialized_payment_details = 2;</code>
-     * @return The serializedPaymentDetails.
-     */
-    com.google.protobuf.ByteString getSerializedPaymentDetails();
-
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> 
-        getBeneficiariesList();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
-     */
-    com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index);
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
-     */
-    int getBeneficiariesCount();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
-     */
-    com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * List of attestations requested
-     * </pre>
-     *
-     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
-     * @return A list containing the attestationsRequested.
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList();
-    /**
-     * <pre>
-     * List of attestations requested
-     * </pre>
-     *
-     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
-     * @return The count of attestationsRequested.
-     */
-    int getAttestationsRequestedCount();
-    /**
-     * <pre>
-     * List of attestations requested
-     * </pre>
-     *
-     * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
-     * @param index The index of the element to return.
-     * @return The attestationsRequested at the given index.
-     */
-    com.netki.bip75.protocol.Messages.AttestationType getAttestationsRequested(int index);
-
-    /**
-     * <pre>
-     * none / x509+sha256
-     * </pre>
-     *
-     * <code>required string sender_pki_type = 5 [default = "none"];</code>
-     * @return Whether the senderPkiType field is set.
-     */
-    boolean hasSenderPkiType();
-    /**
-     * <pre>
-     * none / x509+sha256
-     * </pre>
-     *
-     * <code>required string sender_pki_type = 5 [default = "none"];</code>
-     * @return The senderPkiType.
-     */
-    java.lang.String getSenderPkiType();
-    /**
-     * <pre>
-     * none / x509+sha256
-     * </pre>
-     *
-     * <code>required string sender_pki_type = 5 [default = "none"];</code>
-     * @return The bytes for senderPkiType.
-     */
-    com.google.protobuf.ByteString
-        getSenderPkiTypeBytes();
-
-    /**
-     * <pre>
-     * Sender's pki data, depends on pki_type
-     * </pre>
-     *
-     * <code>optional bytes sender_pki_data = 6;</code>
-     * @return Whether the senderPkiData field is set.
-     */
-    boolean hasSenderPkiData();
-    /**
-     * <pre>
-     * Sender's pki data, depends on pki_type
-     * </pre>
-     *
-     * <code>optional bytes sender_pki_data = 6;</code>
-     * @return The senderPkiData.
-     */
-    com.google.protobuf.ByteString getSenderPkiData();
-
-    /**
-     * <pre>
-     * Sender's Signature of the whole message
-     * </pre>
-     *
-     * <code>optional bytes sender_signature = 7;</code>
-     * @return Whether the senderSignature field is set.
-     */
-    boolean hasSenderSignature();
-    /**
-     * <pre>
-     * Sender's Signature of the whole message
-     * </pre>
-     *
-     * <code>optional bytes sender_signature = 7;</code>
-     * @return The senderSignature.
-     */
-    com.google.protobuf.ByteString getSenderSignature();
-  }
   /**
    * Protobuf type {@code payments.PaymentRequest}
    */
-  public  static final class PaymentRequest extends
+  public static final class PaymentRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.PaymentRequest)
       PaymentRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int PAYMENT_DETAILS_VERSION_FIELD_NUMBER = 1;
+    public static final int SERIALIZED_PAYMENT_DETAILS_FIELD_NUMBER = 2;
+    public static final int BENEFICIARIES_FIELD_NUMBER = 3;
+    public static final int ATTESTATIONSREQUESTED_FIELD_NUMBER = 4;
+    public static final int SENDER_PKI_TYPE_FIELD_NUMBER = 5;
+    public static final int SENDER_PKI_DATA_FIELD_NUMBER = 6;
+    public static final int SENDER_SIGNATURE_FIELD_NUMBER = 7;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<PaymentRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PaymentRequest>() {
+      @java.lang.Override
+      public PaymentRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PaymentRequest(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType> attestationsRequested_converter_ =
+        new com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>() {
+          public com.netki.bip75.protocol.Messages.AttestationType convert(java.lang.Integer from) {
+            @SuppressWarnings("deprecation")
+            com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType
+                .valueOf(from);
+            return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
+          }
+        };
+    // @@protoc_insertion_point(class_scope:payments.PaymentRequest)
+    private static final com.netki.bip75.protocol.Messages.PaymentRequest DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentRequest();
+    }
+
+    private int bitField0_;
+    private int paymentDetailsVersion_;
+    private com.google.protobuf.ByteString serializedPaymentDetails_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
+    private java.util.List<java.lang.Integer> attestationsRequested_;
+    private volatile java.lang.Object senderPkiType_;
+    private com.google.protobuf.ByteString senderPkiData_;
+    private com.google.protobuf.ByteString senderSignature_;
+    private byte memoizedIsInitialized = -1;
+
     // Use PaymentRequest.newBuilder() to construct.
     private PaymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private PaymentRequest() {
       paymentDetailsVersion_ = 1;
       serializedPaymentDetails_ = com.google.protobuf.ByteString.EMPTY;
@@ -4589,18 +6513,6 @@ public final class Messages {
       senderSignature_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PaymentRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private PaymentRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4642,7 +6554,8 @@ public final class Messages {
             case 32: {
               int rawValue = input.readEnum();
               @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType.valueOf(rawValue);
+              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(4, rawValue);
               } else {
@@ -4657,10 +6570,11 @@ public final class Messages {
             case 34: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
+              while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-                com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType.valueOf(rawValue);
+                com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType
+                    .valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(4, rawValue);
                 } else {
@@ -4715,64 +6629,175 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<PaymentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PaymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.PaymentRequest.class, com.netki.bip75.protocol.Messages.PaymentRequest.Builder.class);
+              com.netki.bip75.protocol.Messages.PaymentRequest.class,
+              com.netki.bip75.protocol.Messages.PaymentRequest.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int PAYMENT_DETAILS_VERSION_FIELD_NUMBER = 1;
-    private int paymentDetailsVersion_;
     /**
      * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+     *
      * @return Whether the paymentDetailsVersion field is set.
      */
     public boolean hasPaymentDetailsVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+     *
      * @return The paymentDetailsVersion.
      */
     public int getPaymentDetailsVersion() {
       return paymentDetailsVersion_;
     }
 
-    public static final int SERIALIZED_PAYMENT_DETAILS_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString serializedPaymentDetails_;
     /**
      * <pre>
      * PaymentDetails
      * </pre>
      *
      * <code>required bytes serialized_payment_details = 2;</code>
+     *
      * @return Whether the serializedPaymentDetails field is set.
      */
     public boolean hasSerializedPaymentDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * PaymentDetails
      * </pre>
      *
      * <code>required bytes serialized_payment_details = 2;</code>
+     *
      * @return The serializedPaymentDetails.
      */
     public com.google.protobuf.ByteString getSerializedPaymentDetails() {
       return serializedPaymentDetails_;
     }
 
-    public static final int BENEFICIARIES_FIELD_NUMBER = 3;
-    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -4783,6 +6808,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> getBeneficiariesList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -4790,10 +6816,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -4804,6 +6831,7 @@ public final class Messages {
     public int getBeneficiariesCount() {
       return beneficiaries_.size();
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -4814,6 +6842,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index) {
       return beneficiaries_.get(index);
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -4826,47 +6855,41 @@ public final class Messages {
       return beneficiaries_.get(index);
     }
 
-    public static final int ATTESTATIONSREQUESTED_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Integer> attestationsRequested_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType> attestationsRequested_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>() {
-              public com.netki.bip75.protocol.Messages.AttestationType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType.valueOf(from);
-                return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
-              }
-            };
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
      * @return A list containing the attestationsRequested.
      */
     public java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_, attestationsRequested_converter_);
+          java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_,
+          attestationsRequested_converter_);
     }
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
      * @param value The attestationsRequested to add.
      */
     public int getAttestationsRequestedCount() {
       return attestationsRequested_.size();
     }
+
     /**
      * <pre>
      * List of attestations requested
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     *
      * @param index The index of the element to return.
      * @return The attestationsRequested at the given index.
      */
@@ -4874,25 +6897,26 @@ public final class Messages {
       return attestationsRequested_converter_.convert(attestationsRequested_.get(index));
     }
 
-    public static final int SENDER_PKI_TYPE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object senderPkiType_;
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
      * @return Whether the senderPkiType field is set.
      */
     public boolean hasSenderPkiType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
      * @return The senderPkiType.
      */
     public java.lang.String getSenderPkiType() {
@@ -4900,7 +6924,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4909,19 +6933,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * none / x509+sha256
      * </pre>
      *
      * <code>required string sender_pki_type = 5 [default = "none"];</code>
+     *
      * @return The bytes for senderPkiType.
      */
     public com.google.protobuf.ByteString
-        getSenderPkiTypeBytes() {
+    getSenderPkiTypeBytes() {
       java.lang.Object ref = senderPkiType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         senderPkiType_ = b;
@@ -4931,62 +6957,67 @@ public final class Messages {
       }
     }
 
-    public static final int SENDER_PKI_DATA_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString senderPkiData_;
     /**
      * <pre>
      * Sender's pki data, depends on pki_type
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 6;</code>
+     *
      * @return Whether the senderPkiData field is set.
      */
     public boolean hasSenderPkiData() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * Sender's pki data, depends on pki_type
      * </pre>
      *
      * <code>optional bytes sender_pki_data = 6;</code>
+     *
      * @return The senderPkiData.
      */
     public com.google.protobuf.ByteString getSenderPkiData() {
       return senderPkiData_;
     }
 
-    public static final int SENDER_SIGNATURE_FIELD_NUMBER = 7;
-    private com.google.protobuf.ByteString senderSignature_;
     /**
      * <pre>
      * Sender's Signature of the whole message
      * </pre>
      *
      * <code>optional bytes sender_signature = 7;</code>
+     *
      * @return Whether the senderSignature field is set.
      */
     public boolean hasSenderSignature() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <pre>
      * Sender's Signature of the whole message
      * </pre>
      *
      * <code>optional bytes sender_signature = 7;</code>
+     *
      * @return The senderSignature.
      */
     public com.google.protobuf.ByteString getSenderSignature() {
       return senderSignature_;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasSerializedPaymentDetails()) {
         memoizedIsInitialized = 0;
@@ -5008,7 +7039,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(1, paymentDetailsVersion_);
       }
@@ -5036,26 +7067,28 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, paymentDetailsVersion_);
+            .computeUInt32Size(1, paymentDetailsVersion_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, serializedPaymentDetails_);
+            .computeBytesSize(2, serializedPaymentDetails_);
       }
       for (int i = 0; i < beneficiaries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, beneficiaries_.get(i));
+            .computeMessageSize(3, beneficiaries_.get(i));
       }
       {
         int dataSize = 0;
         for (int i = 0; i < attestationsRequested_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(attestationsRequested_.get(i));
+              .computeEnumSizeNoTag(attestationsRequested_.get(i));
         }
         size += dataSize;
         size += 1 * attestationsRequested_.size();
@@ -5065,11 +7098,11 @@ public final class Messages {
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, senderPkiData_);
+            .computeBytesSize(6, senderPkiData_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, senderSignature_);
+            .computeBytesSize(7, senderSignature_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5079,42 +7112,68 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.PaymentRequest)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.PaymentRequest other = (com.netki.bip75.protocol.Messages.PaymentRequest) obj;
 
-      if (hasPaymentDetailsVersion() != other.hasPaymentDetailsVersion()) return false;
+      if (hasPaymentDetailsVersion() != other.hasPaymentDetailsVersion()) {
+        return false;
+      }
       if (hasPaymentDetailsVersion()) {
         if (getPaymentDetailsVersion()
-            != other.getPaymentDetailsVersion()) return false;
+            != other.getPaymentDetailsVersion()) {
+          return false;
+        }
       }
-      if (hasSerializedPaymentDetails() != other.hasSerializedPaymentDetails()) return false;
+      if (hasSerializedPaymentDetails() != other.hasSerializedPaymentDetails()) {
+        return false;
+      }
       if (hasSerializedPaymentDetails()) {
         if (!getSerializedPaymentDetails()
-            .equals(other.getSerializedPaymentDetails())) return false;
+            .equals(other.getSerializedPaymentDetails())) {
+          return false;
+        }
       }
       if (!getBeneficiariesList()
-          .equals(other.getBeneficiariesList())) return false;
-      if (!attestationsRequested_.equals(other.attestationsRequested_)) return false;
-      if (hasSenderPkiType() != other.hasSenderPkiType()) return false;
+          .equals(other.getBeneficiariesList())) {
+        return false;
+      }
+      if (!attestationsRequested_.equals(other.attestationsRequested_)) {
+        return false;
+      }
+      if (hasSenderPkiType() != other.hasSenderPkiType()) {
+        return false;
+      }
       if (hasSenderPkiType()) {
         if (!getSenderPkiType()
-            .equals(other.getSenderPkiType())) return false;
+            .equals(other.getSenderPkiType())) {
+          return false;
+        }
       }
-      if (hasSenderPkiData() != other.hasSenderPkiData()) return false;
+      if (hasSenderPkiData() != other.hasSenderPkiData()) {
+        return false;
+      }
       if (hasSenderPkiData()) {
         if (!getSenderPkiData()
-            .equals(other.getSenderPkiData())) return false;
+            .equals(other.getSenderPkiData())) {
+          return false;
+        }
       }
-      if (hasSenderSignature() != other.hasSenderSignature()) return false;
+      if (hasSenderSignature() != other.hasSenderSignature()) {
+        return false;
+      }
       if (hasSenderSignature()) {
         if (!getSenderSignature()
-            .equals(other.getSenderSignature())) return false;
+            .equals(other.getSenderSignature())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -5158,84 +7217,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -5248,6 +7234,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PaymentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.PaymentRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.PaymentRequest}
      */
@@ -5255,18 +7252,19 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.PaymentRequest)
         com.netki.bip75.protocol.Messages.PaymentRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.PaymentRequest.class, com.netki.bip75.protocol.Messages.PaymentRequest.Builder.class);
-      }
+      private int bitField0_;
+      private int paymentDetailsVersion_ = 1;
+      private com.google.protobuf.ByteString serializedPaymentDetails_ = com.google.protobuf.ByteString.EMPTY;
+      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
+      private java.util.List<java.lang.Integer> attestationsRequested_ =
+          java.util.Collections.emptyList();
+      private java.lang.Object senderPkiType_ = "none";
+      private com.google.protobuf.ByteString senderPkiData_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString senderSignature_ = com.google.protobuf.ByteString.EMPTY;
 
       // Construct using com.netki.bip75.protocol.Messages.PaymentRequest.newBuilder()
       private Builder() {
@@ -5278,12 +7276,28 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.PaymentRequest.class,
+                com.netki.bip75.protocol.Messages.PaymentRequest.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getBeneficiariesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -5310,7 +7324,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentRequest_descriptor;
       }
 
@@ -5330,7 +7344,8 @@ public final class Messages {
 
       @java.lang.Override
       public com.netki.bip75.protocol.Messages.PaymentRequest buildPartial() {
-        com.netki.bip75.protocol.Messages.PaymentRequest result = new com.netki.bip75.protocol.Messages.PaymentRequest(this);
+        com.netki.bip75.protocol.Messages.PaymentRequest result = new com.netki.bip75.protocol.Messages.PaymentRequest(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -5376,38 +7391,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.PaymentRequest) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentRequest)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentRequest) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -5415,7 +7436,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.PaymentRequest other) {
-        if (other == com.netki.bip75.protocol.Messages.PaymentRequest.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.PaymentRequest.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasPaymentDetailsVersion()) {
           setPaymentDetailsVersion(other.getPaymentDetailsVersion());
         }
@@ -5440,9 +7463,9 @@ public final class Messages {
               beneficiariesBuilder_ = null;
               beneficiaries_ = other.beneficiaries_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              beneficiariesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBeneficiariesFieldBuilder() : null;
+              beneficiariesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getBeneficiariesFieldBuilder() : null;
             } else {
               beneficiariesBuilder_.addAllMessages(other.beneficiaries_);
             }
@@ -5508,25 +7531,28 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private int paymentDetailsVersion_ = 1;
       /**
        * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+       *
        * @return Whether the paymentDetailsVersion field is set.
        */
       public boolean hasPaymentDetailsVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+       *
        * @return The paymentDetailsVersion.
        */
       public int getPaymentDetailsVersion() {
         return paymentDetailsVersion_;
       }
+
       /**
        * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+       *
        * @param value The paymentDetailsVersion to set.
        * @return This builder for chaining.
        */
@@ -5536,8 +7562,10 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional uint32 payment_details_version = 1 [default = 1];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPaymentDetailsVersion() {
@@ -5547,53 +7575,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString serializedPaymentDetails_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * PaymentDetails
        * </pre>
        *
        * <code>required bytes serialized_payment_details = 2;</code>
+       *
        * @return Whether the serializedPaymentDetails field is set.
        */
       public boolean hasSerializedPaymentDetails() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * PaymentDetails
        * </pre>
        *
        * <code>required bytes serialized_payment_details = 2;</code>
+       *
        * @return The serializedPaymentDetails.
        */
       public com.google.protobuf.ByteString getSerializedPaymentDetails() {
         return serializedPaymentDetails_;
       }
+
       /**
        * <pre>
        * PaymentDetails
        * </pre>
        *
        * <code>required bytes serialized_payment_details = 2;</code>
+       *
        * @param value The serializedPaymentDetails to set.
        * @return This builder for chaining.
        */
       public Builder setSerializedPaymentDetails(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         serializedPaymentDetails_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * PaymentDetails
        * </pre>
        *
        * <code>required bytes serialized_payment_details = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSerializedPaymentDetails() {
@@ -5603,17 +7637,12 @@ public final class Messages {
         return this;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
-        java.util.Collections.emptyList();
       private void ensureBeneficiariesIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
           beneficiaries_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Beneficiary>(beneficiaries_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
 
       /**
        * <pre>
@@ -5629,6 +7658,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5643,6 +7673,7 @@ public final class Messages {
           return beneficiariesBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5657,6 +7688,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5678,6 +7710,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5696,6 +7729,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5716,6 +7750,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5737,6 +7772,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5755,6 +7791,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5773,6 +7810,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5792,6 +7830,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5809,6 +7848,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5826,6 +7866,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5837,6 +7878,7 @@ public final class Messages {
           int index) {
         return getBeneficiariesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5847,10 +7889,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
           int index) {
         if (beneficiariesBuilder_ == null) {
-          return beneficiaries_.get(index);  } else {
+          return beneficiaries_.get(index);
+        } else {
           return beneficiariesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5858,14 +7902,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-           getBeneficiariesOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesOrBuilderList() {
         if (beneficiariesBuilder_ != null) {
           return beneficiariesBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(beneficiaries_);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5877,6 +7922,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5889,6 +7935,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -5896,74 +7943,82 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 3;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder> 
-           getBeneficiariesBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder>
+      getBeneficiariesBuilderList() {
         return getBeneficiariesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-          getBeneficiariesFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesFieldBuilder() {
         if (beneficiariesBuilder_ == null) {
           beneficiariesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>(
-                  beneficiaries_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
+              beneficiaries_,
+              ((bitField0_ & 0x00000004) != 0),
+              getParentForChildren(),
+              isClean());
           beneficiaries_ = null;
         }
         return beneficiariesBuilder_;
       }
 
-      private java.util.List<java.lang.Integer> attestationsRequested_ =
-        java.util.Collections.emptyList();
       private void ensureAttestationsRequestedIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
           attestationsRequested_ = new java.util.ArrayList<java.lang.Integer>(attestationsRequested_);
           bitField0_ |= 0x00000008;
         }
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @return A list containing the attestationsRequested.
        */
       public java.util.List<com.netki.bip75.protocol.Messages.AttestationType> getAttestationsRequestedList() {
         return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_, attestationsRequested_converter_);
+            java.lang.Integer, com.netki.bip75.protocol.Messages.AttestationType>(attestationsRequested_,
+            attestationsRequested_converter_);
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @return The count of attestationsRequested.
        */
       public int getAttestationsRequestedCount() {
         return attestationsRequested_.size();
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @param index The index of the element to return.
        * @return The attestationsRequested at the given index.
        */
       public com.netki.bip75.protocol.Messages.AttestationType getAttestationsRequested(int index) {
         return attestationsRequested_converter_.convert(attestationsRequested_.get(index));
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @param index The index to set the value at.
        * @param value The attestationsRequested to set.
        * @return This builder for chaining.
@@ -5978,12 +8033,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @param value The attestationsRequested to add.
        * @return This builder for chaining.
        */
@@ -5996,12 +8053,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @param values The attestationsRequested to add.
        * @return This builder for chaining.
        */
@@ -6014,12 +8073,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * List of attestations requested
        * </pre>
        *
        * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearAttestationsRequested() {
@@ -6029,24 +8090,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object senderPkiType_ = "none";
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>required string sender_pki_type = 5 [default = "none"];</code>
+       *
        * @return Whether the senderPkiType field is set.
        */
       public boolean hasSenderPkiType() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>required string sender_pki_type = 5 [default = "none"];</code>
+       *
        * @return The senderPkiType.
        */
       public java.lang.String getSenderPkiType() {
@@ -6063,19 +8126,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>required string sender_pki_type = 5 [default = "none"];</code>
+       *
+       * @param value The senderPkiType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderPkiType(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        senderPkiType_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * none / x509+sha256
+       * </pre>
+       *
+       * <code>required string sender_pki_type = 5 [default = "none"];</code>
+       *
        * @return The bytes for senderPkiType.
        */
       public com.google.protobuf.ByteString
-          getSenderPkiTypeBytes() {
+      getSenderPkiTypeBytes() {
         java.lang.Object ref = senderPkiType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           senderPkiType_ = b;
@@ -6084,31 +8170,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>required string sender_pki_type = 5 [default = "none"];</code>
-       * @param value The senderPkiType to set.
+       *
+       * @param value The bytes for senderPkiType to set.
        * @return This builder for chaining.
        */
-      public Builder setSenderPkiType(
-          java.lang.String value) {
+      public Builder setSenderPkiTypeBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         senderPkiType_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * none / x509+sha256
        * </pre>
        *
        * <code>required string sender_pki_type = 5 [default = "none"];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderPkiType() {
@@ -6117,73 +8207,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * none / x509+sha256
-       * </pre>
-       *
-       * <code>required string sender_pki_type = 5 [default = "none"];</code>
-       * @param value The bytes for senderPkiType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSenderPkiTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        senderPkiType_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString senderPkiData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 6;</code>
+       *
        * @return Whether the senderPkiData field is set.
        */
       public boolean hasSenderPkiData() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 6;</code>
+       *
        * @return The senderPkiData.
        */
       public com.google.protobuf.ByteString getSenderPkiData() {
         return senderPkiData_;
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 6;</code>
+       *
        * @param value The senderPkiData to set.
        * @return This builder for chaining.
        */
       public Builder setSenderPkiData(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
         senderPkiData_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's pki data, depends on pki_type
        * </pre>
        *
        * <code>optional bytes sender_pki_data = 6;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderPkiData() {
@@ -6193,53 +8270,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString senderSignature_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 7;</code>
+       *
        * @return Whether the senderSignature field is set.
        */
       public boolean hasSenderSignature() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 7;</code>
+       *
        * @return The senderSignature.
        */
       public com.google.protobuf.ByteString getSenderSignature() {
         return senderSignature_;
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 7;</code>
+       *
        * @param value The senderSignature to set.
        * @return This builder for chaining.
        */
       public Builder setSenderSignature(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
         senderSignature_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's Signature of the whole message
        * </pre>
        *
        * <code>optional bytes sender_signature = 7;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderSignature() {
@@ -6248,6 +8331,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6260,268 +8344,53 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.PaymentRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.PaymentRequest)
-    private static final com.netki.bip75.protocol.Messages.PaymentRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentRequest();
-    }
-
-    public static com.netki.bip75.protocol.Messages.PaymentRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PaymentRequest>
-        PARSER = new com.google.protobuf.AbstractParser<PaymentRequest>() {
-      @java.lang.Override
-      public PaymentRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PaymentRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PaymentRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PaymentRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.PaymentRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface PaymentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.Payment)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * From PaymentDetails.merchant_data
-     * </pre>
-     *
-     * <code>optional bytes merchant_data = 1;</code>
-     * @return Whether the merchantData field is set.
-     */
-    boolean hasMerchantData();
-    /**
-     * <pre>
-     * From PaymentDetails.merchant_data
-     * </pre>
-     *
-     * <code>optional bytes merchant_data = 1;</code>
-     * @return The merchantData.
-     */
-    com.google.protobuf.ByteString getMerchantData();
-
-    /**
-     * <pre>
-     * Signed transactions that satisfy PaymentDetails.outputs
-     * </pre>
-     *
-     * <code>repeated bytes transactions = 2;</code>
-     * @return A list containing the transactions.
-     */
-    java.util.List<com.google.protobuf.ByteString> getTransactionsList();
-    /**
-     * <pre>
-     * Signed transactions that satisfy PaymentDetails.outputs
-     * </pre>
-     *
-     * <code>repeated bytes transactions = 2;</code>
-     * @return The count of transactions.
-     */
-    int getTransactionsCount();
-    /**
-     * <pre>
-     * Signed transactions that satisfy PaymentDetails.outputs
-     * </pre>
-     *
-     * <code>repeated bytes transactions = 2;</code>
-     * @param index The index of the element to return.
-     * @return The transactions at the given index.
-     */
-    com.google.protobuf.ByteString getTransactions(int index);
-
-    /**
-     * <pre>
-     * Where to send refunds, if a refund is necessary
-     * </pre>
-     *
-     * <code>repeated .payments.Output refund_to = 3;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Output> 
-        getRefundToList();
-    /**
-     * <pre>
-     * Where to send refunds, if a refund is necessary
-     * </pre>
-     *
-     * <code>repeated .payments.Output refund_to = 3;</code>
-     */
-    com.netki.bip75.protocol.Messages.Output getRefundTo(int index);
-    /**
-     * <pre>
-     * Where to send refunds, if a refund is necessary
-     * </pre>
-     *
-     * <code>repeated .payments.Output refund_to = 3;</code>
-     */
-    int getRefundToCount();
-    /**
-     * <pre>
-     * Where to send refunds, if a refund is necessary
-     * </pre>
-     *
-     * <code>repeated .payments.Output refund_to = 3;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getRefundToOrBuilderList();
-    /**
-     * <pre>
-     * Where to send refunds, if a refund is necessary
-     * </pre>
-     *
-     * <code>repeated .payments.Output refund_to = 3;</code>
-     */
-    com.netki.bip75.protocol.Messages.OutputOrBuilder getRefundToOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Human-readable message for the merchant
-     * </pre>
-     *
-     * <code>optional string memo = 4;</code>
-     * @return Whether the memo field is set.
-     */
-    boolean hasMemo();
-    /**
-     * <pre>
-     * Human-readable message for the merchant
-     * </pre>
-     *
-     * <code>optional string memo = 4;</code>
-     * @return The memo.
-     */
-    java.lang.String getMemo();
-    /**
-     * <pre>
-     * Human-readable message for the merchant
-     * </pre>
-     *
-     * <code>optional string memo = 4;</code>
-     * @return The bytes for memo.
-     */
-    com.google.protobuf.ByteString
-        getMemoBytes();
-
-    /**
-     * <pre>
-     * Originators of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Originator originators = 5;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Originator> 
-        getOriginatorsList();
-    /**
-     * <pre>
-     * Originators of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Originator originators = 5;</code>
-     */
-    com.netki.bip75.protocol.Messages.Originator getOriginators(int index);
-    /**
-     * <pre>
-     * Originators of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Originator originators = 5;</code>
-     */
-    int getOriginatorsCount();
-    /**
-     * <pre>
-     * Originators of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Originator originators = 5;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-        getOriginatorsOrBuilderList();
-    /**
-     * <pre>
-     * Originators of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Originator originators = 5;</code>
-     */
-    com.netki.bip75.protocol.Messages.OriginatorOrBuilder getOriginatorsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> 
-        getBeneficiariesList();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
-     */
-    com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index);
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
-     */
-    int getBeneficiariesCount();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList();
-    /**
-     * <pre>
-     * Beneficiaries of the InvoiceRequest
-     * </pre>
-     *
-     * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
-     */
-    com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
-        int index);
-  }
   /**
    * Protobuf type {@code payments.Payment}
    */
-  public  static final class Payment extends
+  public static final class Payment extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.Payment)
       PaymentOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int MERCHANT_DATA_FIELD_NUMBER = 1;
+    public static final int TRANSACTIONS_FIELD_NUMBER = 2;
+    public static final int REFUND_TO_FIELD_NUMBER = 3;
+    public static final int MEMO_FIELD_NUMBER = 4;
+    public static final int ORIGINATORS_FIELD_NUMBER = 5;
+    public static final int BENEFICIARIES_FIELD_NUMBER = 6;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<Payment>
+        PARSER = new com.google.protobuf.AbstractParser<Payment>() {
+      @java.lang.Override
+      public Payment parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Payment(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.Payment)
+    private static final com.netki.bip75.protocol.Messages.Payment DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Payment();
+    }
+
+    private int bitField0_;
+    private com.google.protobuf.ByteString merchantData_;
+    private java.util.List<com.google.protobuf.ByteString> transactions_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Output> refundTo_;
+    private volatile java.lang.Object memo_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
+    private byte memoizedIsInitialized = -1;
+
     // Use Payment.newBuilder() to construct.
     private Payment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6535,18 +8404,6 @@ public final class Messages {
       beneficiaries_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Payment();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private Payment(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6643,76 +8500,190 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Payment prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Payment getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Payment> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Payment();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.netki.bip75.protocol.Messages.Payment.class, com.netki.bip75.protocol.Messages.Payment.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int MERCHANT_DATA_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString merchantData_;
     /**
      * <pre>
      * From PaymentDetails.merchant_data
      * </pre>
      *
      * <code>optional bytes merchant_data = 1;</code>
+     *
      * @return Whether the merchantData field is set.
      */
     public boolean hasMerchantData() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * From PaymentDetails.merchant_data
      * </pre>
      *
      * <code>optional bytes merchant_data = 1;</code>
+     *
      * @return The merchantData.
      */
     public com.google.protobuf.ByteString getMerchantData() {
       return merchantData_;
     }
 
-    public static final int TRANSACTIONS_FIELD_NUMBER = 2;
-    private java.util.List<com.google.protobuf.ByteString> transactions_;
     /**
      * <pre>
      * Signed transactions that satisfy PaymentDetails.outputs
      * </pre>
      *
      * <code>repeated bytes transactions = 2;</code>
+     *
      * @return A list containing the transactions.
      */
     public java.util.List<com.google.protobuf.ByteString>
-        getTransactionsList() {
+    getTransactionsList() {
       return transactions_;
     }
+
     /**
      * <pre>
      * Signed transactions that satisfy PaymentDetails.outputs
      * </pre>
      *
      * <code>repeated bytes transactions = 2;</code>
+     *
      * @return The count of transactions.
      */
     public int getTransactionsCount() {
       return transactions_.size();
     }
+
     /**
      * <pre>
      * Signed transactions that satisfy PaymentDetails.outputs
      * </pre>
      *
      * <code>repeated bytes transactions = 2;</code>
+     *
      * @param index The index of the element to return.
      * @return The transactions at the given index.
      */
@@ -6720,8 +8691,6 @@ public final class Messages {
       return transactions_.get(index);
     }
 
-    public static final int REFUND_TO_FIELD_NUMBER = 3;
-    private java.util.List<com.netki.bip75.protocol.Messages.Output> refundTo_;
     /**
      * <pre>
      * Where to send refunds, if a refund is necessary
@@ -6732,6 +8701,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Output> getRefundToList() {
       return refundTo_;
     }
+
     /**
      * <pre>
      * Where to send refunds, if a refund is necessary
@@ -6739,10 +8709,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Output refund_to = 3;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getRefundToOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getRefundToOrBuilderList() {
       return refundTo_;
     }
+
     /**
      * <pre>
      * Where to send refunds, if a refund is necessary
@@ -6753,6 +8724,7 @@ public final class Messages {
     public int getRefundToCount() {
       return refundTo_.size();
     }
+
     /**
      * <pre>
      * Where to send refunds, if a refund is necessary
@@ -6763,6 +8735,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Output getRefundTo(int index) {
       return refundTo_.get(index);
     }
+
     /**
      * <pre>
      * Where to send refunds, if a refund is necessary
@@ -6775,25 +8748,26 @@ public final class Messages {
       return refundTo_.get(index);
     }
 
-    public static final int MEMO_FIELD_NUMBER = 4;
-    private volatile java.lang.Object memo_;
     /**
      * <pre>
      * Human-readable message for the merchant
      * </pre>
      *
      * <code>optional string memo = 4;</code>
+     *
      * @return Whether the memo field is set.
      */
     public boolean hasMemo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Human-readable message for the merchant
      * </pre>
      *
      * <code>optional string memo = 4;</code>
+     *
      * @return The memo.
      */
     public java.lang.String getMemo() {
@@ -6801,7 +8775,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -6810,19 +8784,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable message for the merchant
      * </pre>
      *
      * <code>optional string memo = 4;</code>
+     *
      * @return The bytes for memo.
      */
     public com.google.protobuf.ByteString
-        getMemoBytes() {
+    getMemoBytes() {
       java.lang.Object ref = memo_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         memo_ = b;
@@ -6832,8 +8808,6 @@ public final class Messages {
       }
     }
 
-    public static final int ORIGINATORS_FIELD_NUMBER = 5;
-    private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_;
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -6844,6 +8818,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Originator> getOriginatorsList() {
       return originators_;
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -6851,10 +8826,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Originator originators = 5;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-        getOriginatorsOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+    getOriginatorsOrBuilderList() {
       return originators_;
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -6865,6 +8841,7 @@ public final class Messages {
     public int getOriginatorsCount() {
       return originators_.size();
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -6875,6 +8852,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Originator getOriginators(int index) {
       return originators_.get(index);
     }
+
     /**
      * <pre>
      * Originators of the InvoiceRequest
@@ -6887,8 +8865,6 @@ public final class Messages {
       return originators_.get(index);
     }
 
-    public static final int BENEFICIARIES_FIELD_NUMBER = 6;
-    private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_;
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -6899,6 +8875,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> getBeneficiariesList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -6906,10 +8883,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-        getBeneficiariesOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+    getBeneficiariesOrBuilderList() {
       return beneficiaries_;
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -6920,6 +8898,7 @@ public final class Messages {
     public int getBeneficiariesCount() {
       return beneficiaries_.size();
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -6930,6 +8909,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Beneficiary getBeneficiaries(int index) {
       return beneficiaries_.get(index);
     }
+
     /**
      * <pre>
      * Beneficiaries of the InvoiceRequest
@@ -6942,12 +8922,15 @@ public final class Messages {
       return beneficiaries_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       for (int i = 0; i < getOriginatorsCount(); i++) {
         if (!getOriginators(i).isInitialized()) {
@@ -6967,7 +8950,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeBytes(1, merchantData_);
       }
@@ -6992,36 +8975,38 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, merchantData_);
+            .computeBytesSize(1, merchantData_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < transactions_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(transactions_.get(i));
+              .computeBytesSizeNoTag(transactions_.get(i));
         }
         size += dataSize;
         size += 1 * getTransactionsList().size();
       }
       for (int i = 0; i < refundTo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, refundTo_.get(i));
+            .computeMessageSize(3, refundTo_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, memo_);
       }
       for (int i = 0; i < originators_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, originators_.get(i));
+            .computeMessageSize(5, originators_.get(i));
       }
       for (int i = 0; i < beneficiaries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, beneficiaries_.get(i));
+            .computeMessageSize(6, beneficiaries_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7031,32 +9016,50 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.Payment)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.Payment other = (com.netki.bip75.protocol.Messages.Payment) obj;
 
-      if (hasMerchantData() != other.hasMerchantData()) return false;
+      if (hasMerchantData() != other.hasMerchantData()) {
+        return false;
+      }
       if (hasMerchantData()) {
         if (!getMerchantData()
-            .equals(other.getMerchantData())) return false;
+            .equals(other.getMerchantData())) {
+          return false;
+        }
       }
       if (!getTransactionsList()
-          .equals(other.getTransactionsList())) return false;
+          .equals(other.getTransactionsList())) {
+        return false;
+      }
       if (!getRefundToList()
-          .equals(other.getRefundToList())) return false;
-      if (hasMemo() != other.hasMemo()) return false;
+          .equals(other.getRefundToList())) {
+        return false;
+      }
+      if (hasMemo() != other.hasMemo()) {
+        return false;
+      }
       if (hasMemo()) {
         if (!getMemo()
-            .equals(other.getMemo())) return false;
+            .equals(other.getMemo())) {
+          return false;
+        }
       }
       if (!getOriginatorsList()
-          .equals(other.getOriginatorsList())) return false;
+          .equals(other.getOriginatorsList())) {
+        return false;
+      }
       if (!getBeneficiariesList()
-          .equals(other.getBeneficiariesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          .equals(other.getBeneficiariesList())) {
+        return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -7096,84 +9099,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Payment parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Payment prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -7186,6 +9116,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Payment> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.Payment getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.Payment}
      */
@@ -7193,18 +9134,23 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.Payment)
         com.netki.bip75.protocol.Messages.PaymentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.Payment.class, com.netki.bip75.protocol.Messages.Payment.Builder.class);
-      }
+      private int bitField0_;
+      private com.google.protobuf.ByteString merchantData_ = com.google.protobuf.ByteString.EMPTY;
+      private java.util.List<com.google.protobuf.ByteString> transactions_ = java.util.Collections.emptyList();
+      private java.util.List<com.netki.bip75.protocol.Messages.Output> refundTo_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> refundToBuilder_;
+      private java.lang.Object memo_ = "";
+      private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> originatorsBuilder_;
+      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
 
       // Construct using com.netki.bip75.protocol.Messages.Payment.newBuilder()
       private Builder() {
@@ -7216,14 +9162,30 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.Payment.class,
+                com.netki.bip75.protocol.Messages.Payment.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getRefundToFieldBuilder();
           getOriginatorsFieldBuilder();
           getBeneficiariesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -7256,7 +9218,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_Payment_descriptor;
       }
 
@@ -7328,38 +9290,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.Payment) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.Payment)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.Payment) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -7367,7 +9335,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.Payment other) {
-        if (other == com.netki.bip75.protocol.Messages.Payment.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.Payment.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasMerchantData()) {
           setMerchantData(other.getMerchantData());
         }
@@ -7399,9 +9369,9 @@ public final class Messages {
               refundToBuilder_ = null;
               refundTo_ = other.refundTo_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              refundToBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRefundToFieldBuilder() : null;
+              refundToBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getRefundToFieldBuilder() : null;
             } else {
               refundToBuilder_.addAllMessages(other.refundTo_);
             }
@@ -7430,9 +9400,9 @@ public final class Messages {
               originatorsBuilder_ = null;
               originators_ = other.originators_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              originatorsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOriginatorsFieldBuilder() : null;
+              originatorsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getOriginatorsFieldBuilder() : null;
             } else {
               originatorsBuilder_.addAllMessages(other.originators_);
             }
@@ -7456,9 +9426,9 @@ public final class Messages {
               beneficiariesBuilder_ = null;
               beneficiaries_ = other.beneficiaries_;
               bitField0_ = (bitField0_ & ~0x00000020);
-              beneficiariesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBeneficiariesFieldBuilder() : null;
+              beneficiariesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getBeneficiariesFieldBuilder() : null;
             } else {
               beneficiariesBuilder_.addAllMessages(other.beneficiaries_);
             }
@@ -7502,55 +9472,60 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.ByteString merchantData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * From PaymentDetails.merchant_data
        * </pre>
        *
        * <code>optional bytes merchant_data = 1;</code>
+       *
        * @return Whether the merchantData field is set.
        */
       public boolean hasMerchantData() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * From PaymentDetails.merchant_data
        * </pre>
        *
        * <code>optional bytes merchant_data = 1;</code>
+       *
        * @return The merchantData.
        */
       public com.google.protobuf.ByteString getMerchantData() {
         return merchantData_;
       }
+
       /**
        * <pre>
        * From PaymentDetails.merchant_data
        * </pre>
        *
        * <code>optional bytes merchant_data = 1;</code>
+       *
        * @param value The merchantData to set.
        * @return This builder for chaining.
        */
       public Builder setMerchantData(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         merchantData_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * From PaymentDetails.merchant_data
        * </pre>
        *
        * <code>optional bytes merchant_data = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMerchantData() {
@@ -7560,55 +9535,62 @@ public final class Messages {
         return this;
       }
 
-      private java.util.List<com.google.protobuf.ByteString> transactions_ = java.util.Collections.emptyList();
       private void ensureTransactionsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
           transactions_ = new java.util.ArrayList<com.google.protobuf.ByteString>(transactions_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @return A list containing the transactions.
        */
       public java.util.List<com.google.protobuf.ByteString>
-          getTransactionsList() {
+      getTransactionsList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(transactions_) : transactions_;
+            java.util.Collections.unmodifiableList(transactions_) : transactions_;
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @return The count of transactions.
        */
       public int getTransactionsCount() {
         return transactions_.size();
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @param index The index of the element to return.
        * @return The transactions at the given index.
        */
       public com.google.protobuf.ByteString getTransactions(int index) {
         return transactions_.get(index);
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @param index The index to set the value at.
        * @param value The transactions to set.
        * @return This builder for chaining.
@@ -7616,37 +9598,41 @@ public final class Messages {
       public Builder setTransactions(
           int index, com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTransactionsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureTransactionsIsMutable();
         transactions_.set(index, value);
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @param value The transactions to add.
        * @return This builder for chaining.
        */
       public Builder addTransactions(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTransactionsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureTransactionsIsMutable();
         transactions_.add(value);
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @param values The transactions to add.
        * @return This builder for chaining.
        */
@@ -7658,12 +9644,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Signed transactions that satisfy PaymentDetails.outputs
        * </pre>
        *
        * <code>repeated bytes transactions = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearTransactions() {
@@ -7673,17 +9661,12 @@ public final class Messages {
         return this;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Output> refundTo_ =
-        java.util.Collections.emptyList();
       private void ensureRefundToIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
           refundTo_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Output>(refundTo_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> refundToBuilder_;
 
       /**
        * <pre>
@@ -7699,6 +9682,7 @@ public final class Messages {
           return refundToBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7713,6 +9697,7 @@ public final class Messages {
           return refundToBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7727,6 +9712,7 @@ public final class Messages {
           return refundToBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7748,6 +9734,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7766,6 +9753,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7786,6 +9774,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7807,6 +9796,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7825,6 +9815,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7843,6 +9834,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7862,6 +9854,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7879,6 +9872,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7896,6 +9890,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7907,6 +9902,7 @@ public final class Messages {
           int index) {
         return getRefundToFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7917,10 +9913,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.OutputOrBuilder getRefundToOrBuilder(
           int index) {
         if (refundToBuilder_ == null) {
-          return refundTo_.get(index);  } else {
+          return refundTo_.get(index);
+        } else {
           return refundToBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7928,14 +9926,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Output refund_to = 3;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-           getRefundToOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getRefundToOrBuilderList() {
         if (refundToBuilder_ != null) {
           return refundToBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(refundTo_);
         }
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7947,6 +9946,7 @@ public final class Messages {
         return getRefundToFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7959,6 +9959,7 @@ public final class Messages {
         return getRefundToFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where to send refunds, if a refund is necessary
@@ -7966,43 +9967,46 @@ public final class Messages {
        *
        * <code>repeated .payments.Output refund_to = 3;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder> 
-           getRefundToBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder>
+      getRefundToBuilderList() {
         return getRefundToFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-          getRefundToFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getRefundToFieldBuilder() {
         if (refundToBuilder_ == null) {
           refundToBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>(
-                  refundTo_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
+              refundTo_,
+              ((bitField0_ & 0x00000004) != 0),
+              getParentForChildren(),
+              isClean());
           refundTo_ = null;
         }
         return refundToBuilder_;
       }
 
-      private java.lang.Object memo_ = "";
       /**
        * <pre>
        * Human-readable message for the merchant
        * </pre>
        *
        * <code>optional string memo = 4;</code>
+       *
        * @return Whether the memo field is set.
        */
       public boolean hasMemo() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <pre>
        * Human-readable message for the merchant
        * </pre>
        *
        * <code>optional string memo = 4;</code>
+       *
        * @return The memo.
        */
       public java.lang.String getMemo() {
@@ -8019,19 +10023,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable message for the merchant
        * </pre>
        *
        * <code>optional string memo = 4;</code>
+       *
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable message for the merchant
+       * </pre>
+       *
+       * <code>optional string memo = 4;</code>
+       *
        * @return The bytes for memo.
        */
       public com.google.protobuf.ByteString
-          getMemoBytes() {
+      getMemoBytes() {
         java.lang.Object ref = memo_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           memo_ = b;
@@ -8040,31 +10067,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable message for the merchant
        * </pre>
        *
        * <code>optional string memo = 4;</code>
-       * @param value The memo to set.
+       *
+       * @param value The bytes for memo to set.
        * @return This builder for chaining.
        */
-      public Builder setMemo(
-          java.lang.String value) {
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         memo_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable message for the merchant
        * </pre>
        *
        * <code>optional string memo = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMemo() {
@@ -8073,37 +10104,13 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable message for the merchant
-       * </pre>
-       *
-       * <code>optional string memo = 4;</code>
-       * @param value The bytes for memo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Originator> originators_ =
-        java.util.Collections.emptyList();
       private void ensureOriginatorsIsMutable() {
         if (!((bitField0_ & 0x00000010) != 0)) {
           originators_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Originator>(originators_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> originatorsBuilder_;
 
       /**
        * <pre>
@@ -8119,6 +10126,7 @@ public final class Messages {
           return originatorsBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8133,6 +10141,7 @@ public final class Messages {
           return originatorsBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8147,6 +10156,7 @@ public final class Messages {
           return originatorsBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8168,6 +10178,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8186,6 +10197,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8206,6 +10218,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8227,6 +10240,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8245,6 +10259,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8263,6 +10278,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8282,6 +10298,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8299,6 +10316,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8316,6 +10334,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8327,6 +10346,7 @@ public final class Messages {
           int index) {
         return getOriginatorsFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8337,10 +10357,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.OriginatorOrBuilder getOriginatorsOrBuilder(
           int index) {
         if (originatorsBuilder_ == null) {
-          return originators_.get(index);  } else {
+          return originators_.get(index);
+        } else {
           return originatorsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8348,14 +10370,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Originator originators = 5;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-           getOriginatorsOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+      getOriginatorsOrBuilderList() {
         if (originatorsBuilder_ != null) {
           return originatorsBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(originators_);
         }
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8367,6 +10390,7 @@ public final class Messages {
         return getOriginatorsFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Originator.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8379,6 +10403,7 @@ public final class Messages {
         return getOriginatorsFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Originator.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Originators of the InvoiceRequest
@@ -8386,36 +10411,32 @@ public final class Messages {
        *
        * <code>repeated .payments.Originator originators = 5;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Originator.Builder> 
-           getOriginatorsBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Originator.Builder>
+      getOriginatorsBuilderList() {
         return getOriginatorsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder> 
-          getOriginatorsFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder>
+      getOriginatorsFieldBuilder() {
         if (originatorsBuilder_ == null) {
           originatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Originator, com.netki.bip75.protocol.Messages.Originator.Builder, com.netki.bip75.protocol.Messages.OriginatorOrBuilder>(
-                  originators_,
-                  ((bitField0_ & 0x00000010) != 0),
-                  getParentForChildren(),
-                  isClean());
+              originators_,
+              ((bitField0_ & 0x00000010) != 0),
+              getParentForChildren(),
+              isClean());
           originators_ = null;
         }
         return originatorsBuilder_;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Beneficiary> beneficiaries_ =
-        java.util.Collections.emptyList();
       private void ensureBeneficiariesIsMutable() {
         if (!((bitField0_ & 0x00000020) != 0)) {
           beneficiaries_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Beneficiary>(beneficiaries_);
           bitField0_ |= 0x00000020;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> beneficiariesBuilder_;
 
       /**
        * <pre>
@@ -8431,6 +10452,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8445,6 +10467,7 @@ public final class Messages {
           return beneficiariesBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8459,6 +10482,7 @@ public final class Messages {
           return beneficiariesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8480,6 +10504,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8498,6 +10523,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8518,6 +10544,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8539,6 +10566,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8557,6 +10585,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8575,6 +10604,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8594,6 +10624,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8611,6 +10642,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8628,6 +10660,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8639,6 +10672,7 @@ public final class Messages {
           int index) {
         return getBeneficiariesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8649,10 +10683,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder getBeneficiariesOrBuilder(
           int index) {
         if (beneficiariesBuilder_ == null) {
-          return beneficiaries_.get(index);  } else {
+          return beneficiaries_.get(index);
+        } else {
           return beneficiariesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8660,14 +10696,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-           getBeneficiariesOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesOrBuilderList() {
         if (beneficiariesBuilder_ != null) {
           return beneficiariesBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(beneficiaries_);
         }
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8679,6 +10716,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8691,6 +10729,7 @@ public final class Messages {
         return getBeneficiariesFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Beneficiaries of the InvoiceRequest
@@ -8698,24 +10737,26 @@ public final class Messages {
        *
        * <code>repeated .payments.Beneficiary beneficiaries = 6;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder> 
-           getBeneficiariesBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Beneficiary.Builder>
+      getBeneficiariesBuilderList() {
         return getBeneficiariesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder> 
-          getBeneficiariesFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>
+      getBeneficiariesFieldBuilder() {
         if (beneficiariesBuilder_ == null) {
           beneficiariesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Beneficiary, com.netki.bip75.protocol.Messages.Beneficiary.Builder, com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder>(
-                  beneficiaries_,
-                  ((bitField0_ & 0x00000020) != 0),
-                  getParentForChildren(),
-                  isClean());
+              beneficiaries_,
+              ((bitField0_ & 0x00000020) != 0),
+              getParentForChildren(),
+              isClean());
           beneficiaries_ = null;
         }
         return beneficiariesBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8728,135 +10769,53 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.Payment)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.Payment)
-    private static final com.netki.bip75.protocol.Messages.Payment DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Payment();
-    }
-
-    public static com.netki.bip75.protocol.Messages.Payment getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Payment>
-        PARSER = new com.google.protobuf.AbstractParser<Payment>() {
-      @java.lang.Override
-      public Payment parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Payment(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Payment> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Payment> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.Payment getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface PaymentACKOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.PaymentACK)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Payment message that triggered this ACK
-     * </pre>
-     *
-     * <code>required .payments.Payment payment = 1;</code>
-     * @return Whether the payment field is set.
-     */
-    boolean hasPayment();
-    /**
-     * <pre>
-     * Payment message that triggered this ACK
-     * </pre>
-     *
-     * <code>required .payments.Payment payment = 1;</code>
-     * @return The payment.
-     */
-    com.netki.bip75.protocol.Messages.Payment getPayment();
-    /**
-     * <pre>
-     * Payment message that triggered this ACK
-     * </pre>
-     *
-     * <code>required .payments.Payment payment = 1;</code>
-     */
-    com.netki.bip75.protocol.Messages.PaymentOrBuilder getPaymentOrBuilder();
-
-    /**
-     * <pre>
-     * Human-readable message for customer
-     * </pre>
-     *
-     * <code>optional string memo = 2;</code>
-     * @return Whether the memo field is set.
-     */
-    boolean hasMemo();
-    /**
-     * <pre>
-     * Human-readable message for customer
-     * </pre>
-     *
-     * <code>optional string memo = 2;</code>
-     * @return The memo.
-     */
-    java.lang.String getMemo();
-    /**
-     * <pre>
-     * Human-readable message for customer
-     * </pre>
-     *
-     * <code>optional string memo = 2;</code>
-     * @return The bytes for memo.
-     */
-    com.google.protobuf.ByteString
-        getMemoBytes();
-  }
   /**
    * Protobuf type {@code payments.PaymentACK}
    */
-  public  static final class PaymentACK extends
+  public static final class PaymentACK extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.PaymentACK)
       PaymentACKOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int PAYMENT_FIELD_NUMBER = 1;
+    public static final int MEMO_FIELD_NUMBER = 2;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<PaymentACK>
+        PARSER = new com.google.protobuf.AbstractParser<PaymentACK>() {
+      @java.lang.Override
+      public PaymentACK parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PaymentACK(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.PaymentACK)
+    private static final com.netki.bip75.protocol.Messages.PaymentACK DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentACK();
+    }
+
+    private int bitField0_;
+    private com.netki.bip75.protocol.Messages.Payment payment_;
+    private volatile java.lang.Object memo_;
+    private byte memoizedIsInitialized = -1;
     // Use PaymentACK.newBuilder() to construct.
     private PaymentACK(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private PaymentACK() {
       memo_ = "";
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PaymentACK();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private PaymentACK(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8914,44 +10873,157 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentACK prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentACK getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<PaymentACK> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PaymentACK();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.PaymentACK.class, com.netki.bip75.protocol.Messages.PaymentACK.Builder.class);
+              com.netki.bip75.protocol.Messages.PaymentACK.class,
+              com.netki.bip75.protocol.Messages.PaymentACK.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int PAYMENT_FIELD_NUMBER = 1;
-    private com.netki.bip75.protocol.Messages.Payment payment_;
     /**
      * <pre>
      * Payment message that triggered this ACK
      * </pre>
      *
      * <code>required .payments.Payment payment = 1;</code>
+     *
      * @return Whether the payment field is set.
      */
     public boolean hasPayment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * Payment message that triggered this ACK
      * </pre>
      *
      * <code>required .payments.Payment payment = 1;</code>
+     *
      * @return The payment.
      */
     public com.netki.bip75.protocol.Messages.Payment getPayment() {
       return payment_ == null ? com.netki.bip75.protocol.Messages.Payment.getDefaultInstance() : payment_;
     }
+
     /**
      * <pre>
      * Payment message that triggered this ACK
@@ -8963,25 +11035,26 @@ public final class Messages {
       return payment_ == null ? com.netki.bip75.protocol.Messages.Payment.getDefaultInstance() : payment_;
     }
 
-    public static final int MEMO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object memo_;
     /**
      * <pre>
      * Human-readable message for customer
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return Whether the memo field is set.
      */
     public boolean hasMemo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Human-readable message for customer
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The memo.
      */
     public java.lang.String getMemo() {
@@ -8989,7 +11062,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8998,19 +11071,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable message for customer
      * </pre>
      *
      * <code>optional string memo = 2;</code>
+     *
      * @return The bytes for memo.
      */
     public com.google.protobuf.ByteString
-        getMemoBytes() {
+    getMemoBytes() {
       java.lang.Object ref = memo_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         memo_ = b;
@@ -9020,12 +11095,15 @@ public final class Messages {
       }
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasPayment()) {
         memoizedIsInitialized = 0;
@@ -9041,7 +11119,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getPayment());
       }
@@ -9054,12 +11132,14 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getPayment());
+            .computeMessageSize(1, getPayment());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memo_);
@@ -9072,24 +11152,34 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.PaymentACK)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.PaymentACK other = (com.netki.bip75.protocol.Messages.PaymentACK) obj;
 
-      if (hasPayment() != other.hasPayment()) return false;
+      if (hasPayment() != other.hasPayment()) {
+        return false;
+      }
       if (hasPayment()) {
         if (!getPayment()
-            .equals(other.getPayment())) return false;
+            .equals(other.getPayment())) {
+          return false;
+        }
       }
-      if (hasMemo() != other.hasMemo()) return false;
+      if (hasMemo() != other.hasMemo()) {
+        return false;
+      }
       if (hasMemo()) {
         if (!getMemo()
-            .equals(other.getMemo())) return false;
+            .equals(other.getMemo())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -9113,84 +11203,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentACK parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentACK prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -9203,6 +11220,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PaymentACK> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.PaymentACK getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.PaymentACK}
      */
@@ -9210,18 +11238,12 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.PaymentACK)
         com.netki.bip75.protocol.Messages.PaymentACKOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.PaymentACK.class, com.netki.bip75.protocol.Messages.PaymentACK.Builder.class);
-      }
+      private int bitField0_;
+      private com.netki.bip75.protocol.Messages.Payment payment_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Payment, com.netki.bip75.protocol.Messages.Payment.Builder, com.netki.bip75.protocol.Messages.PaymentOrBuilder> paymentBuilder_;
+      private java.lang.Object memo_ = "";
 
       // Construct using com.netki.bip75.protocol.Messages.PaymentACK.newBuilder()
       private Builder() {
@@ -9233,12 +11255,28 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.PaymentACK.class,
+                com.netki.bip75.protocol.Messages.PaymentACK.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getPaymentFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -9255,7 +11293,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentACK_descriptor;
       }
 
@@ -9299,38 +11337,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.PaymentACK) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentACK)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentACK) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -9338,7 +11382,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.PaymentACK other) {
-        if (other == com.netki.bip75.protocol.Messages.PaymentACK.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.PaymentACK.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasPayment()) {
           mergePayment(other.getPayment());
         }
@@ -9381,28 +11427,27 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.netki.bip75.protocol.Messages.Payment payment_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Payment, com.netki.bip75.protocol.Messages.Payment.Builder, com.netki.bip75.protocol.Messages.PaymentOrBuilder> paymentBuilder_;
       /**
        * <pre>
        * Payment message that triggered this ACK
        * </pre>
        *
        * <code>required .payments.Payment payment = 1;</code>
+       *
        * @return Whether the payment field is set.
        */
       public boolean hasPayment() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
        * </pre>
        *
        * <code>required .payments.Payment payment = 1;</code>
+       *
        * @return The payment.
        */
       public com.netki.bip75.protocol.Messages.Payment getPayment() {
@@ -9412,6 +11457,7 @@ public final class Messages {
           return paymentBuilder_.getMessage();
         }
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9432,6 +11478,7 @@ public final class Messages {
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9450,6 +11497,7 @@ public final class Messages {
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9463,7 +11511,7 @@ public final class Messages {
               payment_ != null &&
               payment_ != com.netki.bip75.protocol.Messages.Payment.getDefaultInstance()) {
             payment_ =
-              com.netki.bip75.protocol.Messages.Payment.newBuilder(payment_).mergeFrom(value).buildPartial();
+                com.netki.bip75.protocol.Messages.Payment.newBuilder(payment_).mergeFrom(value).buildPartial();
           } else {
             payment_ = value;
           }
@@ -9474,6 +11522,7 @@ public final class Messages {
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9491,6 +11540,7 @@ public final class Messages {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9503,6 +11553,7 @@ public final class Messages {
         onChanged();
         return getPaymentFieldBuilder().getBuilder();
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9518,6 +11569,7 @@ public final class Messages {
               com.netki.bip75.protocol.Messages.Payment.getDefaultInstance() : payment_;
         }
       }
+
       /**
        * <pre>
        * Payment message that triggered this ACK
@@ -9526,37 +11578,39 @@ public final class Messages {
        * <code>required .payments.Payment payment = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Payment, com.netki.bip75.protocol.Messages.Payment.Builder, com.netki.bip75.protocol.Messages.PaymentOrBuilder> 
-          getPaymentFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Payment, com.netki.bip75.protocol.Messages.Payment.Builder, com.netki.bip75.protocol.Messages.PaymentOrBuilder>
+      getPaymentFieldBuilder() {
         if (paymentBuilder_ == null) {
           paymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Payment, com.netki.bip75.protocol.Messages.Payment.Builder, com.netki.bip75.protocol.Messages.PaymentOrBuilder>(
-                  getPayment(),
-                  getParentForChildren(),
-                  isClean());
+              getPayment(),
+              getParentForChildren(),
+              isClean());
           payment_ = null;
         }
         return paymentBuilder_;
       }
 
-      private java.lang.Object memo_ = "";
       /**
        * <pre>
        * Human-readable message for customer
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return Whether the memo field is set.
        */
       public boolean hasMemo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * Human-readable message for customer
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return The memo.
        */
       public java.lang.String getMemo() {
@@ -9573,19 +11627,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable message for customer
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable message for customer
+       * </pre>
+       *
+       * <code>optional string memo = 2;</code>
+       *
        * @return The bytes for memo.
        */
       public com.google.protobuf.ByteString
-          getMemoBytes() {
+      getMemoBytes() {
         java.lang.Object ref = memo_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           memo_ = b;
@@ -9594,31 +11671,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable message for customer
        * </pre>
        *
        * <code>optional string memo = 2;</code>
-       * @param value The memo to set.
+       *
+       * @param value The bytes for memo to set.
        * @return This builder for chaining.
        */
-      public Builder setMemo(
-          java.lang.String value) {
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         memo_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable message for customer
        * </pre>
        *
        * <code>optional string memo = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMemo() {
@@ -9627,25 +11708,7 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable message for customer
-       * </pre>
-       *
-       * <code>optional string memo = 2;</code>
-       * @param value The bytes for memo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9658,143 +11721,54 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.PaymentACK)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.PaymentACK)
-    private static final com.netki.bip75.protocol.Messages.PaymentACK DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentACK();
-    }
-
-    public static com.netki.bip75.protocol.Messages.PaymentACK getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PaymentACK>
-        PARSER = new com.google.protobuf.AbstractParser<PaymentACK>() {
-      @java.lang.Override
-      public PaymentACK parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PaymentACK(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PaymentACK> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PaymentACK> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.PaymentACK getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface BeneficiaryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.Beneficiary)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
-     * </pre>
-     *
-     * <code>required bool primary_for_transaction = 1 [default = true];</code>
-     * @return Whether the primaryForTransaction field is set.
-     */
-    boolean hasPrimaryForTransaction();
-    /**
-     * <pre>
-     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
-     * </pre>
-     *
-     * <code>required bool primary_for_transaction = 1 [default = true];</code>
-     * @return The primaryForTransaction.
-     */
-    boolean getPrimaryForTransaction();
-
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Attestation> 
-        getAttestationsList();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.Attestation getAttestations(int index);
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    int getAttestationsCount();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-        getAttestationsOrBuilderList();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
-        int index);
-  }
   /**
    * Protobuf type {@code payments.Beneficiary}
    */
-  public  static final class Beneficiary extends
+  public static final class Beneficiary extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.Beneficiary)
       BeneficiaryOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int PRIMARY_FOR_TRANSACTION_FIELD_NUMBER = 1;
+    public static final int ATTESTATIONS_FIELD_NUMBER = 2;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<Beneficiary>
+        PARSER = new com.google.protobuf.AbstractParser<Beneficiary>() {
+      @java.lang.Override
+      public Beneficiary parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Beneficiary(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.Beneficiary)
+    private static final com.netki.bip75.protocol.Messages.Beneficiary DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Beneficiary();
+    }
+
+    private int bitField0_;
+    private boolean primaryForTransaction_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_;
+    private byte memoizedIsInitialized = -1;
     // Use Beneficiary.newBuilder() to construct.
     private Beneficiary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Beneficiary() {
       primaryForTransaction_ = true;
       attestations_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Beneficiary();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private Beneficiary(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9850,47 +11824,157 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Beneficiary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Beneficiary getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Beneficiary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Beneficiary();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.Beneficiary.class, com.netki.bip75.protocol.Messages.Beneficiary.Builder.class);
+              com.netki.bip75.protocol.Messages.Beneficiary.class,
+              com.netki.bip75.protocol.Messages.Beneficiary.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int PRIMARY_FOR_TRANSACTION_FIELD_NUMBER = 1;
-    private boolean primaryForTransaction_;
     /**
      * <pre>
      * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
      * </pre>
      *
      * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
      * @return Whether the primaryForTransaction field is set.
      */
     public boolean hasPrimaryForTransaction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
      * </pre>
      *
      * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
      * @return The primaryForTransaction.
      */
     public boolean getPrimaryForTransaction() {
       return primaryForTransaction_;
     }
 
-    public static final int ATTESTATIONS_FIELD_NUMBER = 2;
-    private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_;
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -9901,6 +11985,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Attestation> getAttestationsList() {
       return attestations_;
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -9908,10 +11993,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Attestation attestations = 2;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-        getAttestationsOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+    getAttestationsOrBuilderList() {
       return attestations_;
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -9922,6 +12008,7 @@ public final class Messages {
     public int getAttestationsCount() {
       return attestations_.size();
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -9932,6 +12019,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Attestation getAttestations(int index) {
       return attestations_.get(index);
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -9944,12 +12032,15 @@ public final class Messages {
       return attestations_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasPrimaryForTransaction()) {
         memoizedIsInitialized = 0;
@@ -9961,7 +12052,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeBool(1, primaryForTransaction_);
       }
@@ -9974,16 +12065,18 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, primaryForTransaction_);
+            .computeBoolSize(1, primaryForTransaction_);
       }
       for (int i = 0; i < attestations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, attestations_.get(i));
+            .computeMessageSize(2, attestations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9993,21 +12086,29 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.Beneficiary)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.Beneficiary other = (com.netki.bip75.protocol.Messages.Beneficiary) obj;
 
-      if (hasPrimaryForTransaction() != other.hasPrimaryForTransaction()) return false;
+      if (hasPrimaryForTransaction() != other.hasPrimaryForTransaction()) {
+        return false;
+      }
       if (hasPrimaryForTransaction()) {
         if (getPrimaryForTransaction()
-            != other.getPrimaryForTransaction()) return false;
+            != other.getPrimaryForTransaction()) {
+          return false;
+        }
       }
       if (!getAttestationsList()
-          .equals(other.getAttestationsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          .equals(other.getAttestationsList())) {
+        return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -10032,84 +12133,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Beneficiary parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Beneficiary prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -10122,6 +12150,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Beneficiary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.Beneficiary getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.Beneficiary}
      */
@@ -10129,18 +12168,13 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.Beneficiary)
         com.netki.bip75.protocol.Messages.BeneficiaryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.Beneficiary.class, com.netki.bip75.protocol.Messages.Beneficiary.Builder.class);
-      }
+      private int bitField0_;
+      private boolean primaryForTransaction_ = true;
+      private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> attestationsBuilder_;
 
       // Construct using com.netki.bip75.protocol.Messages.Beneficiary.newBuilder()
       private Builder() {
@@ -10152,12 +12186,28 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.Beneficiary.class,
+                com.netki.bip75.protocol.Messages.Beneficiary.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getAttestationsFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -10174,7 +12224,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_Beneficiary_descriptor;
       }
 
@@ -10219,38 +12269,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.Beneficiary) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.Beneficiary)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.Beneficiary) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -10258,7 +12314,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.Beneficiary other) {
-        if (other == com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.Beneficiary.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasPrimaryForTransaction()) {
           setPrimaryForTransaction(other.getPrimaryForTransaction());
         }
@@ -10280,9 +12338,9 @@ public final class Messages {
               attestationsBuilder_ = null;
               attestations_ = other.attestations_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              attestationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAttestationsFieldBuilder() : null;
+              attestationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getAttestationsFieldBuilder() : null;
             } else {
               attestationsBuilder_.addAllMessages(other.attestations_);
             }
@@ -10319,37 +12377,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private boolean primaryForTransaction_ = true;
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return Whether the primaryForTransaction field is set.
        */
       public boolean hasPrimaryForTransaction() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return The primaryForTransaction.
        */
       public boolean getPrimaryForTransaction() {
         return primaryForTransaction_;
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @param value The primaryForTransaction to set.
        * @return This builder for chaining.
        */
@@ -10359,12 +12420,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPrimaryForTransaction() {
@@ -10374,17 +12437,12 @@ public final class Messages {
         return this;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_ =
-        java.util.Collections.emptyList();
       private void ensureAttestationsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
           attestations_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Attestation>(attestations_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> attestationsBuilder_;
 
       /**
        * <pre>
@@ -10400,6 +12458,7 @@ public final class Messages {
           return attestationsBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10414,6 +12473,7 @@ public final class Messages {
           return attestationsBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10428,6 +12488,7 @@ public final class Messages {
           return attestationsBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10449,6 +12510,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10467,6 +12529,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10487,6 +12550,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10508,6 +12572,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10526,6 +12591,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10544,6 +12610,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10563,6 +12630,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10580,6 +12648,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10597,6 +12666,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10608,6 +12678,7 @@ public final class Messages {
           int index) {
         return getAttestationsFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10618,10 +12689,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
           int index) {
         if (attestationsBuilder_ == null) {
-          return attestations_.get(index);  } else {
+          return attestations_.get(index);
+        } else {
           return attestationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10629,14 +12702,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Attestation attestations = 2;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-           getAttestationsOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+      getAttestationsOrBuilderList() {
         if (attestationsBuilder_ != null) {
           return attestationsBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(attestations_);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10648,6 +12722,7 @@ public final class Messages {
         return getAttestationsFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance());
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10660,6 +12735,7 @@ public final class Messages {
         return getAttestationsFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance());
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -10667,24 +12743,26 @@ public final class Messages {
        *
        * <code>repeated .payments.Attestation attestations = 2;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Attestation.Builder> 
-           getAttestationsBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Attestation.Builder>
+      getAttestationsBuilderList() {
         return getAttestationsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-          getAttestationsFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+      getAttestationsFieldBuilder() {
         if (attestationsBuilder_ == null) {
           attestationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder>(
-                  attestations_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
+              attestations_,
+              ((bitField0_ & 0x00000002) != 0),
+              getParentForChildren(),
+              isClean());
           attestations_ = null;
         }
         return attestationsBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10697,143 +12775,54 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.Beneficiary)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.Beneficiary)
-    private static final com.netki.bip75.protocol.Messages.Beneficiary DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Beneficiary();
-    }
-
-    public static com.netki.bip75.protocol.Messages.Beneficiary getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Beneficiary>
-        PARSER = new com.google.protobuf.AbstractParser<Beneficiary>() {
-      @java.lang.Override
-      public Beneficiary parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Beneficiary(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Beneficiary> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Beneficiary> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.Beneficiary getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface OriginatorOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.Originator)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
-     * </pre>
-     *
-     * <code>required bool primary_for_transaction = 1 [default = true];</code>
-     * @return Whether the primaryForTransaction field is set.
-     */
-    boolean hasPrimaryForTransaction();
-    /**
-     * <pre>
-     * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
-     * </pre>
-     *
-     * <code>required bool primary_for_transaction = 1 [default = true];</code>
-     * @return The primaryForTransaction.
-     */
-    boolean getPrimaryForTransaction();
-
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Attestation> 
-        getAttestationsList();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.Attestation getAttestations(int index);
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    int getAttestationsCount();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-        getAttestationsOrBuilderList();
-    /**
-     * <pre>
-     * All the Beneficiary attestations for the message
-     * </pre>
-     *
-     * <code>repeated .payments.Attestation attestations = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
-        int index);
-  }
   /**
    * Protobuf type {@code payments.Originator}
    */
-  public  static final class Originator extends
+  public static final class Originator extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.Originator)
       OriginatorOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int PRIMARY_FOR_TRANSACTION_FIELD_NUMBER = 1;
+    public static final int ATTESTATIONS_FIELD_NUMBER = 2;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<Originator>
+        PARSER = new com.google.protobuf.AbstractParser<Originator>() {
+      @java.lang.Override
+      public Originator parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Originator(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.Originator)
+    private static final com.netki.bip75.protocol.Messages.Originator DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Originator();
+    }
+
+    private int bitField0_;
+    private boolean primaryForTransaction_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_;
+    private byte memoizedIsInitialized = -1;
     // Use Originator.newBuilder() to construct.
     private Originator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Originator() {
       primaryForTransaction_ = true;
       attestations_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Originator();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private Originator(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10889,47 +12878,157 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Originator prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Originator getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Originator> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Originator();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.Originator.class, com.netki.bip75.protocol.Messages.Originator.Builder.class);
+              com.netki.bip75.protocol.Messages.Originator.class,
+              com.netki.bip75.protocol.Messages.Originator.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int PRIMARY_FOR_TRANSACTION_FIELD_NUMBER = 1;
-    private boolean primaryForTransaction_;
     /**
      * <pre>
      * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
      * </pre>
      *
      * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
      * @return Whether the primaryForTransaction field is set.
      */
     public boolean hasPrimaryForTransaction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
      * </pre>
      *
      * <code>required bool primary_for_transaction = 1 [default = true];</code>
+     *
      * @return The primaryForTransaction.
      */
     public boolean getPrimaryForTransaction() {
       return primaryForTransaction_;
     }
 
-    public static final int ATTESTATIONS_FIELD_NUMBER = 2;
-    private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_;
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -10940,6 +13039,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Attestation> getAttestationsList() {
       return attestations_;
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -10947,10 +13047,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Attestation attestations = 2;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-        getAttestationsOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+    getAttestationsOrBuilderList() {
       return attestations_;
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -10961,6 +13062,7 @@ public final class Messages {
     public int getAttestationsCount() {
       return attestations_.size();
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -10971,6 +13073,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Attestation getAttestations(int index) {
       return attestations_.get(index);
     }
+
     /**
      * <pre>
      * All the Beneficiary attestations for the message
@@ -10983,12 +13086,15 @@ public final class Messages {
       return attestations_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasPrimaryForTransaction()) {
         memoizedIsInitialized = 0;
@@ -11000,7 +13106,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeBool(1, primaryForTransaction_);
       }
@@ -11013,16 +13119,18 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, primaryForTransaction_);
+            .computeBoolSize(1, primaryForTransaction_);
       }
       for (int i = 0; i < attestations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, attestations_.get(i));
+            .computeMessageSize(2, attestations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11032,21 +13140,29 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.Originator)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.Originator other = (com.netki.bip75.protocol.Messages.Originator) obj;
 
-      if (hasPrimaryForTransaction() != other.hasPrimaryForTransaction()) return false;
+      if (hasPrimaryForTransaction() != other.hasPrimaryForTransaction()) {
+        return false;
+      }
       if (hasPrimaryForTransaction()) {
         if (getPrimaryForTransaction()
-            != other.getPrimaryForTransaction()) return false;
+            != other.getPrimaryForTransaction()) {
+          return false;
+        }
       }
       if (!getAttestationsList()
-          .equals(other.getAttestationsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          .equals(other.getAttestationsList())) {
+        return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -11071,84 +13187,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Originator parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Originator prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -11161,6 +13204,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Originator> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.Originator getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.Originator}
      */
@@ -11168,18 +13222,13 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.Originator)
         com.netki.bip75.protocol.Messages.OriginatorOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.Originator.class, com.netki.bip75.protocol.Messages.Originator.Builder.class);
-      }
+      private int bitField0_;
+      private boolean primaryForTransaction_ = true;
+      private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> attestationsBuilder_;
 
       // Construct using com.netki.bip75.protocol.Messages.Originator.newBuilder()
       private Builder() {
@@ -11191,12 +13240,28 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.Originator.class,
+                com.netki.bip75.protocol.Messages.Originator.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getAttestationsFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -11213,7 +13278,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_Originator_descriptor;
       }
 
@@ -11258,38 +13323,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.Originator) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.Originator)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.Originator) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -11297,7 +13368,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.Originator other) {
-        if (other == com.netki.bip75.protocol.Messages.Originator.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.Originator.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasPrimaryForTransaction()) {
           setPrimaryForTransaction(other.getPrimaryForTransaction());
         }
@@ -11319,9 +13392,9 @@ public final class Messages {
               attestationsBuilder_ = null;
               attestations_ = other.attestations_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              attestationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAttestationsFieldBuilder() : null;
+              attestationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getAttestationsFieldBuilder() : null;
             } else {
               attestationsBuilder_.addAllMessages(other.attestations_);
             }
@@ -11358,37 +13431,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private boolean primaryForTransaction_ = true;
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return Whether the primaryForTransaction field is set.
        */
       public boolean hasPrimaryForTransaction() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return The primaryForTransaction.
        */
       public boolean getPrimaryForTransaction() {
         return primaryForTransaction_;
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @param value The primaryForTransaction to set.
        * @return This builder for chaining.
        */
@@ -11398,12 +13474,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * True if this is the primary account owner for this transaction, there can be only one primary owner per transaction
        * </pre>
        *
        * <code>required bool primary_for_transaction = 1 [default = true];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPrimaryForTransaction() {
@@ -11413,17 +13491,12 @@ public final class Messages {
         return this;
       }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Attestation> attestations_ =
-        java.util.Collections.emptyList();
       private void ensureAttestationsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
           attestations_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Attestation>(attestations_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> attestationsBuilder_;
 
       /**
        * <pre>
@@ -11439,6 +13512,7 @@ public final class Messages {
           return attestationsBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11453,6 +13527,7 @@ public final class Messages {
           return attestationsBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11467,6 +13542,7 @@ public final class Messages {
           return attestationsBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11488,6 +13564,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11506,6 +13583,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11526,6 +13604,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11547,6 +13626,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11565,6 +13645,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11583,6 +13664,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11602,6 +13684,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11619,6 +13702,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11636,6 +13720,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11647,6 +13732,7 @@ public final class Messages {
           int index) {
         return getAttestationsFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11657,10 +13743,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.AttestationOrBuilder getAttestationsOrBuilder(
           int index) {
         if (attestationsBuilder_ == null) {
-          return attestations_.get(index);  } else {
+          return attestations_.get(index);
+        } else {
           return attestationsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11668,14 +13756,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Attestation attestations = 2;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-           getAttestationsOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+      getAttestationsOrBuilderList() {
         if (attestationsBuilder_ != null) {
           return attestationsBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(attestations_);
         }
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11687,6 +13776,7 @@ public final class Messages {
         return getAttestationsFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance());
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11699,6 +13789,7 @@ public final class Messages {
         return getAttestationsFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance());
       }
+
       /**
        * <pre>
        * All the Beneficiary attestations for the message
@@ -11706,24 +13797,26 @@ public final class Messages {
        *
        * <code>repeated .payments.Attestation attestations = 2;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Attestation.Builder> 
-           getAttestationsBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Attestation.Builder>
+      getAttestationsBuilderList() {
         return getAttestationsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder> 
-          getAttestationsFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder>
+      getAttestationsFieldBuilder() {
         if (attestationsBuilder_ == null) {
           attestationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Attestation, com.netki.bip75.protocol.Messages.Attestation.Builder, com.netki.bip75.protocol.Messages.AttestationOrBuilder>(
-                  attestations_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
+              attestations_,
+              ((bitField0_ & 0x00000002) != 0),
+              getParentForChildren(),
+              isClean());
           attestations_ = null;
         }
         return attestationsBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11736,149 +13829,53 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.Originator)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.Originator)
-    private static final com.netki.bip75.protocol.Messages.Originator DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Originator();
-    }
-
-    public static com.netki.bip75.protocol.Messages.Originator getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Originator>
-        PARSER = new com.google.protobuf.AbstractParser<Originator>() {
-      @java.lang.Override
-      public Originator parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Originator(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Originator> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Originator> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.Originator getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface AttestationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.Attestation)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Type of attestation
-     * </pre>
-     *
-     * <code>optional .payments.AttestationType attestation = 1;</code>
-     * @return Whether the attestation field is set.
-     */
-    boolean hasAttestation();
-    /**
-     * <pre>
-     * Type of attestation
-     * </pre>
-     *
-     * <code>optional .payments.AttestationType attestation = 1;</code>
-     * @return The attestation.
-     */
-    com.netki.bip75.protocol.Messages.AttestationType getAttestation();
-
-    /**
-     * <pre>
-     * none / x509+sha256 / x509+sha1
-     * </pre>
-     *
-     * <code>optional string pki_type = 2 [default = "none"];</code>
-     * @return Whether the pkiType field is set.
-     */
-    boolean hasPkiType();
-    /**
-     * <pre>
-     * none / x509+sha256 / x509+sha1
-     * </pre>
-     *
-     * <code>optional string pki_type = 2 [default = "none"];</code>
-     * @return The pkiType.
-     */
-    java.lang.String getPkiType();
-    /**
-     * <pre>
-     * none / x509+sha256 / x509+sha1
-     * </pre>
-     *
-     * <code>optional string pki_type = 2 [default = "none"];</code>
-     * @return The bytes for pkiType.
-     */
-    com.google.protobuf.ByteString
-        getPkiTypeBytes();
-
-    /**
-     * <pre>
-     * Depends on pki_type
-     * </pre>
-     *
-     * <code>optional bytes pki_data = 3;</code>
-     * @return Whether the pkiData field is set.
-     */
-    boolean hasPkiData();
-    /**
-     * <pre>
-     * Depends on pki_type
-     * </pre>
-     *
-     * <code>optional bytes pki_data = 3;</code>
-     * @return The pkiData.
-     */
-    com.google.protobuf.ByteString getPkiData();
-
-    /**
-     * <pre>
-     * PKI-dependent signature
-     * </pre>
-     *
-     * <code>optional bytes signature = 4;</code>
-     * @return Whether the signature field is set.
-     */
-    boolean hasSignature();
-    /**
-     * <pre>
-     * PKI-dependent signature
-     * </pre>
-     *
-     * <code>optional bytes signature = 4;</code>
-     * @return The signature.
-     */
-    com.google.protobuf.ByteString getSignature();
-  }
   /**
    * Protobuf type {@code payments.Attestation}
    */
-  public  static final class Attestation extends
+  public static final class Attestation extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.Attestation)
       AttestationOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int ATTESTATION_FIELD_NUMBER = 1;
+    public static final int PKI_TYPE_FIELD_NUMBER = 2;
+    public static final int PKI_DATA_FIELD_NUMBER = 3;
+    public static final int SIGNATURE_FIELD_NUMBER = 4;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<Attestation>
+        PARSER = new com.google.protobuf.AbstractParser<Attestation>() {
+      @java.lang.Override
+      public Attestation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Attestation(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.Attestation)
+    private static final com.netki.bip75.protocol.Messages.Attestation DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Attestation();
+    }
+
+    private int bitField0_;
+    private int attestation_;
+    private volatile java.lang.Object pkiType_;
+    private com.google.protobuf.ByteString pkiData_;
+    private com.google.protobuf.ByteString signature_;
+    private byte memoizedIsInitialized = -1;
     // Use Attestation.newBuilder() to construct.
     private Attestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Attestation() {
       attestation_ = 0;
       pkiType_ = "none";
@@ -11886,18 +13883,6 @@ public final class Messages {
       signature_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Attestation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private Attestation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11919,8 +13904,9 @@ public final class Messages {
               break;
             case 8: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType.valueOf(rawValue);
+              @SuppressWarnings("deprecation")
+              com.netki.bip75.protocol.Messages.AttestationType value = com.netki.bip75.protocol.Messages.AttestationType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
@@ -11964,66 +13950,180 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Attestation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Attestation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Attestation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Attestation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.Attestation.class, com.netki.bip75.protocol.Messages.Attestation.Builder.class);
+              com.netki.bip75.protocol.Messages.Attestation.class,
+              com.netki.bip75.protocol.Messages.Attestation.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int ATTESTATION_FIELD_NUMBER = 1;
-    private int attestation_;
     /**
      * <pre>
      * Type of attestation
      * </pre>
      *
      * <code>optional .payments.AttestationType attestation = 1;</code>
+     *
      * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * Type of attestation
      * </pre>
      *
      * <code>optional .payments.AttestationType attestation = 1;</code>
+     *
      * @return The attestation.
      */
     public com.netki.bip75.protocol.Messages.AttestationType getAttestation() {
       @SuppressWarnings("deprecation")
-      com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType.valueOf(attestation_);
+      com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType
+          .valueOf(attestation_);
       return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
     }
 
-    public static final int PKI_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object pkiType_;
     /**
      * <pre>
      * none / x509+sha256 / x509+sha1
      * </pre>
      *
      * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
      * @return Whether the pkiType field is set.
      */
     public boolean hasPkiType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * none / x509+sha256 / x509+sha1
      * </pre>
      *
      * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
      * @return The pkiType.
      */
     public java.lang.String getPkiType() {
@@ -12031,7 +14131,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -12040,19 +14140,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * none / x509+sha256 / x509+sha1
      * </pre>
      *
      * <code>optional string pki_type = 2 [default = "none"];</code>
+     *
      * @return The bytes for pkiType.
      */
     public com.google.protobuf.ByteString
-        getPkiTypeBytes() {
+    getPkiTypeBytes() {
       java.lang.Object ref = pkiType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         pkiType_ = b;
@@ -12062,62 +14164,67 @@ public final class Messages {
       }
     }
 
-    public static final int PKI_DATA_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString pkiData_;
     /**
      * <pre>
      * Depends on pki_type
      * </pre>
      *
      * <code>optional bytes pki_data = 3;</code>
+     *
      * @return Whether the pkiData field is set.
      */
     public boolean hasPkiData() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * Depends on pki_type
      * </pre>
      *
      * <code>optional bytes pki_data = 3;</code>
+     *
      * @return The pkiData.
      */
     public com.google.protobuf.ByteString getPkiData() {
       return pkiData_;
     }
 
-    public static final int SIGNATURE_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString signature_;
     /**
      * <pre>
      * PKI-dependent signature
      * </pre>
      *
      * <code>optional bytes signature = 4;</code>
+     *
      * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * PKI-dependent signature
      * </pre>
      *
      * <code>optional bytes signature = 4;</code>
+     *
      * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       memoizedIsInitialized = 1;
       return true;
@@ -12125,7 +14232,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeEnum(1, attestation_);
       }
@@ -12144,23 +14251,25 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, attestation_);
+            .computeEnumSize(1, attestation_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pkiType_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, pkiData_);
+            .computeBytesSize(3, pkiData_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, signature_);
+            .computeBytesSize(4, signature_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12170,33 +14279,51 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.Attestation)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.Attestation other = (com.netki.bip75.protocol.Messages.Attestation) obj;
 
-      if (hasAttestation() != other.hasAttestation()) return false;
-      if (hasAttestation()) {
-        if (attestation_ != other.attestation_) return false;
+      if (hasAttestation() != other.hasAttestation()) {
+        return false;
       }
-      if (hasPkiType() != other.hasPkiType()) return false;
+      if (hasAttestation()) {
+        if (attestation_ != other.attestation_) {
+          return false;
+        }
+      }
+      if (hasPkiType() != other.hasPkiType()) {
+        return false;
+      }
       if (hasPkiType()) {
         if (!getPkiType()
-            .equals(other.getPkiType())) return false;
+            .equals(other.getPkiType())) {
+          return false;
+        }
       }
-      if (hasPkiData() != other.hasPkiData()) return false;
+      if (hasPkiData() != other.hasPkiData()) {
+        return false;
+      }
       if (hasPkiData()) {
         if (!getPkiData()
-            .equals(other.getPkiData())) return false;
+            .equals(other.getPkiData())) {
+          return false;
+        }
       }
-      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature() != other.hasSignature()) {
+        return false;
+      }
       if (hasSignature()) {
         if (!getSignature()
-            .equals(other.getSignature())) return false;
+            .equals(other.getSignature())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -12228,84 +14355,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Attestation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Attestation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -12318,6 +14372,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Attestation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.Attestation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.Attestation}
      */
@@ -12325,18 +14390,12 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.Attestation)
         com.netki.bip75.protocol.Messages.AttestationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.Attestation.class, com.netki.bip75.protocol.Messages.Attestation.Builder.class);
-      }
+      private int bitField0_;
+      private int attestation_ = 0;
+      private java.lang.Object pkiType_ = "none";
+      private com.google.protobuf.ByteString pkiData_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
 
       // Construct using com.netki.bip75.protocol.Messages.Attestation.newBuilder()
       private Builder() {
@@ -12348,11 +14407,27 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.Attestation.class,
+                com.netki.bip75.protocol.Messages.Attestation.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -12369,7 +14444,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_Attestation_descriptor;
       }
 
@@ -12417,38 +14492,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.Attestation) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.Attestation)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.Attestation) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -12456,7 +14537,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.Attestation other) {
-        if (other == com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.Attestation.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasAttestation()) {
           setAttestation(other.getAttestation());
         }
@@ -12499,39 +14582,43 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private int attestation_ = 0;
       /**
        * <pre>
        * Type of attestation
        * </pre>
        *
        * <code>optional .payments.AttestationType attestation = 1;</code>
+       *
        * @return Whether the attestation field is set.
        */
       public boolean hasAttestation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * Type of attestation
        * </pre>
        *
        * <code>optional .payments.AttestationType attestation = 1;</code>
+       *
        * @return The attestation.
        */
       public com.netki.bip75.protocol.Messages.AttestationType getAttestation() {
         @SuppressWarnings("deprecation")
-        com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType.valueOf(attestation_);
+        com.netki.bip75.protocol.Messages.AttestationType result = com.netki.bip75.protocol.Messages.AttestationType
+            .valueOf(attestation_);
         return result == null ? com.netki.bip75.protocol.Messages.AttestationType.LEGAL_PERSON_NAME : result;
       }
+
       /**
        * <pre>
        * Type of attestation
        * </pre>
        *
        * <code>optional .payments.AttestationType attestation = 1;</code>
+       *
        * @param value The attestation to set.
        * @return This builder for chaining.
        */
@@ -12544,12 +14631,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Type of attestation
        * </pre>
        *
        * <code>optional .payments.AttestationType attestation = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearAttestation() {
@@ -12559,24 +14648,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object pkiType_ = "none";
       /**
        * <pre>
        * none / x509+sha256 / x509+sha1
        * </pre>
        *
        * <code>optional string pki_type = 2 [default = "none"];</code>
+       *
        * @return Whether the pkiType field is set.
        */
       public boolean hasPkiType() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * none / x509+sha256 / x509+sha1
        * </pre>
        *
        * <code>optional string pki_type = 2 [default = "none"];</code>
+       *
        * @return The pkiType.
        */
       public java.lang.String getPkiType() {
@@ -12593,19 +14684,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256 / x509+sha1
        * </pre>
        *
        * <code>optional string pki_type = 2 [default = "none"];</code>
+       *
+       * @param value The pkiType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPkiType(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        pkiType_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * none / x509+sha256 / x509+sha1
+       * </pre>
+       *
+       * <code>optional string pki_type = 2 [default = "none"];</code>
+       *
        * @return The bytes for pkiType.
        */
       public com.google.protobuf.ByteString
-          getPkiTypeBytes() {
+      getPkiTypeBytes() {
         java.lang.Object ref = pkiType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           pkiType_ = b;
@@ -12614,31 +14728,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * none / x509+sha256 / x509+sha1
        * </pre>
        *
        * <code>optional string pki_type = 2 [default = "none"];</code>
-       * @param value The pkiType to set.
+       *
+       * @param value The bytes for pkiType to set.
        * @return This builder for chaining.
        */
-      public Builder setPkiType(
-          java.lang.String value) {
+      public Builder setPkiTypeBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         pkiType_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * none / x509+sha256 / x509+sha1
        * </pre>
        *
        * <code>optional string pki_type = 2 [default = "none"];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPkiType() {
@@ -12647,73 +14765,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * none / x509+sha256 / x509+sha1
-       * </pre>
-       *
-       * <code>optional string pki_type = 2 [default = "none"];</code>
-       * @param value The bytes for pkiType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPkiTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        pkiType_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString pkiData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Depends on pki_type
        * </pre>
        *
        * <code>optional bytes pki_data = 3;</code>
+       *
        * @return Whether the pkiData field is set.
        */
       public boolean hasPkiData() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * Depends on pki_type
        * </pre>
        *
        * <code>optional bytes pki_data = 3;</code>
+       *
        * @return The pkiData.
        */
       public com.google.protobuf.ByteString getPkiData() {
         return pkiData_;
       }
+
       /**
        * <pre>
        * Depends on pki_type
        * </pre>
        *
        * <code>optional bytes pki_data = 3;</code>
+       *
        * @param value The pkiData to set.
        * @return This builder for chaining.
        */
       public Builder setPkiData(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         pkiData_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Depends on pki_type
        * </pre>
        *
        * <code>optional bytes pki_data = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPkiData() {
@@ -12723,53 +14828,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * PKI-dependent signature
        * </pre>
        *
        * <code>optional bytes signature = 4;</code>
+       *
        * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <pre>
        * PKI-dependent signature
        * </pre>
        *
        * <code>optional bytes signature = 4;</code>
+       *
        * @return The signature.
        */
       public com.google.protobuf.ByteString getSignature() {
         return signature_;
       }
+
       /**
        * <pre>
        * PKI-dependent signature
        * </pre>
        *
        * <code>optional bytes signature = 4;</code>
+       *
        * @param value The signature to set.
        * @return This builder for chaining.
        */
       public Builder setSignature(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         signature_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * PKI-dependent signature
        * </pre>
        *
        * <code>optional bytes signature = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
@@ -12778,6 +14889,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12790,270 +14902,66 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.Attestation)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.Attestation)
-    private static final com.netki.bip75.protocol.Messages.Attestation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Attestation();
-    }
-
-    public static com.netki.bip75.protocol.Messages.Attestation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Attestation>
-        PARSER = new com.google.protobuf.AbstractParser<Attestation>() {
-      @java.lang.Override
-      public Attestation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Attestation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Attestation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Attestation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.Attestation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface PaymentDetailsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.PaymentDetails)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * "main" or "test"
-     * </pre>
-     *
-     * <code>optional string network = 1 [default = "main"];</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * "main" or "test"
-     * </pre>
-     *
-     * <code>optional string network = 1 [default = "main"];</code>
-     * @return The network.
-     */
-    java.lang.String getNetwork();
-    /**
-     * <pre>
-     * "main" or "test"
-     * </pre>
-     *
-     * <code>optional string network = 1 [default = "main"];</code>
-     * @return The bytes for network.
-     */
-    com.google.protobuf.ByteString
-        getNetworkBytes();
-
-    /**
-     * <pre>
-     * Where payment should be sent
-     * </pre>
-     *
-     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
-     */
-    java.util.List<com.netki.bip75.protocol.Messages.Output> 
-        getBeneficiariesAddressesList();
-    /**
-     * <pre>
-     * Where payment should be sent
-     * </pre>
-     *
-     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.Output getBeneficiariesAddresses(int index);
-    /**
-     * <pre>
-     * Where payment should be sent
-     * </pre>
-     *
-     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
-     */
-    int getBeneficiariesAddressesCount();
-    /**
-     * <pre>
-     * Where payment should be sent
-     * </pre>
-     *
-     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
-     */
-    java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getBeneficiariesAddressesOrBuilderList();
-    /**
-     * <pre>
-     * Where payment should be sent
-     * </pre>
-     *
-     * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
-     */
-    com.netki.bip75.protocol.Messages.OutputOrBuilder getBeneficiariesAddressesOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Timestamp; when payment request created
-     * </pre>
-     *
-     * <code>required uint64 time = 3;</code>
-     * @return Whether the time field is set.
-     */
-    boolean hasTime();
-    /**
-     * <pre>
-     * Timestamp; when payment request created
-     * </pre>
-     *
-     * <code>required uint64 time = 3;</code>
-     * @return The time.
-     */
-    long getTime();
-
-    /**
-     * <pre>
-     * Timestamp; when this request should be considered invalid
-     * </pre>
-     *
-     * <code>optional uint64 expires = 4;</code>
-     * @return Whether the expires field is set.
-     */
-    boolean hasExpires();
-    /**
-     * <pre>
-     * Timestamp; when this request should be considered invalid
-     * </pre>
-     *
-     * <code>optional uint64 expires = 4;</code>
-     * @return The expires.
-     */
-    long getExpires();
-
-    /**
-     * <pre>
-     * Human-readable description of request for the customer
-     * </pre>
-     *
-     * <code>optional string memo = 5;</code>
-     * @return Whether the memo field is set.
-     */
-    boolean hasMemo();
-    /**
-     * <pre>
-     * Human-readable description of request for the customer
-     * </pre>
-     *
-     * <code>optional string memo = 5;</code>
-     * @return The memo.
-     */
-    java.lang.String getMemo();
-    /**
-     * <pre>
-     * Human-readable description of request for the customer
-     * </pre>
-     *
-     * <code>optional string memo = 5;</code>
-     * @return The bytes for memo.
-     */
-    com.google.protobuf.ByteString
-        getMemoBytes();
-
-    /**
-     * <pre>
-     * URL to send Payment and get PaymentACK
-     * </pre>
-     *
-     * <code>optional string payment_url = 6;</code>
-     * @return Whether the paymentUrl field is set.
-     */
-    boolean hasPaymentUrl();
-    /**
-     * <pre>
-     * URL to send Payment and get PaymentACK
-     * </pre>
-     *
-     * <code>optional string payment_url = 6;</code>
-     * @return The paymentUrl.
-     */
-    java.lang.String getPaymentUrl();
-    /**
-     * <pre>
-     * URL to send Payment and get PaymentACK
-     * </pre>
-     *
-     * <code>optional string payment_url = 6;</code>
-     * @return The bytes for paymentUrl.
-     */
-    com.google.protobuf.ByteString
-        getPaymentUrlBytes();
-
-    /**
-     * <pre>
-     * Arbitrary data to include in the Payment message
-     * </pre>
-     *
-     * <code>optional bytes merchant_data = 7;</code>
-     * @return Whether the merchantData field is set.
-     */
-    boolean hasMerchantData();
-    /**
-     * <pre>
-     * Arbitrary data to include in the Payment message
-     * </pre>
-     *
-     * <code>optional bytes merchant_data = 7;</code>
-     * @return The merchantData.
-     */
-    com.google.protobuf.ByteString getMerchantData();
-  }
   /**
    * Protobuf type {@code payments.PaymentDetails}
    */
-  public  static final class PaymentDetails extends
+  public static final class PaymentDetails extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.PaymentDetails)
       PaymentDetailsOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int NETWORK_FIELD_NUMBER = 1;
+    public static final int BENEFICIARIESADDRESSES_FIELD_NUMBER = 2;
+    public static final int TIME_FIELD_NUMBER = 3;
+    public static final int EXPIRES_FIELD_NUMBER = 4;
+    public static final int MEMO_FIELD_NUMBER = 5;
+    public static final int PAYMENT_URL_FIELD_NUMBER = 6;
+    public static final int MERCHANT_DATA_FIELD_NUMBER = 7;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<PaymentDetails>
+        PARSER = new com.google.protobuf.AbstractParser<PaymentDetails>() {
+      @java.lang.Override
+      public PaymentDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PaymentDetails(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.PaymentDetails)
+    private static final com.netki.bip75.protocol.Messages.PaymentDetails DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentDetails();
+    }
+
+    private int bitField0_;
+    private volatile java.lang.Object network_;
+    private java.util.List<com.netki.bip75.protocol.Messages.Output> beneficiariesAddresses_;
+    private long time_;
+    private long expires_;
+    private volatile java.lang.Object memo_;
+    private volatile java.lang.Object paymentUrl_;
+    private com.google.protobuf.ByteString merchantData_;
+    private byte memoizedIsInitialized = -1;
+
     // Use PaymentDetails.newBuilder() to construct.
     private PaymentDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private PaymentDetails() {
       network_ = "main";
       beneficiariesAddresses_ = java.util.Collections.emptyList();
       memo_ = "";
       paymentUrl_ = "";
       merchantData_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PaymentDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
     }
     private PaymentDetails(
         com.google.protobuf.CodedInputStream input,
@@ -13138,39 +15046,151 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.PaymentDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<PaymentDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PaymentDetails();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.PaymentDetails.class, com.netki.bip75.protocol.Messages.PaymentDetails.Builder.class);
+              com.netki.bip75.protocol.Messages.PaymentDetails.class,
+              com.netki.bip75.protocol.Messages.PaymentDetails.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int NETWORK_FIELD_NUMBER = 1;
-    private volatile java.lang.Object network_;
     /**
      * <pre>
      * "main" or "test"
      * </pre>
      *
      * <code>optional string network = 1 [default = "main"];</code>
+     *
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * "main" or "test"
      * </pre>
      *
      * <code>optional string network = 1 [default = "main"];</code>
+     *
      * @return The network.
      */
     public java.lang.String getNetwork() {
@@ -13178,7 +15198,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13187,19 +15207,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * "main" or "test"
      * </pre>
      *
      * <code>optional string network = 1 [default = "main"];</code>
+     *
      * @return The bytes for network.
      */
     public com.google.protobuf.ByteString
-        getNetworkBytes() {
+    getNetworkBytes() {
       java.lang.Object ref = network_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         network_ = b;
@@ -13209,8 +15231,6 @@ public final class Messages {
       }
     }
 
-    public static final int BENEFICIARIESADDRESSES_FIELD_NUMBER = 2;
-    private java.util.List<com.netki.bip75.protocol.Messages.Output> beneficiariesAddresses_;
     /**
      * <pre>
      * Where payment should be sent
@@ -13221,6 +15241,7 @@ public final class Messages {
     public java.util.List<com.netki.bip75.protocol.Messages.Output> getBeneficiariesAddressesList() {
       return beneficiariesAddresses_;
     }
+
     /**
      * <pre>
      * Where payment should be sent
@@ -13228,10 +15249,11 @@ public final class Messages {
      *
      * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
      */
-    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-        getBeneficiariesAddressesOrBuilderList() {
+    public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+    getBeneficiariesAddressesOrBuilderList() {
       return beneficiariesAddresses_;
     }
+
     /**
      * <pre>
      * Where payment should be sent
@@ -13242,6 +15264,7 @@ public final class Messages {
     public int getBeneficiariesAddressesCount() {
       return beneficiariesAddresses_.size();
     }
+
     /**
      * <pre>
      * Where payment should be sent
@@ -13252,6 +15275,7 @@ public final class Messages {
     public com.netki.bip75.protocol.Messages.Output getBeneficiariesAddresses(int index) {
       return beneficiariesAddresses_.get(index);
     }
+
     /**
      * <pre>
      * Where payment should be sent
@@ -13264,75 +15288,78 @@ public final class Messages {
       return beneficiariesAddresses_.get(index);
     }
 
-    public static final int TIME_FIELD_NUMBER = 3;
-    private long time_;
     /**
      * <pre>
      * Timestamp; when payment request created
      * </pre>
      *
      * <code>required uint64 time = 3;</code>
+     *
      * @return Whether the time field is set.
      */
     public boolean hasTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Timestamp; when payment request created
      * </pre>
      *
      * <code>required uint64 time = 3;</code>
+     *
      * @return The time.
      */
     public long getTime() {
       return time_;
     }
 
-    public static final int EXPIRES_FIELD_NUMBER = 4;
-    private long expires_;
     /**
      * <pre>
      * Timestamp; when this request should be considered invalid
      * </pre>
      *
      * <code>optional uint64 expires = 4;</code>
+     *
      * @return Whether the expires field is set.
      */
     public boolean hasExpires() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * Timestamp; when this request should be considered invalid
      * </pre>
      *
      * <code>optional uint64 expires = 4;</code>
+     *
      * @return The expires.
      */
     public long getExpires() {
       return expires_;
     }
 
-    public static final int MEMO_FIELD_NUMBER = 5;
-    private volatile java.lang.Object memo_;
     /**
      * <pre>
      * Human-readable description of request for the customer
      * </pre>
      *
      * <code>optional string memo = 5;</code>
+     *
      * @return Whether the memo field is set.
      */
     public boolean hasMemo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * Human-readable description of request for the customer
      * </pre>
      *
      * <code>optional string memo = 5;</code>
+     *
      * @return The memo.
      */
     public java.lang.String getMemo() {
@@ -13340,7 +15367,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13349,19 +15376,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable description of request for the customer
      * </pre>
      *
      * <code>optional string memo = 5;</code>
+     *
      * @return The bytes for memo.
      */
     public com.google.protobuf.ByteString
-        getMemoBytes() {
+    getMemoBytes() {
       java.lang.Object ref = memo_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         memo_ = b;
@@ -13371,25 +15400,26 @@ public final class Messages {
       }
     }
 
-    public static final int PAYMENT_URL_FIELD_NUMBER = 6;
-    private volatile java.lang.Object paymentUrl_;
     /**
      * <pre>
      * URL to send Payment and get PaymentACK
      * </pre>
      *
      * <code>optional string payment_url = 6;</code>
+     *
      * @return Whether the paymentUrl field is set.
      */
     public boolean hasPaymentUrl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <pre>
      * URL to send Payment and get PaymentACK
      * </pre>
      *
      * <code>optional string payment_url = 6;</code>
+     *
      * @return The paymentUrl.
      */
     public java.lang.String getPaymentUrl() {
@@ -13397,7 +15427,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13406,19 +15436,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * URL to send Payment and get PaymentACK
      * </pre>
      *
      * <code>optional string payment_url = 6;</code>
+     *
      * @return The bytes for paymentUrl.
      */
     public com.google.protobuf.ByteString
-        getPaymentUrlBytes() {
+    getPaymentUrlBytes() {
       java.lang.Object ref = paymentUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         paymentUrl_ = b;
@@ -13428,37 +15460,41 @@ public final class Messages {
       }
     }
 
-    public static final int MERCHANT_DATA_FIELD_NUMBER = 7;
-    private com.google.protobuf.ByteString merchantData_;
     /**
      * <pre>
      * Arbitrary data to include in the Payment message
      * </pre>
      *
      * <code>optional bytes merchant_data = 7;</code>
+     *
      * @return Whether the merchantData field is set.
      */
     public boolean hasMerchantData() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      * <pre>
      * Arbitrary data to include in the Payment message
      * </pre>
      *
      * <code>optional bytes merchant_data = 7;</code>
+     *
      * @return The merchantData.
      */
     public com.google.protobuf.ByteString getMerchantData() {
       return merchantData_;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasTime()) {
         memoizedIsInitialized = 0;
@@ -13470,7 +15506,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
       }
@@ -13498,7 +15534,9 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -13506,15 +15544,15 @@ public final class Messages {
       }
       for (int i = 0; i < beneficiariesAddresses_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, beneficiariesAddresses_.get(i));
+            .computeMessageSize(2, beneficiariesAddresses_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, time_);
+            .computeUInt64Size(3, time_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, expires_);
+            .computeUInt64Size(4, expires_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, memo_);
@@ -13524,7 +15562,7 @@ public final class Messages {
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, merchantData_);
+            .computeBytesSize(7, merchantData_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13534,46 +15572,74 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.PaymentDetails)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.PaymentDetails other = (com.netki.bip75.protocol.Messages.PaymentDetails) obj;
 
-      if (hasNetwork() != other.hasNetwork()) return false;
+      if (hasNetwork() != other.hasNetwork()) {
+        return false;
+      }
       if (hasNetwork()) {
         if (!getNetwork()
-            .equals(other.getNetwork())) return false;
+            .equals(other.getNetwork())) {
+          return false;
+        }
       }
       if (!getBeneficiariesAddressesList()
-          .equals(other.getBeneficiariesAddressesList())) return false;
-      if (hasTime() != other.hasTime()) return false;
+          .equals(other.getBeneficiariesAddressesList())) {
+        return false;
+      }
+      if (hasTime() != other.hasTime()) {
+        return false;
+      }
       if (hasTime()) {
         if (getTime()
-            != other.getTime()) return false;
+            != other.getTime()) {
+          return false;
+        }
       }
-      if (hasExpires() != other.hasExpires()) return false;
+      if (hasExpires() != other.hasExpires()) {
+        return false;
+      }
       if (hasExpires()) {
         if (getExpires()
-            != other.getExpires()) return false;
+            != other.getExpires()) {
+          return false;
+        }
       }
-      if (hasMemo() != other.hasMemo()) return false;
+      if (hasMemo() != other.hasMemo()) {
+        return false;
+      }
       if (hasMemo()) {
         if (!getMemo()
-            .equals(other.getMemo())) return false;
+            .equals(other.getMemo())) {
+          return false;
+        }
       }
-      if (hasPaymentUrl() != other.hasPaymentUrl()) return false;
+      if (hasPaymentUrl() != other.hasPaymentUrl()) {
+        return false;
+      }
       if (hasPaymentUrl()) {
         if (!getPaymentUrl()
-            .equals(other.getPaymentUrl())) return false;
+            .equals(other.getPaymentUrl())) {
+          return false;
+        }
       }
-      if (hasMerchantData() != other.hasMerchantData()) return false;
+      if (hasMerchantData() != other.hasMerchantData()) {
+        return false;
+      }
       if (hasMerchantData()) {
         if (!getMerchantData()
-            .equals(other.getMerchantData())) return false;
+            .equals(other.getMerchantData())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -13619,84 +15685,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.PaymentDetails parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.PaymentDetails prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -13709,6 +15702,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PaymentDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.PaymentDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.PaymentDetails}
      */
@@ -13716,18 +15720,18 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.PaymentDetails)
         com.netki.bip75.protocol.Messages.PaymentDetailsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.PaymentDetails.class, com.netki.bip75.protocol.Messages.PaymentDetails.Builder.class);
-      }
+      private int bitField0_;
+      private java.lang.Object network_ = "main";
+      private java.util.List<com.netki.bip75.protocol.Messages.Output> beneficiariesAddresses_ =
+          java.util.Collections.emptyList();
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> beneficiariesAddressesBuilder_;
+      private long time_;
+      private long expires_;
+      private java.lang.Object memo_ = "";
+      private java.lang.Object paymentUrl_ = "";
+      private com.google.protobuf.ByteString merchantData_ = com.google.protobuf.ByteString.EMPTY;
 
       // Construct using com.netki.bip75.protocol.Messages.PaymentDetails.newBuilder()
       private Builder() {
@@ -13739,12 +15743,28 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.PaymentDetails.class,
+                com.netki.bip75.protocol.Messages.PaymentDetails.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
           getBeneficiariesAddressesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -13771,7 +15791,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_PaymentDetails_descriptor;
       }
 
@@ -13791,7 +15811,8 @@ public final class Messages {
 
       @java.lang.Override
       public com.netki.bip75.protocol.Messages.PaymentDetails buildPartial() {
-        com.netki.bip75.protocol.Messages.PaymentDetails result = new com.netki.bip75.protocol.Messages.PaymentDetails(this);
+        com.netki.bip75.protocol.Messages.PaymentDetails result = new com.netki.bip75.protocol.Messages.PaymentDetails(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -13836,38 +15857,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.PaymentDetails) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentDetails)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.PaymentDetails) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -13875,7 +15902,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.PaymentDetails other) {
-        if (other == com.netki.bip75.protocol.Messages.PaymentDetails.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.PaymentDetails.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasNetwork()) {
           bitField0_ |= 0x00000001;
           network_ = other.network_;
@@ -13899,9 +15928,9 @@ public final class Messages {
               beneficiariesAddressesBuilder_ = null;
               beneficiariesAddresses_ = other.beneficiariesAddresses_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              beneficiariesAddressesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBeneficiariesAddressesFieldBuilder() : null;
+              beneficiariesAddressesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getBeneficiariesAddressesFieldBuilder() : null;
             } else {
               beneficiariesAddressesBuilder_.addAllMessages(other.beneficiariesAddresses_);
             }
@@ -13957,26 +15986,27 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.lang.Object network_ = "main";
       /**
        * <pre>
        * "main" or "test"
        * </pre>
        *
        * <code>optional string network = 1 [default = "main"];</code>
+       *
        * @return Whether the network field is set.
        */
       public boolean hasNetwork() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * "main" or "test"
        * </pre>
        *
        * <code>optional string network = 1 [default = "main"];</code>
+       *
        * @return The network.
        */
       public java.lang.String getNetwork() {
@@ -13993,19 +16023,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * "main" or "test"
        * </pre>
        *
        * <code>optional string network = 1 [default = "main"];</code>
+       *
+       * @param value The network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetwork(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        network_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * "main" or "test"
+       * </pre>
+       *
+       * <code>optional string network = 1 [default = "main"];</code>
+       *
        * @return The bytes for network.
        */
       public com.google.protobuf.ByteString
-          getNetworkBytes() {
+      getNetworkBytes() {
         java.lang.Object ref = network_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           network_ = b;
@@ -14014,31 +16067,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * "main" or "test"
        * </pre>
        *
        * <code>optional string network = 1 [default = "main"];</code>
-       * @param value The network to set.
+       *
+       * @param value The bytes for network to set.
        * @return This builder for chaining.
        */
-      public Builder setNetwork(
-          java.lang.String value) {
+      public Builder setNetworkBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         network_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * "main" or "test"
        * </pre>
        *
        * <code>optional string network = 1 [default = "main"];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearNetwork() {
@@ -14047,37 +16104,14 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * "main" or "test"
-       * </pre>
-       *
-       * <code>optional string network = 1 [default = "main"];</code>
-       * @param value The bytes for network to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNetworkBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        network_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.util.List<com.netki.bip75.protocol.Messages.Output> beneficiariesAddresses_ =
-        java.util.Collections.emptyList();
       private void ensureBeneficiariesAddressesIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          beneficiariesAddresses_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Output>(beneficiariesAddresses_);
+          beneficiariesAddresses_ = new java.util.ArrayList<com.netki.bip75.protocol.Messages.Output>(
+              beneficiariesAddresses_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> beneficiariesAddressesBuilder_;
 
       /**
        * <pre>
@@ -14093,6 +16127,7 @@ public final class Messages {
           return beneficiariesAddressesBuilder_.getMessageList();
         }
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14107,6 +16142,7 @@ public final class Messages {
           return beneficiariesAddressesBuilder_.getCount();
         }
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14121,6 +16157,7 @@ public final class Messages {
           return beneficiariesAddressesBuilder_.getMessage(index);
         }
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14142,6 +16179,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14160,6 +16198,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14180,6 +16219,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14201,6 +16241,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14219,6 +16260,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14237,6 +16279,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14256,6 +16299,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14273,6 +16317,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14290,6 +16335,7 @@ public final class Messages {
         }
         return this;
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14301,6 +16347,7 @@ public final class Messages {
           int index) {
         return getBeneficiariesAddressesFieldBuilder().getBuilder(index);
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14311,10 +16358,12 @@ public final class Messages {
       public com.netki.bip75.protocol.Messages.OutputOrBuilder getBeneficiariesAddressesOrBuilder(
           int index) {
         if (beneficiariesAddressesBuilder_ == null) {
-          return beneficiariesAddresses_.get(index);  } else {
+          return beneficiariesAddresses_.get(index);
+        } else {
           return beneficiariesAddressesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14322,14 +16371,15 @@ public final class Messages {
        *
        * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
        */
-      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-           getBeneficiariesAddressesOrBuilderList() {
+      public java.util.List<? extends com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getBeneficiariesAddressesOrBuilderList() {
         if (beneficiariesAddressesBuilder_ != null) {
           return beneficiariesAddressesBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(beneficiariesAddresses_);
         }
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14341,6 +16391,7 @@ public final class Messages {
         return getBeneficiariesAddressesFieldBuilder().addBuilder(
             com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14353,6 +16404,7 @@ public final class Messages {
         return getBeneficiariesAddressesFieldBuilder().addBuilder(
             index, com.netki.bip75.protocol.Messages.Output.getDefaultInstance());
       }
+
       /**
        * <pre>
        * Where payment should be sent
@@ -14360,54 +16412,59 @@ public final class Messages {
        *
        * <code>repeated .payments.Output beneficiariesAddresses = 2;</code>
        */
-      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder> 
-           getBeneficiariesAddressesBuilderList() {
+      public java.util.List<com.netki.bip75.protocol.Messages.Output.Builder>
+      getBeneficiariesAddressesBuilderList() {
         return getBeneficiariesAddressesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder> 
-          getBeneficiariesAddressesFieldBuilder() {
+          com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>
+      getBeneficiariesAddressesFieldBuilder() {
         if (beneficiariesAddressesBuilder_ == null) {
           beneficiariesAddressesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.netki.bip75.protocol.Messages.Output, com.netki.bip75.protocol.Messages.Output.Builder, com.netki.bip75.protocol.Messages.OutputOrBuilder>(
-                  beneficiariesAddresses_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
+              beneficiariesAddresses_,
+              ((bitField0_ & 0x00000002) != 0),
+              getParentForChildren(),
+              isClean());
           beneficiariesAddresses_ = null;
         }
         return beneficiariesAddressesBuilder_;
       }
 
-      private long time_ ;
       /**
        * <pre>
        * Timestamp; when payment request created
        * </pre>
        *
        * <code>required uint64 time = 3;</code>
+       *
        * @return Whether the time field is set.
        */
       public boolean hasTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * Timestamp; when payment request created
        * </pre>
        *
        * <code>required uint64 time = 3;</code>
+       *
        * @return The time.
        */
       public long getTime() {
         return time_;
       }
+
       /**
        * <pre>
        * Timestamp; when payment request created
        * </pre>
        *
        * <code>required uint64 time = 3;</code>
+       *
        * @param value The time to set.
        * @return This builder for chaining.
        */
@@ -14417,12 +16474,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Timestamp; when payment request created
        * </pre>
        *
        * <code>required uint64 time = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearTime() {
@@ -14432,35 +16491,39 @@ public final class Messages {
         return this;
       }
 
-      private long expires_ ;
       /**
        * <pre>
        * Timestamp; when this request should be considered invalid
        * </pre>
        *
        * <code>optional uint64 expires = 4;</code>
+       *
        * @return Whether the expires field is set.
        */
       public boolean hasExpires() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <pre>
        * Timestamp; when this request should be considered invalid
        * </pre>
        *
        * <code>optional uint64 expires = 4;</code>
+       *
        * @return The expires.
        */
       public long getExpires() {
         return expires_;
       }
+
       /**
        * <pre>
        * Timestamp; when this request should be considered invalid
        * </pre>
        *
        * <code>optional uint64 expires = 4;</code>
+       *
        * @param value The expires to set.
        * @return This builder for chaining.
        */
@@ -14470,12 +16533,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Timestamp; when this request should be considered invalid
        * </pre>
        *
        * <code>optional uint64 expires = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearExpires() {
@@ -14485,24 +16550,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object memo_ = "";
       /**
        * <pre>
        * Human-readable description of request for the customer
        * </pre>
        *
        * <code>optional string memo = 5;</code>
+       *
        * @return Whether the memo field is set.
        */
       public boolean hasMemo() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        * <pre>
        * Human-readable description of request for the customer
        * </pre>
        *
        * <code>optional string memo = 5;</code>
+       *
        * @return The memo.
        */
       public java.lang.String getMemo() {
@@ -14519,19 +16586,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable description of request for the customer
        * </pre>
        *
        * <code>optional string memo = 5;</code>
+       *
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable description of request for the customer
+       * </pre>
+       *
+       * <code>optional string memo = 5;</code>
+       *
        * @return The bytes for memo.
        */
       public com.google.protobuf.ByteString
-          getMemoBytes() {
+      getMemoBytes() {
         java.lang.Object ref = memo_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           memo_ = b;
@@ -14540,31 +16630,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable description of request for the customer
        * </pre>
        *
        * <code>optional string memo = 5;</code>
-       * @param value The memo to set.
+       *
+       * @param value The bytes for memo to set.
        * @return This builder for chaining.
        */
-      public Builder setMemo(
-          java.lang.String value) {
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         memo_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable description of request for the customer
        * </pre>
        *
        * <code>optional string memo = 5;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMemo() {
@@ -14573,44 +16667,27 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable description of request for the customer
-       * </pre>
-       *
-       * <code>optional string memo = 5;</code>
-       * @param value The bytes for memo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMemoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object paymentUrl_ = "";
       /**
        * <pre>
        * URL to send Payment and get PaymentACK
        * </pre>
        *
        * <code>optional string payment_url = 6;</code>
+       *
        * @return Whether the paymentUrl field is set.
        */
       public boolean hasPaymentUrl() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        * <pre>
        * URL to send Payment and get PaymentACK
        * </pre>
        *
        * <code>optional string payment_url = 6;</code>
+       *
        * @return The paymentUrl.
        */
       public java.lang.String getPaymentUrl() {
@@ -14627,19 +16704,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * URL to send Payment and get PaymentACK
        * </pre>
        *
        * <code>optional string payment_url = 6;</code>
+       *
+       * @param value The paymentUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPaymentUrl(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        paymentUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * URL to send Payment and get PaymentACK
+       * </pre>
+       *
+       * <code>optional string payment_url = 6;</code>
+       *
        * @return The bytes for paymentUrl.
        */
       public com.google.protobuf.ByteString
-          getPaymentUrlBytes() {
+      getPaymentUrlBytes() {
         java.lang.Object ref = paymentUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           paymentUrl_ = b;
@@ -14648,31 +16748,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * URL to send Payment and get PaymentACK
        * </pre>
        *
        * <code>optional string payment_url = 6;</code>
-       * @param value The paymentUrl to set.
+       *
+       * @param value The bytes for paymentUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setPaymentUrl(
-          java.lang.String value) {
+      public Builder setPaymentUrlBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
         paymentUrl_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * URL to send Payment and get PaymentACK
        * </pre>
        *
        * <code>optional string payment_url = 6;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearPaymentUrl() {
@@ -14681,73 +16785,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * URL to send Payment and get PaymentACK
-       * </pre>
-       *
-       * <code>optional string payment_url = 6;</code>
-       * @param value The bytes for paymentUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPaymentUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        paymentUrl_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString merchantData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Arbitrary data to include in the Payment message
        * </pre>
        *
        * <code>optional bytes merchant_data = 7;</code>
+       *
        * @return Whether the merchantData field is set.
        */
       public boolean hasMerchantData() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        * <pre>
        * Arbitrary data to include in the Payment message
        * </pre>
        *
        * <code>optional bytes merchant_data = 7;</code>
+       *
        * @return The merchantData.
        */
       public com.google.protobuf.ByteString getMerchantData() {
         return merchantData_;
       }
+
       /**
        * <pre>
        * Arbitrary data to include in the Payment message
        * </pre>
        *
        * <code>optional bytes merchant_data = 7;</code>
+       *
        * @param value The merchantData to set.
        * @return This builder for chaining.
        */
       public Builder setMerchantData(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
         merchantData_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Arbitrary data to include in the Payment message
        * </pre>
        *
        * <code>optional bytes merchant_data = 7;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMerchantData() {
@@ -14756,6 +16847,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -14768,136 +16860,55 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.PaymentDetails)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.PaymentDetails)
-    private static final com.netki.bip75.protocol.Messages.PaymentDetails DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.PaymentDetails();
-    }
-
-    public static com.netki.bip75.protocol.Messages.PaymentDetails getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PaymentDetails>
-        PARSER = new com.google.protobuf.AbstractParser<PaymentDetails>() {
-      @java.lang.Override
-      public PaymentDetails parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PaymentDetails(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PaymentDetails> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PaymentDetails> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.PaymentDetails getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface OutputOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.Output)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * amount is integer-number-of-satoshis
-     * </pre>
-     *
-     * <code>optional uint64 amount = 1 [default = 0];</code>
-     * @return Whether the amount field is set.
-     */
-    boolean hasAmount();
-    /**
-     * <pre>
-     * amount is integer-number-of-satoshis
-     * </pre>
-     *
-     * <code>optional uint64 amount = 1 [default = 0];</code>
-     * @return The amount.
-     */
-    long getAmount();
-
-    /**
-     * <pre>
-     * usually one of the standard Script forms
-     * </pre>
-     *
-     * <code>optional bytes script = 2;</code>
-     * @return Whether the script field is set.
-     */
-    boolean hasScript();
-    /**
-     * <pre>
-     * usually one of the standard Script forms
-     * </pre>
-     *
-     * <code>optional bytes script = 2;</code>
-     * @return The script.
-     */
-    com.google.protobuf.ByteString getScript();
-
-    /**
-     * <pre>
-     * The currency of the provided Script
-     * </pre>
-     *
-     * <code>optional .payments.CurrencyType currency = 3;</code>
-     * @return Whether the currency field is set.
-     */
-    boolean hasCurrency();
-    /**
-     * <pre>
-     * The currency of the provided Script
-     * </pre>
-     *
-     * <code>optional .payments.CurrencyType currency = 3;</code>
-     * @return The currency.
-     */
-    com.netki.bip75.protocol.Messages.CurrencyType getCurrency();
-  }
   /**
    * Protobuf type {@code payments.Output}
    */
-  public  static final class Output extends
+  public static final class Output extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.Output)
       OutputOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int AMOUNT_FIELD_NUMBER = 1;
+    public static final int SCRIPT_FIELD_NUMBER = 2;
+    public static final int CURRENCY_FIELD_NUMBER = 3;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<Output>
+        PARSER = new com.google.protobuf.AbstractParser<Output>() {
+      @java.lang.Override
+      public Output parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Output(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.Output)
+    private static final com.netki.bip75.protocol.Messages.Output DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Output();
+    }
+
+    private int bitField0_;
+    private long amount_;
+    private com.google.protobuf.ByteString script_;
+    private int currency_;
+    private byte memoizedIsInitialized = -1;
+
     // Use Output.newBuilder() to construct.
     private Output(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Output() {
       script_ = com.google.protobuf.ByteString.EMPTY;
       currency_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Output();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
     }
     private Output(
         com.google.protobuf.CodedInputStream input,
@@ -14930,8 +16941,9 @@ public final class Messages {
             }
             case 24: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.CurrencyType value = com.netki.bip75.protocol.Messages.CurrencyType.valueOf(rawValue);
+              @SuppressWarnings("deprecation")
+              com.netki.bip75.protocol.Messages.CurrencyType value = com.netki.bip75.protocol.Messages.CurrencyType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
@@ -14959,103 +16971,220 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Output_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Output prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.Output getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Output> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Output();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_Output_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.netki.bip75.protocol.Messages.Output.class, com.netki.bip75.protocol.Messages.Output.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int AMOUNT_FIELD_NUMBER = 1;
-    private long amount_;
     /**
      * <pre>
      * amount is integer-number-of-satoshis
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * amount is integer-number-of-satoshis
      * </pre>
      *
      * <code>optional uint64 amount = 1 [default = 0];</code>
+     *
      * @return The amount.
      */
     public long getAmount() {
       return amount_;
     }
 
-    public static final int SCRIPT_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString script_;
     /**
      * <pre>
      * usually one of the standard Script forms
      * </pre>
      *
      * <code>optional bytes script = 2;</code>
+     *
      * @return Whether the script field is set.
      */
     public boolean hasScript() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * usually one of the standard Script forms
      * </pre>
      *
      * <code>optional bytes script = 2;</code>
+     *
      * @return The script.
      */
     public com.google.protobuf.ByteString getScript() {
       return script_;
     }
 
-    public static final int CURRENCY_FIELD_NUMBER = 3;
-    private int currency_;
     /**
      * <pre>
      * The currency of the provided Script
      * </pre>
      *
      * <code>optional .payments.CurrencyType currency = 3;</code>
+     *
      * @return Whether the currency field is set.
      */
     public boolean hasCurrency() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * The currency of the provided Script
      * </pre>
      *
      * <code>optional .payments.CurrencyType currency = 3;</code>
+     *
      * @return The currency.
      */
     public com.netki.bip75.protocol.Messages.CurrencyType getCurrency() {
       @SuppressWarnings("deprecation")
-      com.netki.bip75.protocol.Messages.CurrencyType result = com.netki.bip75.protocol.Messages.CurrencyType.valueOf(currency_);
+      com.netki.bip75.protocol.Messages.CurrencyType result = com.netki.bip75.protocol.Messages.CurrencyType
+          .valueOf(currency_);
       return result == null ? com.netki.bip75.protocol.Messages.CurrencyType.BITCOIN : result;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       memoizedIsInitialized = 1;
       return true;
@@ -15063,7 +17192,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt64(1, amount_);
       }
@@ -15079,20 +17208,22 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, amount_);
+            .computeUInt64Size(1, amount_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, script_);
+            .computeBytesSize(2, script_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, currency_);
+            .computeEnumSize(3, currency_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15102,28 +17233,42 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.Output)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.Output other = (com.netki.bip75.protocol.Messages.Output) obj;
 
-      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount() != other.hasAmount()) {
+        return false;
+      }
       if (hasAmount()) {
         if (getAmount()
-            != other.getAmount()) return false;
+            != other.getAmount()) {
+          return false;
+        }
       }
-      if (hasScript() != other.hasScript()) return false;
+      if (hasScript() != other.hasScript()) {
+        return false;
+      }
       if (hasScript()) {
         if (!getScript()
-            .equals(other.getScript())) return false;
+            .equals(other.getScript())) {
+          return false;
+        }
       }
-      if (hasCurrency() != other.hasCurrency()) return false;
+      if (hasCurrency() != other.hasCurrency()) {
+        return false;
+      }
       if (hasCurrency()) {
-        if (currency_ != other.currency_) return false;
+        if (currency_ != other.currency_) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -15152,84 +17297,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.Output parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.Output prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -15242,6 +17314,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Output> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.Output getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.Output}
      */
@@ -15249,18 +17332,11 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.Output)
         com.netki.bip75.protocol.Messages.OutputOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Output_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_Output_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.Output.class, com.netki.bip75.protocol.Messages.Output.Builder.class);
-      }
+      private int bitField0_;
+      private long amount_;
+      private com.google.protobuf.ByteString script_ = com.google.protobuf.ByteString.EMPTY;
+      private int currency_ = 0;
 
       // Construct using com.netki.bip75.protocol.Messages.Output.newBuilder()
       private Builder() {
@@ -15272,11 +17348,26 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Output_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_Output_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.Output.class, com.netki.bip75.protocol.Messages.Output.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -15291,7 +17382,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_Output_descriptor;
       }
 
@@ -15335,38 +17426,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.Output) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.Output)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.Output) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -15374,7 +17471,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.Output other) {
-        if (other == com.netki.bip75.protocol.Messages.Output.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.Output.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasAmount()) {
           setAmount(other.getAmount());
         }
@@ -15412,37 +17511,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private long amount_ ;
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return The amount.
        */
       public long getAmount() {
         return amount_;
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -15452,12 +17554,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * amount is integer-number-of-satoshis
        * </pre>
        *
        * <code>optional uint64 amount = 1 [default = 0];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -15467,53 +17571,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString script_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * usually one of the standard Script forms
        * </pre>
        *
        * <code>optional bytes script = 2;</code>
+       *
        * @return Whether the script field is set.
        */
       public boolean hasScript() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * usually one of the standard Script forms
        * </pre>
        *
        * <code>optional bytes script = 2;</code>
+       *
        * @return The script.
        */
       public com.google.protobuf.ByteString getScript() {
         return script_;
       }
+
       /**
        * <pre>
        * usually one of the standard Script forms
        * </pre>
        *
        * <code>optional bytes script = 2;</code>
+       *
        * @param value The script to set.
        * @return This builder for chaining.
        */
       public Builder setScript(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         script_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * usually one of the standard Script forms
        * </pre>
        *
        * <code>optional bytes script = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearScript() {
@@ -15523,37 +17633,42 @@ public final class Messages {
         return this;
       }
 
-      private int currency_ = 0;
       /**
        * <pre>
        * The currency of the provided Script
        * </pre>
        *
        * <code>optional .payments.CurrencyType currency = 3;</code>
+       *
        * @return Whether the currency field is set.
        */
       public boolean hasCurrency() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * The currency of the provided Script
        * </pre>
        *
        * <code>optional .payments.CurrencyType currency = 3;</code>
+       *
        * @return The currency.
        */
       public com.netki.bip75.protocol.Messages.CurrencyType getCurrency() {
         @SuppressWarnings("deprecation")
-        com.netki.bip75.protocol.Messages.CurrencyType result = com.netki.bip75.protocol.Messages.CurrencyType.valueOf(currency_);
+        com.netki.bip75.protocol.Messages.CurrencyType result = com.netki.bip75.protocol.Messages.CurrencyType
+            .valueOf(currency_);
         return result == null ? com.netki.bip75.protocol.Messages.CurrencyType.BITCOIN : result;
       }
+
       /**
        * <pre>
        * The currency of the provided Script
        * </pre>
        *
        * <code>optional .payments.CurrencyType currency = 3;</code>
+       *
        * @param value The currency to set.
        * @return This builder for chaining.
        */
@@ -15566,12 +17681,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * The currency of the provided Script
        * </pre>
        *
        * <code>optional .payments.CurrencyType currency = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearCurrency() {
@@ -15580,6 +17697,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15592,187 +17710,57 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.Output)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.Output)
-    private static final com.netki.bip75.protocol.Messages.Output DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.Output();
-    }
-
-    public static com.netki.bip75.protocol.Messages.Output getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Output>
-        PARSER = new com.google.protobuf.AbstractParser<Output>() {
-      @java.lang.Override
-      public Output parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Output(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Output> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Output> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.Output getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface ProtocolMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.ProtocolMessage)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Protocol version number
-     * </pre>
-     *
-     * <code>required uint64 version = 1 [default = 1];</code>
-     * @return Whether the version field is set.
-     */
-    boolean hasVersion();
-    /**
-     * <pre>
-     * Protocol version number
-     * </pre>
-     *
-     * <code>required uint64 version = 1 [default = 1];</code>
-     * @return The version.
-     */
-    long getVersion();
-
-    /**
-     * <pre>
-     * Payment Protocol Status Code (Default: 1 "OK")
-     * </pre>
-     *
-     * <code>required uint64 status_code = 2 [default = 1];</code>
-     * @return Whether the statusCode field is set.
-     */
-    boolean hasStatusCode();
-    /**
-     * <pre>
-     * Payment Protocol Status Code (Default: 1 "OK")
-     * </pre>
-     *
-     * <code>required uint64 status_code = 2 [default = 1];</code>
-     * @return The statusCode.
-     */
-    long getStatusCode();
-
-    /**
-     * <pre>
-     * Message Type of serialized_message
-     * </pre>
-     *
-     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
-     * @return Whether the messageType field is set.
-     */
-    boolean hasMessageType();
-    /**
-     * <pre>
-     * Message Type of serialized_message
-     * </pre>
-     *
-     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
-     * @return The messageType.
-     */
-    com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType();
-
-    /**
-     * <pre>
-     * Serialized Payment Protocol Message
-     * </pre>
-     *
-     * <code>required bytes serialized_message = 4;</code>
-     * @return Whether the serializedMessage field is set.
-     */
-    boolean hasSerializedMessage();
-    /**
-     * <pre>
-     * Serialized Payment Protocol Message
-     * </pre>
-     *
-     * <code>required bytes serialized_message = 4;</code>
-     * @return The serializedMessage.
-     */
-    com.google.protobuf.ByteString getSerializedMessage();
-
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 5;</code>
-     * @return Whether the statusMessage field is set.
-     */
-    boolean hasStatusMessage();
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 5;</code>
-     * @return The statusMessage.
-     */
-    java.lang.String getStatusMessage();
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 5;</code>
-     * @return The bytes for statusMessage.
-     */
-    com.google.protobuf.ByteString
-        getStatusMessageBytes();
-
-    /**
-     * <pre>
-     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
-     * </pre>
-     *
-     * <code>required bytes identifier = 6;</code>
-     * @return Whether the identifier field is set.
-     */
-    boolean hasIdentifier();
-    /**
-     * <pre>
-     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
-     * </pre>
-     *
-     * <code>required bytes identifier = 6;</code>
-     * @return The identifier.
-     */
-    com.google.protobuf.ByteString getIdentifier();
-  }
   /**
    * Protobuf type {@code payments.ProtocolMessage}
    */
-  public  static final class ProtocolMessage extends
+  public static final class ProtocolMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.ProtocolMessage)
       ProtocolMessageOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int VERSION_FIELD_NUMBER = 1;
+    public static final int STATUS_CODE_FIELD_NUMBER = 2;
+    public static final int MESSAGE_TYPE_FIELD_NUMBER = 3;
+    public static final int SERIALIZED_MESSAGE_FIELD_NUMBER = 4;
+    public static final int STATUS_MESSAGE_FIELD_NUMBER = 5;
+    public static final int IDENTIFIER_FIELD_NUMBER = 6;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<ProtocolMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ProtocolMessage>() {
+      @java.lang.Override
+      public ProtocolMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProtocolMessage(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.ProtocolMessage)
+    private static final com.netki.bip75.protocol.Messages.ProtocolMessage DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.ProtocolMessage();
+    }
+
+    private int bitField0_;
+    private long version_;
+    private long statusCode_;
+    private int messageType_;
+    private com.google.protobuf.ByteString serializedMessage_;
+    private volatile java.lang.Object statusMessage_;
+    private com.google.protobuf.ByteString identifier_;
+    private byte memoizedIsInitialized = -1;
     // Use ProtocolMessage.newBuilder() to construct.
     private ProtocolMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ProtocolMessage() {
       version_ = 1L;
       statusCode_ = 1L;
@@ -15782,18 +17770,6 @@ public final class Messages {
       identifier_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ProtocolMessage();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private ProtocolMessage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15825,8 +17801,9 @@ public final class Messages {
             }
             case 24: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.ProtocolMessageType value = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(rawValue);
+              @SuppressWarnings("deprecation")
+              com.netki.bip75.protocol.Messages.ProtocolMessageType value = com.netki.bip75.protocol.Messages.ProtocolMessageType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
@@ -15870,141 +17847,258 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.ProtocolMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.ProtocolMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<ProtocolMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProtocolMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.ProtocolMessage.class, com.netki.bip75.protocol.Messages.ProtocolMessage.Builder.class);
+              com.netki.bip75.protocol.Messages.ProtocolMessage.class,
+              com.netki.bip75.protocol.Messages.ProtocolMessage.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int VERSION_FIELD_NUMBER = 1;
-    private long version_;
     /**
      * <pre>
      * Protocol version number
      * </pre>
      *
      * <code>required uint64 version = 1 [default = 1];</code>
+     *
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * Protocol version number
      * </pre>
      *
      * <code>required uint64 version = 1 [default = 1];</code>
+     *
      * @return The version.
      */
     public long getVersion() {
       return version_;
     }
 
-    public static final int STATUS_CODE_FIELD_NUMBER = 2;
-    private long statusCode_;
     /**
      * <pre>
      * Payment Protocol Status Code (Default: 1 "OK")
      * </pre>
      *
      * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
      * @return Whether the statusCode field is set.
      */
     public boolean hasStatusCode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Payment Protocol Status Code (Default: 1 "OK")
      * </pre>
      *
      * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
      * @return The statusCode.
      */
     public long getStatusCode() {
       return statusCode_;
     }
 
-    public static final int MESSAGE_TYPE_FIELD_NUMBER = 3;
-    private int messageType_;
     /**
      * <pre>
      * Message Type of serialized_message
      * </pre>
      *
      * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
      * @return Whether the messageType field is set.
      */
     public boolean hasMessageType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * Message Type of serialized_message
      * </pre>
      *
      * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
      * @return The messageType.
      */
     public com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType() {
       @SuppressWarnings("deprecation")
-      com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(messageType_);
+      com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType
+          .valueOf(messageType_);
       return result == null ? com.netki.bip75.protocol.Messages.ProtocolMessageType.UNKNOWN_MESSAGE_TYPE : result;
     }
 
-    public static final int SERIALIZED_MESSAGE_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString serializedMessage_;
     /**
      * <pre>
      * Serialized Payment Protocol Message
      * </pre>
      *
      * <code>required bytes serialized_message = 4;</code>
+     *
      * @return Whether the serializedMessage field is set.
      */
     public boolean hasSerializedMessage() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * Serialized Payment Protocol Message
      * </pre>
      *
      * <code>required bytes serialized_message = 4;</code>
+     *
      * @return The serializedMessage.
      */
     public com.google.protobuf.ByteString getSerializedMessage() {
       return serializedMessage_;
     }
 
-    public static final int STATUS_MESSAGE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object statusMessage_;
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 5;</code>
+     *
      * @return Whether the statusMessage field is set.
      */
     public boolean hasStatusMessage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 5;</code>
+     *
      * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
@@ -16012,7 +18106,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -16021,19 +18115,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 5;</code>
+     *
      * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         statusMessage_ = b;
@@ -16043,37 +18139,41 @@ public final class Messages {
       }
     }
 
-    public static final int IDENTIFIER_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString identifier_;
     /**
      * <pre>
      * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
      * </pre>
      *
      * <code>required bytes identifier = 6;</code>
+     *
      * @return Whether the identifier field is set.
      */
     public boolean hasIdentifier() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      * <pre>
      * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
      * </pre>
      *
      * <code>required bytes identifier = 6;</code>
+     *
      * @return The identifier.
      */
     public com.google.protobuf.ByteString getIdentifier() {
       return identifier_;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasVersion()) {
         memoizedIsInitialized = 0;
@@ -16101,7 +18201,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt64(1, version_);
       }
@@ -16126,31 +18226,33 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, version_);
+            .computeUInt64Size(1, version_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, statusCode_);
+            .computeUInt64Size(2, statusCode_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, messageType_);
+            .computeEnumSize(3, messageType_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, serializedMessage_);
+            .computeBytesSize(4, serializedMessage_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMessage_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, identifier_);
+            .computeBytesSize(6, identifier_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16160,43 +18262,69 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.ProtocolMessage)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.ProtocolMessage other = (com.netki.bip75.protocol.Messages.ProtocolMessage) obj;
 
-      if (hasVersion() != other.hasVersion()) return false;
+      if (hasVersion() != other.hasVersion()) {
+        return false;
+      }
       if (hasVersion()) {
         if (getVersion()
-            != other.getVersion()) return false;
+            != other.getVersion()) {
+          return false;
+        }
       }
-      if (hasStatusCode() != other.hasStatusCode()) return false;
+      if (hasStatusCode() != other.hasStatusCode()) {
+        return false;
+      }
       if (hasStatusCode()) {
         if (getStatusCode()
-            != other.getStatusCode()) return false;
+            != other.getStatusCode()) {
+          return false;
+        }
       }
-      if (hasMessageType() != other.hasMessageType()) return false;
+      if (hasMessageType() != other.hasMessageType()) {
+        return false;
+      }
       if (hasMessageType()) {
-        if (messageType_ != other.messageType_) return false;
+        if (messageType_ != other.messageType_) {
+          return false;
+        }
       }
-      if (hasSerializedMessage() != other.hasSerializedMessage()) return false;
+      if (hasSerializedMessage() != other.hasSerializedMessage()) {
+        return false;
+      }
       if (hasSerializedMessage()) {
         if (!getSerializedMessage()
-            .equals(other.getSerializedMessage())) return false;
+            .equals(other.getSerializedMessage())) {
+          return false;
+        }
       }
-      if (hasStatusMessage() != other.hasStatusMessage()) return false;
+      if (hasStatusMessage() != other.hasStatusMessage()) {
+        return false;
+      }
       if (hasStatusMessage()) {
         if (!getStatusMessage()
-            .equals(other.getStatusMessage())) return false;
+            .equals(other.getStatusMessage())) {
+          return false;
+        }
       }
-      if (hasIdentifier() != other.hasIdentifier()) return false;
+      if (hasIdentifier() != other.hasIdentifier()) {
+        return false;
+      }
       if (hasIdentifier()) {
         if (!getIdentifier()
-            .equals(other.getIdentifier())) return false;
+            .equals(other.getIdentifier())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -16238,84 +18366,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.ProtocolMessage prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -16328,6 +18383,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProtocolMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.ProtocolMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.ProtocolMessage}
      */
@@ -16335,18 +18401,14 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.ProtocolMessage)
         com.netki.bip75.protocol.Messages.ProtocolMessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.ProtocolMessage.class, com.netki.bip75.protocol.Messages.ProtocolMessage.Builder.class);
-      }
+      private int bitField0_;
+      private long version_ = 1L;
+      private long statusCode_ = 1L;
+      private int messageType_ = 0;
+      private com.google.protobuf.ByteString serializedMessage_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object statusMessage_ = "";
+      private com.google.protobuf.ByteString identifier_ = com.google.protobuf.ByteString.EMPTY;
 
       // Construct using com.netki.bip75.protocol.Messages.ProtocolMessage.newBuilder()
       private Builder() {
@@ -16358,11 +18420,27 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.ProtocolMessage.class,
+                com.netki.bip75.protocol.Messages.ProtocolMessage.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -16383,7 +18461,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_ProtocolMessage_descriptor;
       }
 
@@ -16403,7 +18481,8 @@ public final class Messages {
 
       @java.lang.Override
       public com.netki.bip75.protocol.Messages.ProtocolMessage buildPartial() {
-        com.netki.bip75.protocol.Messages.ProtocolMessage result = new com.netki.bip75.protocol.Messages.ProtocolMessage(this);
+        com.netki.bip75.protocol.Messages.ProtocolMessage result = new com.netki.bip75.protocol.Messages.ProtocolMessage(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -16439,38 +18518,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.ProtocolMessage) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.ProtocolMessage)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.ProtocolMessage) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -16478,7 +18563,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.ProtocolMessage other) {
-        if (other == com.netki.bip75.protocol.Messages.ProtocolMessage.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.ProtocolMessage.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasVersion()) {
           setVersion(other.getVersion());
         }
@@ -16542,37 +18629,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private long version_ = 1L;
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return Whether the version field is set.
        */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return The version.
        */
       public long getVersion() {
         return version_;
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -16582,12 +18672,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -16597,35 +18689,39 @@ public final class Messages {
         return this;
       }
 
-      private long statusCode_ = 1L;
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return Whether the statusCode field is set.
        */
       public boolean hasStatusCode() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return The statusCode.
        */
       public long getStatusCode() {
         return statusCode_;
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @param value The statusCode to set.
        * @return This builder for chaining.
        */
@@ -16635,12 +18731,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusCode() {
@@ -16650,37 +18748,42 @@ public final class Messages {
         return this;
       }
 
-      private int messageType_ = 0;
       /**
        * <pre>
        * Message Type of serialized_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return Whether the messageType field is set.
        */
       public boolean hasMessageType() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * Message Type of serialized_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return The messageType.
        */
       public com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType() {
         @SuppressWarnings("deprecation")
-        com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(messageType_);
+        com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType
+            .valueOf(messageType_);
         return result == null ? com.netki.bip75.protocol.Messages.ProtocolMessageType.UNKNOWN_MESSAGE_TYPE : result;
       }
+
       /**
        * <pre>
        * Message Type of serialized_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @param value The messageType to set.
        * @return This builder for chaining.
        */
@@ -16693,12 +18796,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Message Type of serialized_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMessageType() {
@@ -16708,53 +18813,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString serializedMessage_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Serialized Payment Protocol Message
        * </pre>
        *
        * <code>required bytes serialized_message = 4;</code>
+       *
        * @return Whether the serializedMessage field is set.
        */
       public boolean hasSerializedMessage() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <pre>
        * Serialized Payment Protocol Message
        * </pre>
        *
        * <code>required bytes serialized_message = 4;</code>
+       *
        * @return The serializedMessage.
        */
       public com.google.protobuf.ByteString getSerializedMessage() {
         return serializedMessage_;
       }
+
       /**
        * <pre>
        * Serialized Payment Protocol Message
        * </pre>
        *
        * <code>required bytes serialized_message = 4;</code>
+       *
        * @param value The serializedMessage to set.
        * @return This builder for chaining.
        */
       public Builder setSerializedMessage(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         serializedMessage_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Serialized Payment Protocol Message
        * </pre>
        *
        * <code>required bytes serialized_message = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSerializedMessage() {
@@ -16764,24 +18875,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object statusMessage_ = "";
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 5;</code>
+       *
        * @return Whether the statusMessage field is set.
        */
       public boolean hasStatusMessage() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 5;</code>
+       *
        * @return The statusMessage.
        */
       public java.lang.String getStatusMessage() {
@@ -16798,19 +18911,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 5;</code>
+       *
+       * @param value The statusMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusMessage(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        statusMessage_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable Payment Protocol status message
+       * </pre>
+       *
+       * <code>optional string status_message = 5;</code>
+       *
        * @return The bytes for statusMessage.
        */
       public com.google.protobuf.ByteString
-          getStatusMessageBytes() {
+      getStatusMessageBytes() {
         java.lang.Object ref = statusMessage_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           statusMessage_ = b;
@@ -16819,31 +18955,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 5;</code>
-       * @param value The statusMessage to set.
+       *
+       * @param value The bytes for statusMessage to set.
        * @return This builder for chaining.
        */
-      public Builder setStatusMessage(
-          java.lang.String value) {
+      public Builder setStatusMessageBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         statusMessage_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 5;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusMessage() {
@@ -16852,73 +18992,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable Payment Protocol status message
-       * </pre>
-       *
-       * <code>optional string status_message = 5;</code>
-       * @param value The bytes for statusMessage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        statusMessage_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString identifier_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 6;</code>
+       *
        * @return Whether the identifier field is set.
        */
       public boolean hasIdentifier() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 6;</code>
+       *
        * @return The identifier.
        */
       public com.google.protobuf.ByteString getIdentifier() {
         return identifier_;
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 6;</code>
+       *
        * @param value The identifier to set.
        * @return This builder for chaining.
        */
       public Builder setIdentifier(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
         identifier_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 6;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearIdentifier() {
@@ -16927,6 +19054,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16939,263 +19067,65 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.ProtocolMessage)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.ProtocolMessage)
-    private static final com.netki.bip75.protocol.Messages.ProtocolMessage DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.ProtocolMessage();
-    }
-
-    public static com.netki.bip75.protocol.Messages.ProtocolMessage getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ProtocolMessage>
-        PARSER = new com.google.protobuf.AbstractParser<ProtocolMessage>() {
-      @java.lang.Override
-      public ProtocolMessage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProtocolMessage(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProtocolMessage> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProtocolMessage> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.ProtocolMessage getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface EncryptedProtocolMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:payments.EncryptedProtocolMessage)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Protocol version number
-     * </pre>
-     *
-     * <code>required uint64 version = 1 [default = 1];</code>
-     * @return Whether the version field is set.
-     */
-    boolean hasVersion();
-    /**
-     * <pre>
-     * Protocol version number
-     * </pre>
-     *
-     * <code>required uint64 version = 1 [default = 1];</code>
-     * @return The version.
-     */
-    long getVersion();
-
-    /**
-     * <pre>
-     * Payment Protocol Status Code (Default: 1 "OK")
-     * </pre>
-     *
-     * <code>required uint64 status_code = 2 [default = 1];</code>
-     * @return Whether the statusCode field is set.
-     */
-    boolean hasStatusCode();
-    /**
-     * <pre>
-     * Payment Protocol Status Code (Default: 1 "OK")
-     * </pre>
-     *
-     * <code>required uint64 status_code = 2 [default = 1];</code>
-     * @return The statusCode.
-     */
-    long getStatusCode();
-
-    /**
-     * <pre>
-     * Message Type of Decrypted encrypted_message
-     * </pre>
-     *
-     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
-     * @return Whether the messageType field is set.
-     */
-    boolean hasMessageType();
-    /**
-     * <pre>
-     * Message Type of Decrypted encrypted_message
-     * </pre>
-     *
-     * <code>required .payments.ProtocolMessageType message_type = 3;</code>
-     * @return The messageType.
-     */
-    com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType();
-
-    /**
-     * <pre>
-     * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
-     * </pre>
-     *
-     * <code>required bytes encrypted_message = 4;</code>
-     * @return Whether the encryptedMessage field is set.
-     */
-    boolean hasEncryptedMessage();
-    /**
-     * <pre>
-     * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
-     * </pre>
-     *
-     * <code>required bytes encrypted_message = 4;</code>
-     * @return The encryptedMessage.
-     */
-    com.google.protobuf.ByteString getEncryptedMessage();
-
-    /**
-     * <pre>
-     * Receiver's DER-encoded EC Public Key
-     * </pre>
-     *
-     * <code>required bytes receiver_public_key = 5;</code>
-     * @return Whether the receiverPublicKey field is set.
-     */
-    boolean hasReceiverPublicKey();
-    /**
-     * <pre>
-     * Receiver's DER-encoded EC Public Key
-     * </pre>
-     *
-     * <code>required bytes receiver_public_key = 5;</code>
-     * @return The receiverPublicKey.
-     */
-    com.google.protobuf.ByteString getReceiverPublicKey();
-
-    /**
-     * <pre>
-     * Sender's DER-encoded EC Public Key
-     * </pre>
-     *
-     * <code>required bytes sender_public_key = 6;</code>
-     * @return Whether the senderPublicKey field is set.
-     */
-    boolean hasSenderPublicKey();
-    /**
-     * <pre>
-     * Sender's DER-encoded EC Public Key
-     * </pre>
-     *
-     * <code>required bytes sender_public_key = 6;</code>
-     * @return The senderPublicKey.
-     */
-    com.google.protobuf.ByteString getSenderPublicKey();
-
-    /**
-     * <pre>
-     * Microseconds since epoch
-     * </pre>
-     *
-     * <code>required uint64 nonce = 7;</code>
-     * @return Whether the nonce field is set.
-     */
-    boolean hasNonce();
-    /**
-     * <pre>
-     * Microseconds since epoch
-     * </pre>
-     *
-     * <code>required uint64 nonce = 7;</code>
-     * @return The nonce.
-     */
-    long getNonce();
-
-    /**
-     * <pre>
-     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
-     * </pre>
-     *
-     * <code>required bytes identifier = 8;</code>
-     * @return Whether the identifier field is set.
-     */
-    boolean hasIdentifier();
-    /**
-     * <pre>
-     * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
-     * </pre>
-     *
-     * <code>required bytes identifier = 8;</code>
-     * @return The identifier.
-     */
-    com.google.protobuf.ByteString getIdentifier();
-
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 9;</code>
-     * @return Whether the statusMessage field is set.
-     */
-    boolean hasStatusMessage();
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 9;</code>
-     * @return The statusMessage.
-     */
-    java.lang.String getStatusMessage();
-    /**
-     * <pre>
-     * Human-readable Payment Protocol status message
-     * </pre>
-     *
-     * <code>optional string status_message = 9;</code>
-     * @return The bytes for statusMessage.
-     */
-    com.google.protobuf.ByteString
-        getStatusMessageBytes();
-
-    /**
-     * <pre>
-     * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
-     * </pre>
-     *
-     * <code>optional bytes signature = 10;</code>
-     * @return Whether the signature field is set.
-     */
-    boolean hasSignature();
-    /**
-     * <pre>
-     * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
-     * </pre>
-     *
-     * <code>optional bytes signature = 10;</code>
-     * @return The signature.
-     */
-    com.google.protobuf.ByteString getSignature();
-  }
   /**
    * Protobuf type {@code payments.EncryptedProtocolMessage}
    */
-  public  static final class EncryptedProtocolMessage extends
+  public static final class EncryptedProtocolMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:payments.EncryptedProtocolMessage)
       EncryptedProtocolMessageOrBuilder {
-  private static final long serialVersionUID = 0L;
+
+    public static final int VERSION_FIELD_NUMBER = 1;
+    public static final int STATUS_CODE_FIELD_NUMBER = 2;
+    public static final int MESSAGE_TYPE_FIELD_NUMBER = 3;
+    public static final int ENCRYPTED_MESSAGE_FIELD_NUMBER = 4;
+    public static final int RECEIVER_PUBLIC_KEY_FIELD_NUMBER = 5;
+    public static final int SENDER_PUBLIC_KEY_FIELD_NUMBER = 6;
+    public static final int NONCE_FIELD_NUMBER = 7;
+    public static final int IDENTIFIER_FIELD_NUMBER = 8;
+    public static final int STATUS_MESSAGE_FIELD_NUMBER = 9;
+    public static final int SIGNATURE_FIELD_NUMBER = 10;
+    @java.lang.Deprecated
+    public static final com.google.protobuf.Parser<EncryptedProtocolMessage>
+        PARSER = new com.google.protobuf.AbstractParser<EncryptedProtocolMessage>() {
+      @java.lang.Override
+      public EncryptedProtocolMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EncryptedProtocolMessage(input, extensionRegistry);
+      }
+    };
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:payments.EncryptedProtocolMessage)
+    private static final com.netki.bip75.protocol.Messages.EncryptedProtocolMessage DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.EncryptedProtocolMessage();
+    }
+
+    private int bitField0_;
+    private long version_;
+    private long statusCode_;
+    private int messageType_;
+    private com.google.protobuf.ByteString encryptedMessage_;
+    private com.google.protobuf.ByteString receiverPublicKey_;
+    private com.google.protobuf.ByteString senderPublicKey_;
+    private long nonce_;
+    private com.google.protobuf.ByteString identifier_;
+    private volatile java.lang.Object statusMessage_;
+    private com.google.protobuf.ByteString signature_;
+    private byte memoizedIsInitialized = -1;
     // Use EncryptedProtocolMessage.newBuilder() to construct.
     private EncryptedProtocolMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private EncryptedProtocolMessage() {
       version_ = 1L;
       statusCode_ = 1L;
@@ -17208,18 +19138,6 @@ public final class Messages {
       signature_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new EncryptedProtocolMessage();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private EncryptedProtocolMessage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17251,8 +19169,9 @@ public final class Messages {
             }
             case 24: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              com.netki.bip75.protocol.Messages.ProtocolMessageType value = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(rawValue);
+              @SuppressWarnings("deprecation")
+              com.netki.bip75.protocol.Messages.ProtocolMessageType value = com.netki.bip75.protocol.Messages.ProtocolMessageType
+                  .valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
@@ -17316,241 +19235,363 @@ public final class Messages {
         makeExtensionsImmutable();
       }
     }
+
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_descriptor;
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseDelimitedFrom(
+        java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.netki.bip75.protocol.Messages.EncryptedProtocolMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<EncryptedProtocolMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EncryptedProtocolMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.class, com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.Builder.class);
+              com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.class,
+              com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int VERSION_FIELD_NUMBER = 1;
-    private long version_;
     /**
      * <pre>
      * Protocol version number
      * </pre>
      *
      * <code>required uint64 version = 1 [default = 1];</code>
+     *
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <pre>
      * Protocol version number
      * </pre>
      *
      * <code>required uint64 version = 1 [default = 1];</code>
+     *
      * @return The version.
      */
     public long getVersion() {
       return version_;
     }
 
-    public static final int STATUS_CODE_FIELD_NUMBER = 2;
-    private long statusCode_;
     /**
      * <pre>
      * Payment Protocol Status Code (Default: 1 "OK")
      * </pre>
      *
      * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
      * @return Whether the statusCode field is set.
      */
     public boolean hasStatusCode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <pre>
      * Payment Protocol Status Code (Default: 1 "OK")
      * </pre>
      *
      * <code>required uint64 status_code = 2 [default = 1];</code>
+     *
      * @return The statusCode.
      */
     public long getStatusCode() {
       return statusCode_;
     }
 
-    public static final int MESSAGE_TYPE_FIELD_NUMBER = 3;
-    private int messageType_;
     /**
      * <pre>
      * Message Type of Decrypted encrypted_message
      * </pre>
      *
      * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
      * @return Whether the messageType field is set.
      */
     public boolean hasMessageType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <pre>
      * Message Type of Decrypted encrypted_message
      * </pre>
      *
      * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+     *
      * @return The messageType.
      */
     public com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType() {
       @SuppressWarnings("deprecation")
-      com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(messageType_);
+      com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType
+          .valueOf(messageType_);
       return result == null ? com.netki.bip75.protocol.Messages.ProtocolMessageType.UNKNOWN_MESSAGE_TYPE : result;
     }
 
-    public static final int ENCRYPTED_MESSAGE_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString encryptedMessage_;
     /**
      * <pre>
      * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
      * </pre>
      *
      * <code>required bytes encrypted_message = 4;</code>
+     *
      * @return Whether the encryptedMessage field is set.
      */
     public boolean hasEncryptedMessage() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <pre>
      * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
      * </pre>
      *
      * <code>required bytes encrypted_message = 4;</code>
+     *
      * @return The encryptedMessage.
      */
     public com.google.protobuf.ByteString getEncryptedMessage() {
       return encryptedMessage_;
     }
 
-    public static final int RECEIVER_PUBLIC_KEY_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString receiverPublicKey_;
     /**
      * <pre>
      * Receiver's DER-encoded EC Public Key
      * </pre>
      *
      * <code>required bytes receiver_public_key = 5;</code>
+     *
      * @return Whether the receiverPublicKey field is set.
      */
     public boolean hasReceiverPublicKey() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      * <pre>
      * Receiver's DER-encoded EC Public Key
      * </pre>
      *
      * <code>required bytes receiver_public_key = 5;</code>
+     *
      * @return The receiverPublicKey.
      */
     public com.google.protobuf.ByteString getReceiverPublicKey() {
       return receiverPublicKey_;
     }
 
-    public static final int SENDER_PUBLIC_KEY_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString senderPublicKey_;
     /**
      * <pre>
      * Sender's DER-encoded EC Public Key
      * </pre>
      *
      * <code>required bytes sender_public_key = 6;</code>
+     *
      * @return Whether the senderPublicKey field is set.
      */
     public boolean hasSenderPublicKey() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      * <pre>
      * Sender's DER-encoded EC Public Key
      * </pre>
      *
      * <code>required bytes sender_public_key = 6;</code>
+     *
      * @return The senderPublicKey.
      */
     public com.google.protobuf.ByteString getSenderPublicKey() {
       return senderPublicKey_;
     }
 
-    public static final int NONCE_FIELD_NUMBER = 7;
-    private long nonce_;
     /**
      * <pre>
      * Microseconds since epoch
      * </pre>
      *
      * <code>required uint64 nonce = 7;</code>
+     *
      * @return Whether the nonce field is set.
      */
     public boolean hasNonce() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      * <pre>
      * Microseconds since epoch
      * </pre>
      *
      * <code>required uint64 nonce = 7;</code>
+     *
      * @return The nonce.
      */
     public long getNonce() {
       return nonce_;
     }
 
-    public static final int IDENTIFIER_FIELD_NUMBER = 8;
-    private com.google.protobuf.ByteString identifier_;
     /**
      * <pre>
      * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
      * </pre>
      *
      * <code>required bytes identifier = 8;</code>
+     *
      * @return Whether the identifier field is set.
      */
     public boolean hasIdentifier() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      * <pre>
      * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
      * </pre>
      *
      * <code>required bytes identifier = 8;</code>
+     *
      * @return The identifier.
      */
     public com.google.protobuf.ByteString getIdentifier() {
       return identifier_;
     }
 
-    public static final int STATUS_MESSAGE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object statusMessage_;
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 9;</code>
+     *
      * @return Whether the statusMessage field is set.
      */
     public boolean hasStatusMessage() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 9;</code>
+     *
      * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
@@ -17558,7 +19599,7 @@ public final class Messages {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -17567,19 +19608,21 @@ public final class Messages {
         return s;
       }
     }
+
     /**
      * <pre>
      * Human-readable Payment Protocol status message
      * </pre>
      *
      * <code>optional string status_message = 9;</code>
+     *
      * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         statusMessage_ = b;
@@ -17589,37 +19632,41 @@ public final class Messages {
       }
     }
 
-    public static final int SIGNATURE_FIELD_NUMBER = 10;
-    private com.google.protobuf.ByteString signature_;
     /**
      * <pre>
      * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
      * </pre>
      *
      * <code>optional bytes signature = 10;</code>
+     *
      * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      * <pre>
      * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
      * </pre>
      *
      * <code>optional bytes signature = 10;</code>
+     *
      * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) {
+        return true;
+      }
+      if (isInitialized == 0) {
+        return false;
+      }
 
       if (!hasVersion()) {
         memoizedIsInitialized = 0;
@@ -17659,7 +19706,7 @@ public final class Messages {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt64(1, version_);
       }
@@ -17696,47 +19743,49 @@ public final class Messages {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) {
+        return size;
+      }
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, version_);
+            .computeUInt64Size(1, version_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, statusCode_);
+            .computeUInt64Size(2, statusCode_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, messageType_);
+            .computeEnumSize(3, messageType_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, encryptedMessage_);
+            .computeBytesSize(4, encryptedMessage_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, receiverPublicKey_);
+            .computeBytesSize(5, receiverPublicKey_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, senderPublicKey_);
+            .computeBytesSize(6, senderPublicKey_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, nonce_);
+            .computeUInt64Size(7, nonce_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, identifier_);
+            .computeBytesSize(8, identifier_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, statusMessage_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, signature_);
+            .computeBytesSize(10, signature_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17746,63 +19795,105 @@ public final class Messages {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.netki.bip75.protocol.Messages.EncryptedProtocolMessage)) {
         return super.equals(obj);
       }
       com.netki.bip75.protocol.Messages.EncryptedProtocolMessage other = (com.netki.bip75.protocol.Messages.EncryptedProtocolMessage) obj;
 
-      if (hasVersion() != other.hasVersion()) return false;
+      if (hasVersion() != other.hasVersion()) {
+        return false;
+      }
       if (hasVersion()) {
         if (getVersion()
-            != other.getVersion()) return false;
+            != other.getVersion()) {
+          return false;
+        }
       }
-      if (hasStatusCode() != other.hasStatusCode()) return false;
+      if (hasStatusCode() != other.hasStatusCode()) {
+        return false;
+      }
       if (hasStatusCode()) {
         if (getStatusCode()
-            != other.getStatusCode()) return false;
+            != other.getStatusCode()) {
+          return false;
+        }
       }
-      if (hasMessageType() != other.hasMessageType()) return false;
+      if (hasMessageType() != other.hasMessageType()) {
+        return false;
+      }
       if (hasMessageType()) {
-        if (messageType_ != other.messageType_) return false;
+        if (messageType_ != other.messageType_) {
+          return false;
+        }
       }
-      if (hasEncryptedMessage() != other.hasEncryptedMessage()) return false;
+      if (hasEncryptedMessage() != other.hasEncryptedMessage()) {
+        return false;
+      }
       if (hasEncryptedMessage()) {
         if (!getEncryptedMessage()
-            .equals(other.getEncryptedMessage())) return false;
+            .equals(other.getEncryptedMessage())) {
+          return false;
+        }
       }
-      if (hasReceiverPublicKey() != other.hasReceiverPublicKey()) return false;
+      if (hasReceiverPublicKey() != other.hasReceiverPublicKey()) {
+        return false;
+      }
       if (hasReceiverPublicKey()) {
         if (!getReceiverPublicKey()
-            .equals(other.getReceiverPublicKey())) return false;
+            .equals(other.getReceiverPublicKey())) {
+          return false;
+        }
       }
-      if (hasSenderPublicKey() != other.hasSenderPublicKey()) return false;
+      if (hasSenderPublicKey() != other.hasSenderPublicKey()) {
+        return false;
+      }
       if (hasSenderPublicKey()) {
         if (!getSenderPublicKey()
-            .equals(other.getSenderPublicKey())) return false;
+            .equals(other.getSenderPublicKey())) {
+          return false;
+        }
       }
-      if (hasNonce() != other.hasNonce()) return false;
+      if (hasNonce() != other.hasNonce()) {
+        return false;
+      }
       if (hasNonce()) {
         if (getNonce()
-            != other.getNonce()) return false;
+            != other.getNonce()) {
+          return false;
+        }
       }
-      if (hasIdentifier() != other.hasIdentifier()) return false;
+      if (hasIdentifier() != other.hasIdentifier()) {
+        return false;
+      }
       if (hasIdentifier()) {
         if (!getIdentifier()
-            .equals(other.getIdentifier())) return false;
+            .equals(other.getIdentifier())) {
+          return false;
+        }
       }
-      if (hasStatusMessage() != other.hasStatusMessage()) return false;
+      if (hasStatusMessage() != other.hasStatusMessage()) {
+        return false;
+      }
       if (hasStatusMessage()) {
         if (!getStatusMessage()
-            .equals(other.getStatusMessage())) return false;
+            .equals(other.getStatusMessage())) {
+          return false;
+        }
       }
-      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature() != other.hasSignature()) {
+        return false;
+      }
       if (hasSignature()) {
         if (!getSignature()
-            .equals(other.getSignature())) return false;
+            .equals(other.getSignature())) {
+          return false;
+        }
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) {
+        return false;
+      }
       return true;
     }
 
@@ -17861,84 +19952,11 @@ public final class Messages {
       return hash;
     }
 
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netki.bip75.protocol.Messages.EncryptedProtocolMessage prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -17951,6 +19969,17 @@ public final class Messages {
       Builder builder = new Builder(parent);
       return builder;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EncryptedProtocolMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.netki.bip75.protocol.Messages.EncryptedProtocolMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
     /**
      * Protobuf type {@code payments.EncryptedProtocolMessage}
      */
@@ -17958,18 +19987,18 @@ public final class Messages {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:payments.EncryptedProtocolMessage)
         com.netki.bip75.protocol.Messages.EncryptedProtocolMessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_descriptor;
-      }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.class, com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.Builder.class);
-      }
+      private int bitField0_;
+      private long version_ = 1L;
+      private long statusCode_ = 1L;
+      private int messageType_ = 0;
+      private com.google.protobuf.ByteString encryptedMessage_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString receiverPublicKey_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString senderPublicKey_ = com.google.protobuf.ByteString.EMPTY;
+      private long nonce_;
+      private com.google.protobuf.ByteString identifier_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object statusMessage_ = "";
+      private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
 
       // Construct using com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.newBuilder()
       private Builder() {
@@ -17981,11 +20010,27 @@ public final class Messages {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.class,
+                com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.Builder.class);
+      }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+            .alwaysUseFieldBuilders) {
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -18014,7 +20059,7 @@ public final class Messages {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.netki.bip75.protocol.Messages.internal_static_payments_EncryptedProtocolMessage_descriptor;
       }
 
@@ -18034,7 +20079,8 @@ public final class Messages {
 
       @java.lang.Override
       public com.netki.bip75.protocol.Messages.EncryptedProtocolMessage buildPartial() {
-        com.netki.bip75.protocol.Messages.EncryptedProtocolMessage result = new com.netki.bip75.protocol.Messages.EncryptedProtocolMessage(this);
+        com.netki.bip75.protocol.Messages.EncryptedProtocolMessage result = new com.netki.bip75.protocol.Messages.EncryptedProtocolMessage(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -18086,38 +20132,44 @@ public final class Messages {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.netki.bip75.protocol.Messages.EncryptedProtocolMessage) {
-          return mergeFrom((com.netki.bip75.protocol.Messages.EncryptedProtocolMessage)other);
+          return mergeFrom((com.netki.bip75.protocol.Messages.EncryptedProtocolMessage) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -18125,7 +20177,9 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.netki.bip75.protocol.Messages.EncryptedProtocolMessage other) {
-        if (other == com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.getDefaultInstance()) return this;
+        if (other == com.netki.bip75.protocol.Messages.EncryptedProtocolMessage.getDefaultInstance()) {
+          return this;
+        }
         if (other.hasVersion()) {
           setVersion(other.getVersion());
         }
@@ -18210,37 +20264,40 @@ public final class Messages {
         }
         return this;
       }
-      private int bitField0_;
 
-      private long version_ = 1L;
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return Whether the version field is set.
        */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return The version.
        */
       public long getVersion() {
         return version_;
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -18250,12 +20307,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Protocol version number
        * </pre>
        *
        * <code>required uint64 version = 1 [default = 1];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -18265,35 +20324,39 @@ public final class Messages {
         return this;
       }
 
-      private long statusCode_ = 1L;
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return Whether the statusCode field is set.
        */
       public boolean hasStatusCode() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return The statusCode.
        */
       public long getStatusCode() {
         return statusCode_;
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @param value The statusCode to set.
        * @return This builder for chaining.
        */
@@ -18303,12 +20366,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Payment Protocol Status Code (Default: 1 "OK")
        * </pre>
        *
        * <code>required uint64 status_code = 2 [default = 1];</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusCode() {
@@ -18318,37 +20383,42 @@ public final class Messages {
         return this;
       }
 
-      private int messageType_ = 0;
       /**
        * <pre>
        * Message Type of Decrypted encrypted_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return Whether the messageType field is set.
        */
       public boolean hasMessageType() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <pre>
        * Message Type of Decrypted encrypted_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return The messageType.
        */
       public com.netki.bip75.protocol.Messages.ProtocolMessageType getMessageType() {
         @SuppressWarnings("deprecation")
-        com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType.valueOf(messageType_);
+        com.netki.bip75.protocol.Messages.ProtocolMessageType result = com.netki.bip75.protocol.Messages.ProtocolMessageType
+            .valueOf(messageType_);
         return result == null ? com.netki.bip75.protocol.Messages.ProtocolMessageType.UNKNOWN_MESSAGE_TYPE : result;
       }
+
       /**
        * <pre>
        * Message Type of Decrypted encrypted_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @param value The messageType to set.
        * @return This builder for chaining.
        */
@@ -18361,12 +20431,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Message Type of Decrypted encrypted_message
        * </pre>
        *
        * <code>required .payments.ProtocolMessageType message_type = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMessageType() {
@@ -18376,53 +20448,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString encryptedMessage_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
        * </pre>
        *
        * <code>required bytes encrypted_message = 4;</code>
+       *
        * @return Whether the encryptedMessage field is set.
        */
       public boolean hasEncryptedMessage() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <pre>
        * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
        * </pre>
        *
        * <code>required bytes encrypted_message = 4;</code>
+       *
        * @return The encryptedMessage.
        */
       public com.google.protobuf.ByteString getEncryptedMessage() {
         return encryptedMessage_;
       }
+
       /**
        * <pre>
        * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
        * </pre>
        *
        * <code>required bytes encrypted_message = 4;</code>
+       *
        * @param value The encryptedMessage to set.
        * @return This builder for chaining.
        */
       public Builder setEncryptedMessage(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         encryptedMessage_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * AES-256-GCM Encrypted (as defined in BIP75) Payment Protocol Message
        * </pre>
        *
        * <code>required bytes encrypted_message = 4;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearEncryptedMessage() {
@@ -18432,53 +20510,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString receiverPublicKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Receiver's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes receiver_public_key = 5;</code>
+       *
        * @return Whether the receiverPublicKey field is set.
        */
       public boolean hasReceiverPublicKey() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        * <pre>
        * Receiver's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes receiver_public_key = 5;</code>
+       *
        * @return The receiverPublicKey.
        */
       public com.google.protobuf.ByteString getReceiverPublicKey() {
         return receiverPublicKey_;
       }
+
       /**
        * <pre>
        * Receiver's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes receiver_public_key = 5;</code>
+       *
        * @param value The receiverPublicKey to set.
        * @return This builder for chaining.
        */
       public Builder setReceiverPublicKey(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         receiverPublicKey_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Receiver's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes receiver_public_key = 5;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearReceiverPublicKey() {
@@ -18488,53 +20572,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString senderPublicKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Sender's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes sender_public_key = 6;</code>
+       *
        * @return Whether the senderPublicKey field is set.
        */
       public boolean hasSenderPublicKey() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        * <pre>
        * Sender's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes sender_public_key = 6;</code>
+       *
        * @return The senderPublicKey.
        */
       public com.google.protobuf.ByteString getSenderPublicKey() {
         return senderPublicKey_;
       }
+
       /**
        * <pre>
        * Sender's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes sender_public_key = 6;</code>
+       *
        * @param value The senderPublicKey to set.
        * @return This builder for chaining.
        */
       public Builder setSenderPublicKey(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
         senderPublicKey_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Sender's DER-encoded EC Public Key
        * </pre>
        *
        * <code>required bytes sender_public_key = 6;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSenderPublicKey() {
@@ -18544,35 +20634,39 @@ public final class Messages {
         return this;
       }
 
-      private long nonce_ ;
       /**
        * <pre>
        * Microseconds since epoch
        * </pre>
        *
        * <code>required uint64 nonce = 7;</code>
+       *
        * @return Whether the nonce field is set.
        */
       public boolean hasNonce() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        * <pre>
        * Microseconds since epoch
        * </pre>
        *
        * <code>required uint64 nonce = 7;</code>
+       *
        * @return The nonce.
        */
       public long getNonce() {
         return nonce_;
       }
+
       /**
        * <pre>
        * Microseconds since epoch
        * </pre>
        *
        * <code>required uint64 nonce = 7;</code>
+       *
        * @param value The nonce to set.
        * @return This builder for chaining.
        */
@@ -18582,12 +20676,14 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Microseconds since epoch
        * </pre>
        *
        * <code>required uint64 nonce = 7;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearNonce() {
@@ -18597,53 +20693,59 @@ public final class Messages {
         return this;
       }
 
-      private com.google.protobuf.ByteString identifier_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 8;</code>
+       *
        * @return Whether the identifier field is set.
        */
       public boolean hasIdentifier() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 8;</code>
+       *
        * @return The identifier.
        */
       public com.google.protobuf.ByteString getIdentifier() {
         return identifier_;
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 8;</code>
+       *
        * @param value The identifier to set.
        * @return This builder for chaining.
        */
       public Builder setIdentifier(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
         identifier_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Unique key to identify this entire exchange on the server. Default value SHOULD be SHA256(Serialized Initial InvoiceRequest + Current Epoch Time in Seconds as a String)
        * </pre>
        *
        * <code>required bytes identifier = 8;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearIdentifier() {
@@ -18653,24 +20755,26 @@ public final class Messages {
         return this;
       }
 
-      private java.lang.Object statusMessage_ = "";
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 9;</code>
+       *
        * @return Whether the statusMessage field is set.
        */
       public boolean hasStatusMessage() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 9;</code>
+       *
        * @return The statusMessage.
        */
       public java.lang.String getStatusMessage() {
@@ -18687,19 +20791,42 @@ public final class Messages {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 9;</code>
+       *
+       * @param value The statusMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusMessage(
+          java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        statusMessage_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Human-readable Payment Protocol status message
+       * </pre>
+       *
+       * <code>optional string status_message = 9;</code>
+       *
        * @return The bytes for statusMessage.
        */
       public com.google.protobuf.ByteString
-          getStatusMessageBytes() {
+      getStatusMessageBytes() {
         java.lang.Object ref = statusMessage_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           statusMessage_ = b;
@@ -18708,31 +20835,35 @@ public final class Messages {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 9;</code>
-       * @param value The statusMessage to set.
+       *
+       * @param value The bytes for statusMessage to set.
        * @return This builder for chaining.
        */
-      public Builder setStatusMessage(
-          java.lang.String value) {
+      public Builder setStatusMessageBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
         statusMessage_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Human-readable Payment Protocol status message
        * </pre>
        *
        * <code>optional string status_message = 9;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearStatusMessage() {
@@ -18741,73 +20872,60 @@ public final class Messages {
         onChanged();
         return this;
       }
-      /**
-       * <pre>
-       * Human-readable Payment Protocol status message
-       * </pre>
-       *
-       * <code>optional string status_message = 9;</code>
-       * @param value The bytes for statusMessage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
-        statusMessage_ = value;
-        onChanged();
-        return this;
-      }
 
-      private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
        * </pre>
        *
        * <code>optional bytes signature = 10;</code>
+       *
        * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
         return ((bitField0_ & 0x00000200) != 0);
       }
+
       /**
        * <pre>
        * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
        * </pre>
        *
        * <code>optional bytes signature = 10;</code>
+       *
        * @return The signature.
        */
       public com.google.protobuf.ByteString getSignature() {
         return signature_;
       }
+
       /**
        * <pre>
        * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
        * </pre>
        *
        * <code>optional bytes signature = 10;</code>
+       *
        * @param value The signature to set.
        * @return This builder for chaining.
        */
       public Builder setSignature(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
         signature_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <pre>
        * Signature over the full EncryptedProtocolMessage with EC Key Belonging to Sender / Receiver, respectively
        * </pre>
        *
        * <code>optional bytes signature = 10;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
@@ -18816,6 +20934,7 @@ public final class Messages {
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18828,260 +20947,9 @@ public final class Messages {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:payments.EncryptedProtocolMessage)
     }
 
-    // @@protoc_insertion_point(class_scope:payments.EncryptedProtocolMessage)
-    private static final com.netki.bip75.protocol.Messages.EncryptedProtocolMessage DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netki.bip75.protocol.Messages.EncryptedProtocolMessage();
-    }
-
-    public static com.netki.bip75.protocol.Messages.EncryptedProtocolMessage getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<EncryptedProtocolMessage>
-        PARSER = new com.google.protobuf.AbstractParser<EncryptedProtocolMessage>() {
-      @java.lang.Override
-      public EncryptedProtocolMessage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EncryptedProtocolMessage(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<EncryptedProtocolMessage> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EncryptedProtocolMessage> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netki.bip75.protocol.Messages.EncryptedProtocolMessage getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_InvoiceRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_InvoiceRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_PaymentRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_PaymentRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_Payment_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_Payment_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_PaymentACK_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_PaymentACK_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_Beneficiary_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_Beneficiary_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_Originator_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_Originator_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_Attestation_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_Attestation_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_PaymentDetails_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_PaymentDetails_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_Output_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_Output_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_ProtocolMessage_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_ProtocolMessage_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_payments_EncryptedProtocolMessage_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\rpayment.proto\022\010payments\"\266\003\n\016InvoiceReq" +
-      "uest\022\021\n\006amount\030\001 \001(\004:\0010\022\014\n\004memo\030\002 \001(\t\022\030\n" +
-      "\020notification_url\030\003 \001(\t\022)\n\013originators\030\004" +
-      " \003(\0132\024.payments.Originator\022,\n\rbeneficiar" +
-      "ies\030\005 \003(\0132\025.payments.Beneficiary\022.\n\024orig" +
-      "inatorsAddresses\030\006 \003(\0132\020.payments.Output" +
-      "\0228\n\025attestationsRequested\030\007 \003(\0162\031.paymen" +
-      "ts.AttestationType\022\035\n\017sender_pki_type\030\010 " +
-      "\001(\t:\004none\022\027\n\017sender_pki_data\030\t \001(\014\022\030\n\020se" +
-      "nder_signature\030\n \001(\014\022\026\n\016sender_ev_cert\030\013" +
-      " \001(\014\022\033\n\023recipient_vasp_name\030\014 \001(\t\022\037\n\027rec" +
-      "ipient_chain_address\030\r \001(\t\"\222\002\n\016PaymentRe" +
-      "quest\022\"\n\027payment_details_version\030\001 \001(\r:\001" +
-      "1\022\"\n\032serialized_payment_details\030\002 \002(\014\022,\n" +
-      "\rbeneficiaries\030\003 \003(\0132\025.payments.Benefici" +
-      "ary\0228\n\025attestationsRequested\030\004 \003(\0162\031.pay" +
-      "ments.AttestationType\022\035\n\017sender_pki_type" +
-      "\030\005 \002(\t:\004none\022\027\n\017sender_pki_data\030\006 \001(\014\022\030\n" +
-      "\020sender_signature\030\007 \001(\014\"\302\001\n\007Payment\022\025\n\rm" +
-      "erchant_data\030\001 \001(\014\022\024\n\014transactions\030\002 \003(\014" +
-      "\022#\n\trefund_to\030\003 \003(\0132\020.payments.Output\022\014\n" +
-      "\004memo\030\004 \001(\t\022)\n\013originators\030\005 \003(\0132\024.payme" +
-      "nts.Originator\022,\n\rbeneficiaries\030\006 \003(\0132\025." +
-      "payments.Beneficiary\">\n\nPaymentACK\022\"\n\007pa" +
-      "yment\030\001 \002(\0132\021.payments.Payment\022\014\n\004memo\030\002" +
-      " \001(\t\"a\n\013Beneficiary\022%\n\027primary_for_trans" +
-      "action\030\001 \002(\010:\004true\022+\n\014attestations\030\002 \003(\013" +
-      "2\025.payments.Attestation\"`\n\nOriginator\022%\n" +
-      "\027primary_for_transaction\030\001 \002(\010:\004true\022+\n\014" +
-      "attestations\030\002 \003(\0132\025.payments.Attestatio" +
-      "n\"z\n\013Attestation\022.\n\013attestation\030\001 \001(\0162\031." +
-      "payments.AttestationType\022\026\n\010pki_type\030\002 \001" +
-      "(\t:\004none\022\020\n\010pki_data\030\003 \001(\014\022\021\n\tsignature\030" +
-      "\004 \001(\014\"\262\001\n\016PaymentDetails\022\025\n\007network\030\001 \001(" +
-      "\t:\004main\0220\n\026beneficiariesAddresses\030\002 \003(\0132" +
-      "\020.payments.Output\022\014\n\004time\030\003 \002(\004\022\017\n\007expir" +
-      "es\030\004 \001(\004\022\014\n\004memo\030\005 \001(\t\022\023\n\013payment_url\030\006 " +
-      "\001(\t\022\025\n\rmerchant_data\030\007 \001(\014\"U\n\006Output\022\021\n\006" +
-      "amount\030\001 \001(\004:\0010\022\016\n\006script\030\002 \001(\014\022(\n\010curre" +
-      "ncy\030\003 \001(\0162\026.payments.CurrencyType\"\272\001\n\017Pr" +
-      "otocolMessage\022\022\n\007version\030\001 \002(\004:\0011\022\026\n\013sta" +
-      "tus_code\030\002 \002(\004:\0011\0223\n\014message_type\030\003 \002(\0162" +
-      "\035.payments.ProtocolMessageType\022\032\n\022serial" +
-      "ized_message\030\004 \002(\014\022\026\n\016status_message\030\005 \001" +
-      "(\t\022\022\n\nidentifier\030\006 \002(\014\"\234\002\n\030EncryptedProt" +
-      "ocolMessage\022\022\n\007version\030\001 \002(\004:\0011\022\026\n\013statu" +
-      "s_code\030\002 \002(\004:\0011\0223\n\014message_type\030\003 \002(\0162\035." +
-      "payments.ProtocolMessageType\022\031\n\021encrypte" +
-      "d_message\030\004 \002(\014\022\033\n\023receiver_public_key\030\005" +
-      " \002(\014\022\031\n\021sender_public_key\030\006 \002(\014\022\r\n\005nonce" +
-      "\030\007 \002(\004\022\022\n\nidentifier\030\010 \002(\014\022\026\n\016status_mes" +
-      "sage\030\t \001(\t\022\021\n\tsignature\030\n \001(\014*w\n\023Protoco" +
-      "lMessageType\022\030\n\024UNKNOWN_MESSAGE_TYPE\020\000\022\023" +
-      "\n\017INVOICE_REQUEST\020\001\022\023\n\017PAYMENT_REQUEST\020\002" +
-      "\022\013\n\007PAYMENT\020\003\022\017\n\013PAYMENT_ACK\020\004*\242\006\n\017Attes" +
-      "tationType\022\025\n\021LEGAL_PERSON_NAME\020\000\022)\n%LEG" +
-      "AL_PERSON_PHONETIC_NAME_IDENTIFIER\020\001\022\026\n\022" +
-      "ADDRESS_DEPARTMENT\020\002\022\032\n\026ADDRESS_SUB_DEPA" +
-      "RTMENT\020\003\022\027\n\023ADDRESS_STREET_NAME\020\004\022\033\n\027ADD" +
-      "RESS_BUILDING_NUMBER\020\005\022\031\n\025ADDRESS_BUILDI" +
-      "NG_NAME\020\006\022\021\n\rADDRESS_FLOOR\020\007\022\023\n\017ADDRESS_" +
-      "POSTBOX\020\010\022\020\n\014ADDRESS_ROOM\020\t\022\024\n\020ADDRESS_P" +
-      "OSTCODE\020\n\022\025\n\021ADDRESS_TOWN_NAME\020\013\022\036\n\032ADDR" +
-      "ESS_TOWN_LOCATION_NAME\020\014\022\031\n\025ADDRESS_DIST" +
-      "RICT_NAME\020\r\022 \n\034ADDRESS_COUNTRY_SUB_DIVIS" +
-      "ION\020\016\022\030\n\024ADDRESS_ADDRESS_LINE\020\017\022\023\n\017ADDRE" +
-      "SS_COUNTRY\020\020\022%\n!NATURAL_PERSON_PRIMARY_I" +
-      "DENTIFIER\020\021\022\'\n#NATURAL_PERSON_SECONDARY_" +
-      "IDENTIFIER\020\022\022+\n\'NATURAL_PERSON_PHONETIC_" +
-      "NAME_IDENTIFIER\020\023\022\021\n\rDATE_OF_BIRTH\020\025\022\022\n\016" +
-      "PLACE_OF_BIRTH\020\026\022\030\n\024COUNTRY_OF_RESIDENCE" +
-      "\020\027\022\024\n\020COUNTRY_OF_ISSUE\020\030\022\033\n\027COUNTRY_OF_R" +
-      "EGISTRATION\020\031\022\027\n\023NATIONAL_IDENTIFIER\020\032\022\022" +
-      "\n\016ACCOUNT_NUMBER\020\033\022\033\n\027CUSTOMER_IDENTIFIC" +
-      "ATION\020\034\022\032\n\026REGISTRATION_AUTHORITY\020\035*I\n\014C" +
-      "urrencyType\022\013\n\007BITCOIN\020\000\022\014\n\010ETHEREUM\020\001\022\014" +
-      "\n\010LITECOIN\020\002\022\020\n\014BITCOIN_CASH\020\003B$\n\030com.ne" +
-      "tki.bip75.protocolB\010Messages"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_payments_InvoiceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_payments_InvoiceRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_InvoiceRequest_descriptor,
-        new java.lang.String[] { "Amount", "Memo", "NotificationUrl", "Originators", "Beneficiaries", "OriginatorsAddresses", "AttestationsRequested", "SenderPkiType", "SenderPkiData", "SenderSignature", "SenderEvCert", "RecipientVaspName", "RecipientChainAddress", });
-    internal_static_payments_PaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_payments_PaymentRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_PaymentRequest_descriptor,
-        new java.lang.String[] { "PaymentDetailsVersion", "SerializedPaymentDetails", "Beneficiaries", "AttestationsRequested", "SenderPkiType", "SenderPkiData", "SenderSignature", });
-    internal_static_payments_Payment_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_payments_Payment_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_Payment_descriptor,
-        new java.lang.String[] { "MerchantData", "Transactions", "RefundTo", "Memo", "Originators", "Beneficiaries", });
-    internal_static_payments_PaymentACK_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_payments_PaymentACK_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_PaymentACK_descriptor,
-        new java.lang.String[] { "Payment", "Memo", });
-    internal_static_payments_Beneficiary_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_payments_Beneficiary_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_Beneficiary_descriptor,
-        new java.lang.String[] { "PrimaryForTransaction", "Attestations", });
-    internal_static_payments_Originator_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_payments_Originator_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_Originator_descriptor,
-        new java.lang.String[] { "PrimaryForTransaction", "Attestations", });
-    internal_static_payments_Attestation_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_payments_Attestation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_Attestation_descriptor,
-        new java.lang.String[] { "Attestation", "PkiType", "PkiData", "Signature", });
-    internal_static_payments_PaymentDetails_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_payments_PaymentDetails_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_PaymentDetails_descriptor,
-        new java.lang.String[] { "Network", "BeneficiariesAddresses", "Time", "Expires", "Memo", "PaymentUrl", "MerchantData", });
-    internal_static_payments_Output_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_payments_Output_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_Output_descriptor,
-        new java.lang.String[] { "Amount", "Script", "Currency", });
-    internal_static_payments_ProtocolMessage_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_payments_ProtocolMessage_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_ProtocolMessage_descriptor,
-        new java.lang.String[] { "Version", "StatusCode", "MessageType", "SerializedMessage", "StatusMessage", "Identifier", });
-    internal_static_payments_EncryptedProtocolMessage_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_payments_EncryptedProtocolMessage_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_payments_EncryptedProtocolMessage_descriptor,
-        new java.lang.String[] { "Version", "StatusCode", "MessageType", "EncryptedMessage", "ReceiverPublicKey", "SenderPublicKey", "Nonce", "Identifier", "StatusMessage", "Signature", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

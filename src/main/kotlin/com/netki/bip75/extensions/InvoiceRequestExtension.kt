@@ -34,7 +34,12 @@ internal fun ByteArray.toMessageInvoiceRequest(): Messages.InvoiceRequest = try 
     Messages.InvoiceRequest.parseFrom(this)
 } catch (exception: Exception) {
     exception.printStackTrace()
-    throw InvalidObjectException(PARSE_BINARY_MESSAGE_INVALID_INPUT.format("invoiceRequest", exception.message))
+    throw InvalidObjectException(
+        PARSE_BINARY_MESSAGE_INVALID_INPUT.format(
+            "invoiceRequest",
+            exception.message
+        )
+    )
 }
 
 /**

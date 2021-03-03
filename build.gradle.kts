@@ -1,6 +1,6 @@
 plugins {
     java
-    kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "1.4.30"
 }
 
 val groupId = "com.netki"
@@ -11,7 +11,7 @@ val protoVersion = "3.10.0"
 val ktorVersion = "1.3.2"
 val jacksonVersion = "2.11.3"
 val bouncyCastleVersion = "1.67"
-val kotlinReflectVersion = "1.3.50"
+val kotlinReflectVersion = "1.4.30"
 
 group = groupId
 version = versionRelease
@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinReflectVersion")
 
     implementation("com.google.protobuf:protobuf-java:$protoVersion")

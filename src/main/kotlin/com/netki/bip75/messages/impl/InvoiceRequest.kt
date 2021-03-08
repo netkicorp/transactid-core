@@ -1,10 +1,10 @@
-package com.netki.bip75.messages
+package com.netki.bip75.messages.impl
 
 import com.netki.bip75.extensions.*
+import com.netki.bip75.messages.ProtocolMessageDefinition
 import com.netki.bip75.protocol.Messages
 import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_EV_NOT_VALID
-import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_INVALID_BENEFICIARY_CERTIFICATE_CA
-import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_INVALID_ORIGINATOR_CERTIFICATE_CA
+import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_NOT_CORRECT_CERTIFICATE_ERROR
 import com.netki.exceptions.ExceptionInformation.SIGNATURE_VALIDATION_INVALID_ORIGINATOR_SIGNATURE
 import com.netki.exceptions.ExceptionInformation.SIGNATURE_VALIDATION_INVALID_SENDER_SIGNATURE
 import com.netki.exceptions.InvalidCertificateChainException
@@ -15,10 +15,14 @@ import com.netki.model.*
 import com.netki.model.InvoiceRequest
 import com.netki.security.Certificate
 
-class InvoiceRequest {
+class InvoiceRequest : ProtocolMessageDefinition {
 
-    fun create(
-        protocolMessageParameters: ProtocolMessageParameters
+    /**
+     * {@inheritDoc}
+     */
+    override fun create(
+        protocolMessageParameters: ProtocolMessageParameters,
+        identifier: String?
     ): ByteArray {
         val invoiceRequestParameters = protocolMessageParameters as InvoiceRequestParameters
         invoiceRequestParameters.originatorParameters.validate(true, OwnerType.ORIGINATOR)
@@ -64,7 +68,10 @@ class InvoiceRequest {
         )
     }
 
-    fun isValid(
+    /**
+     * {@inheritDoc}
+     */
+    override fun isValid(
         protocolMessageBinary: ByteArray,
         recipientParameters: RecipientParameters?
     ): Boolean {
@@ -105,18 +112,10 @@ class InvoiceRequest {
 
         messageInvoiceRequestUnsigned.originatorsList.forEach { originatorMessage ->
             originatorMessage.attestationsList.forEach { attestationMessage ->
-                val isCertificateOwnerChainValid = Certificate.validateCertificate(
+                Certificate.validateCertificate(
                     attestationMessage.getAttestationPkiType(),
                     attestationMessage.pkiData.toStringLocal()
                 )
-
-                check(isCertificateOwnerChainValid) {
-                    throw InvalidCertificateChainException(
-                        CERTIFICATE_VALIDATION_INVALID_ORIGINATOR_CERTIFICATE_CA.format(
-                            attestationMessage.attestation
-                        )
-                    )
-                }
 
                 val isSignatureValid =
                     attestationMessage.validateMessageSignature(originatorMessage.primaryForTransaction)
@@ -133,14 +132,14 @@ class InvoiceRequest {
 
         messageInvoiceRequestUnsigned.beneficiariesList.forEach { beneficiaryMessage ->
             beneficiaryMessage.attestationsList.forEach { attestationMessage ->
-                val isCertificateOwnerChainValid = Certificate.validateCertificate(
+                val isCertificateValid = Certificate.validateCertificate(
                     attestationMessage.getAttestationPkiType(),
                     attestationMessage.pkiData.toStringLocal()
                 )
 
-                check(isCertificateOwnerChainValid) {
+                check(isCertificateValid) {
                     throw InvalidCertificateChainException(
-                        CERTIFICATE_VALIDATION_INVALID_BENEFICIARY_CERTIFICATE_CA.format(
+                        CERTIFICATE_VALIDATION_NOT_CORRECT_CERTIFICATE_ERROR.format(
                             attestationMessage.attestation
                         )
                     )
@@ -149,6 +148,25 @@ class InvoiceRequest {
         }
 
         return true
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    override fun parse(
+        protocolMessageBinary: ByteArray,
+        recipientParameters: RecipientParameters?
+    ) =
+        parseInvoiceRequestBinary(protocolMessageBinary, recipientParameters)
+
+    /**
+     * {@inheritDoc}
+     */
+    override fun parseWithAddressesInfo(
+        protocolMessageBinary: ByteArray,
+        recipientParameters: RecipientParameters?
+    ): ProtocolMessage {
+        TODO("Not yet implemented")
     }
 
     private fun parseInvoiceRequestBinary(

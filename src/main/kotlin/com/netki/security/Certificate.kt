@@ -102,6 +102,19 @@ object Certificate {
         throw InvalidCertificateException(CERTIFICATE_VALIDATION_CLIENT_CERTIFICATE_NOT_FOUND)
     }
 
+    /**
+     * Method to validate if a certificates is valid.
+     *
+     * @param pkiType type of certificate.
+     * @param certificate to validate.
+     * @return true if the client certificate is valid.
+     * @exception InvalidCertificateException if there is a problem with the certificates.
+     * @exception InvalidCertificateChainException if there is a problem with the certificates chain.
+     */
+    @Throws(
+        InvalidCertificateException::class,
+        InvalidCertificateChainException::class
+    )
     fun validateCertificate(pkiType: PkiType, certificate: String) = when (pkiType) {
         PkiType.NONE -> true
         PkiType.X509SHA256 -> {

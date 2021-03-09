@@ -23,15 +23,13 @@ class PaymentRequest : ProtocolMessageDefinition {
         identifier: String?
     ): ByteArray {
         val paymentRequestParameters = protocolMessageParameters as PaymentRequestParameters
-        paymentRequestParameters.beneficiaryParameters?.validate(true, OwnerType.BENEFICIARY)
+        paymentRequestParameters.beneficiaryParameters.validate(true, OwnerType.BENEFICIARY)
 
-        val messagePaymentRequestBuilder = paymentRequestParameters
-            .toMessagePaymentDetails()
-            .toPaymentRequest(
-                paymentRequestParameters.senderParameters,
-                paymentRequestParameters.paymentParametersVersion,
-                paymentRequestParameters.attestationsRequested
-            )
+        val messagePaymentRequestBuilder = paymentRequestParameters.toMessagePaymentDetails().toPaymentRequest(
+            paymentRequestParameters.senderParameters,
+            paymentRequestParameters.paymentParametersVersion,
+            paymentRequestParameters.attestationsRequested
+        )
 
         paymentRequestParameters.beneficiaryParameters.forEach { beneficiary ->
             val beneficiaryMessage = beneficiary.toMessageBeneficiaryBuilderWithoutAttestations()
@@ -45,9 +43,7 @@ class PaymentRequest : ProtocolMessageDefinition {
 
         val messagePaymentRequest = messagePaymentRequestBuilder.build()
 
-        val paymentRequest =
-            messagePaymentRequest.signMessage(paymentRequestParameters.senderParameters)
-                .toByteArray()
+        val paymentRequest = messagePaymentRequest.signMessage(paymentRequestParameters.senderParameters).toByteArray()
 
         return paymentRequest.toProtocolMessage(
             MessageType.PAYMENT_REQUEST,
@@ -132,8 +128,7 @@ class PaymentRequest : ProtocolMessageDefinition {
     override fun parse(
         protocolMessageBinary: ByteArray,
         recipientParameters: RecipientParameters?
-    ) =
-        parsePaymentRequestBinary(protocolMessageBinary, recipientParameters)
+    ) = parsePaymentRequestBinary(protocolMessageBinary, recipientParameters)
 
     /**
      * {@inheritDoc}
@@ -150,12 +145,10 @@ class PaymentRequest : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): PaymentRequest {
         val protocolMessageMetadata = paymentRequestBinary.extractProtocolMessageMetadata()
-        val messagePaymentRequest =
-            paymentRequestBinary.getSerializedMessage(
-                protocolMessageMetadata.encrypted,
-                recipientParameters
-            )
-                .toMessagePaymentRequest()
+        val messagePaymentRequest = paymentRequestBinary.getSerializedMessage(
+            protocolMessageMetadata.encrypted,
+            recipientParameters
+        ).toMessagePaymentRequest()
         return messagePaymentRequest.toPaymentRequest(protocolMessageMetadata)
     }
 }

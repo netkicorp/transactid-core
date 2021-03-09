@@ -3,6 +3,7 @@ package com.netki.bip75.extensions
 import com.netki.bip75.protocol.Messages
 import com.netki.exceptions.ExceptionInformation
 import com.netki.exceptions.InvalidOwnersException
+import com.netki.extensions.toByteString
 import com.netki.model.*
 
 /**
@@ -84,4 +85,48 @@ internal fun Messages.Originator.toOriginator(): Originator {
         pkiDataSets.add(messageAttestation.toPkiData())
     }
     return Originator(this.primaryForTransaction, pkiDataSets)
+}
+
+/**
+ * Transform Beneficiary to Messages.Beneficiary object.
+ *
+ * @return Messages.Beneficiary.
+ */
+internal fun Beneficiary.toMessageBeneficiary(): Messages.Beneficiary {
+    val messageBeneficiary = Messages.Beneficiary.newBuilder()
+
+    messageBeneficiary.primaryForTransaction = this.isPrimaryForTransaction
+    this.pkiDataSet.forEach { pkiDataSet ->
+        val attestation = Messages.Attestation.newBuilder()
+            .setAttestation(pkiDataSet.attestation?.toAttestationType())
+            .setPkiData(pkiDataSet.certificatePem.toByteString())
+            .setPkiType(pkiDataSet.type.value)
+            .setSignature(pkiDataSet.signature?.toByteString())
+            .build()
+        messageBeneficiary.addAttestations(attestation)
+    }
+
+    return messageBeneficiary.build()
+}
+
+/**
+ * Transform Owner to Messages.Owner object.
+ *
+ * @return Messages.Owner.
+ */
+internal fun Originator.toMessageOriginator(): Messages.Originator {
+    val messageOriginator = Messages.Originator.newBuilder()
+
+    messageOriginator.primaryForTransaction = this.isPrimaryForTransaction
+    this.pkiDataSet.forEach { pkiDataSet ->
+        val attestation = Messages.Attestation.newBuilder()
+            .setAttestation(pkiDataSet.attestation?.toAttestationType())
+            .setPkiData(pkiDataSet.certificatePem.toByteString())
+            .setPkiType(pkiDataSet.type.value)
+            .setSignature(pkiDataSet.signature?.toByteString())
+            .build()
+        messageOriginator.addAttestations(attestation)
+    }
+
+    return messageOriginator.build()
 }

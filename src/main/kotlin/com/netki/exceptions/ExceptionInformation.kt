@@ -7,7 +7,8 @@ object ExceptionInformation {
     const val OWNERS_VALIDATION_EMPTY_ERROR = "There should be at least one %s for this message"
     const val SIGNATURE_VALIDATION_INVALID_SENDER_SIGNATURE = "Sender signature is not valid"
     const val SIGNATURE_VALIDATION_INVALID_ORIGINATOR_SIGNATURE = "Originator signature is not valid for attestation %s"
-    const val SIGNATURE_VALIDATION_INVALID_BENEFICIARY_SIGNATURE = "Beneficiary signature is not valid for attestation %s"
+    const val SIGNATURE_VALIDATION_INVALID_BENEFICIARY_SIGNATURE =
+        "Beneficiary signature is not valid for attestation %s"
     const val CERTIFICATE_VALIDATION_INVALID_SENDER_CERTIFICATE_CA =
         "Sender certificate does not belong to any trusted CA"
     const val CERTIFICATE_VALIDATION_INVALID_BENEFICIARY_CERTIFICATE_CA =

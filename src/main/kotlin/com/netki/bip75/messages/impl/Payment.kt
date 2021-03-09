@@ -64,13 +64,11 @@ class Payment : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): Boolean {
         val protocolMessageMetadata = protocolMessageBinary.extractProtocolMessageMetadata()
-        val payment = protocolMessageBinary
-            .getSerializedMessage(protocolMessageMetadata.encrypted, recipientParameters)
+        val payment = protocolMessageBinary.getSerializedMessage(protocolMessageMetadata.encrypted, recipientParameters)
             .toMessagePayment()
 
         if (protocolMessageMetadata.encrypted) {
-            val isSenderEncryptionSignatureValid =
-                protocolMessageBinary.validateMessageEncryptionSignature()
+            val isSenderEncryptionSignatureValid = protocolMessageBinary.validateMessageEncryptionSignature()
 
             check(isSenderEncryptionSignatureValid) {
                 throw InvalidSignatureException(SIGNATURE_VALIDATION_INVALID_SENDER_SIGNATURE)
@@ -117,12 +115,10 @@ class Payment : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): Payment {
         val protocolMessageMetadata = protocolMessageBinary.extractProtocolMessageMetadata()
-        val messagePayment =
-            protocolMessageBinary.getSerializedMessage(
-                protocolMessageMetadata.encrypted,
-                recipientParameters
-            )
-                .toMessagePayment()
+        val messagePayment = protocolMessageBinary.getSerializedMessage(
+            protocolMessageMetadata.encrypted,
+            recipientParameters
+        ).toMessagePayment()
         return messagePayment.toPayment(protocolMessageMetadata)
     }
 

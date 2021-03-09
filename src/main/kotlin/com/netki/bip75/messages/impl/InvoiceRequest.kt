@@ -28,12 +28,11 @@ class InvoiceRequest : ProtocolMessageDefinition {
         invoiceRequestParameters.originatorParameters.validate(true, OwnerType.ORIGINATOR)
         invoiceRequestParameters.beneficiaryParameters?.validate(false, OwnerType.BENEFICIARY)
 
-        val messageInvoiceRequestBuilder =
-            invoiceRequestParameters.toMessageInvoiceRequestBuilderUnsigned(
-                invoiceRequestParameters.senderParameters,
-                invoiceRequestParameters.attestationsRequested,
-                invoiceRequestParameters.recipientParameters
-            )
+        val messageInvoiceRequestBuilder = invoiceRequestParameters.toMessageInvoiceRequestBuilderUnsigned(
+            invoiceRequestParameters.senderParameters,
+            invoiceRequestParameters.attestationsRequested,
+            invoiceRequestParameters.recipientParameters
+        )
 
         invoiceRequestParameters.beneficiaryParameters?.forEach { beneficiary ->
             val beneficiaryMessage = beneficiary.toMessageBeneficiaryBuilderWithoutAttestations()
@@ -57,9 +56,7 @@ class InvoiceRequest : ProtocolMessageDefinition {
 
         val messageInvoiceRequest = messageInvoiceRequestBuilder.build()
 
-        val invoiceRequest =
-            messageInvoiceRequest.signMessage(invoiceRequestParameters.senderParameters)
-                .toByteArray()
+        val invoiceRequest = messageInvoiceRequest.signMessage(invoiceRequestParameters.senderParameters).toByteArray()
         return invoiceRequest.toProtocolMessage(
             MessageType.INVOICE_REQUEST,
             invoiceRequestParameters.messageInformation,
@@ -76,16 +73,13 @@ class InvoiceRequest : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): Boolean {
         val protocolMessageMetadata = protocolMessageBinary.extractProtocolMessageMetadata()
-        val messageInvoiceRequest =
-            protocolMessageBinary.getSerializedMessage(
-                protocolMessageMetadata.encrypted,
-                recipientParameters
-            )
-                .toMessageInvoiceRequest()
+        val messageInvoiceRequest = protocolMessageBinary.getSerializedMessage(
+            protocolMessageMetadata.encrypted,
+            recipientParameters
+        ).toMessageInvoiceRequest()
 
         if (protocolMessageMetadata.encrypted) {
-            val isSenderEncryptionSignatureValid =
-                protocolMessageBinary.validateMessageEncryptionSignature()
+            val isSenderEncryptionSignatureValid = protocolMessageBinary.validateMessageEncryptionSignature()
 
             check(isSenderEncryptionSignatureValid) {
                 throw InvalidSignatureException(SIGNATURE_VALIDATION_INVALID_SENDER_SIGNATURE)
@@ -156,8 +150,7 @@ class InvoiceRequest : ProtocolMessageDefinition {
     override fun parse(
         protocolMessageBinary: ByteArray,
         recipientParameters: RecipientParameters?
-    ) =
-        parseInvoiceRequestBinary(protocolMessageBinary, recipientParameters)
+    ) = parseInvoiceRequestBinary(protocolMessageBinary, recipientParameters)
 
     /**
      * {@inheritDoc}
@@ -174,12 +167,10 @@ class InvoiceRequest : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): InvoiceRequest {
         val protocolMessageMetadata = invoiceRequestBinary.extractProtocolMessageMetadata()
-        val messageInvoiceRequest =
-            invoiceRequestBinary.getSerializedMessage(
-                protocolMessageMetadata.encrypted,
-                recipientParameters
-            )
-                .toMessageInvoiceRequest()
+        val messageInvoiceRequest = invoiceRequestBinary.getSerializedMessage(
+            protocolMessageMetadata.encrypted,
+            recipientParameters
+        ).toMessageInvoiceRequest()
         return messageInvoiceRequest.toInvoiceRequest(protocolMessageMetadata)
     }
 }

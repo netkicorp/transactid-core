@@ -17,8 +17,7 @@ class PaymentAck : ProtocolMessageDefinition {
         identifier: String?
     ): ByteArray {
         val paymentAckParameters = protocolMessageParameters as PaymentAckParameters
-        val paymentAck = paymentAckParameters.payment.toMessagePaymentAck(paymentAckParameters.memo)
-            .toByteArray()
+        val paymentAck = paymentAckParameters.payment.toMessagePaymentAck(paymentAckParameters.memo).toByteArray()
 
         return paymentAck.toProtocolMessage(
             MessageType.PAYMENT_ACK,
@@ -43,8 +42,7 @@ class PaymentAck : ProtocolMessageDefinition {
         ).toMessagePaymentAck()
 
         if (protocolMessageMetadata.encrypted) {
-            val isSenderEncryptionSignatureValid =
-                protocolMessageBinary.validateMessageEncryptionSignature()
+            val isSenderEncryptionSignatureValid = protocolMessageBinary.validateMessageEncryptionSignature()
 
             check(isSenderEncryptionSignatureValid) {
                 throw InvalidSignatureException(SIGNATURE_VALIDATION_INVALID_SENDER_SIGNATURE)
@@ -61,12 +59,10 @@ class PaymentAck : ProtocolMessageDefinition {
         recipientParameters: RecipientParameters?
     ): PaymentAck {
         val protocolMessageMetadata = protocolMessageBinary.extractProtocolMessageMetadata()
-        val messagePaymentAck =
-            protocolMessageBinary.getSerializedMessage(
-                protocolMessageMetadata.encrypted,
-                recipientParameters
-            )
-                .toMessagePaymentAck()
+        val messagePaymentAck = protocolMessageBinary.getSerializedMessage(
+            protocolMessageMetadata.encrypted,
+            recipientParameters
+        ).toMessagePaymentAck()
 
         return messagePaymentAck.toPaymentAck(protocolMessageBinary.extractProtocolMessageMetadata())
     }

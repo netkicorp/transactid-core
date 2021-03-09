@@ -39,10 +39,7 @@ internal fun ByteArray.toMessagePayment(): Messages.Payment = try {
 } catch (exception: Exception) {
     exception.printStackTrace()
     throw InvalidObjectException(
-        PARSE_BINARY_MESSAGE_INVALID_INPUT.format(
-            "payment",
-            exception.message
-        )
+        PARSE_BINARY_MESSAGE_INVALID_INPUT.format("payment", exception.message)
     )
 }
 
@@ -134,10 +131,7 @@ internal fun ByteArray.toMessagePaymentAck(): Messages.PaymentACK = try {
 } catch (exception: Exception) {
     exception.printStackTrace()
     throw InvalidObjectException(
-        PARSE_BINARY_MESSAGE_INVALID_INPUT.format(
-            "paymentAck",
-            exception.message
-        )
+        PARSE_BINARY_MESSAGE_INVALID_INPUT.format("paymentAck", exception.message)
     )
 }
 

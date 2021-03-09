@@ -69,9 +69,7 @@ internal fun Messages.PaymentDetails.toPaymentRequest(
         .setPaymentDetailsVersion(paymentParametersVersion)
         .setSerializedPaymentDetails(this.toByteString())
         .setSenderPkiType(senderParameters.pkiDataParameters?.type?.value ?: PkiType.NONE.value)
-        .setSenderPkiData(
-            senderParameters.pkiDataParameters?.certificatePem?.toByteString() ?: "".toByteString()
-        )
+        .setSenderPkiData(senderParameters.pkiDataParameters?.certificatePem?.toByteString() ?: "".toByteString())
         .setSenderSignature("".toByteString())
 
     attestationsRequested.forEach {
@@ -91,12 +89,7 @@ internal fun ByteArray.toMessagePaymentRequest(): Messages.PaymentRequest = try 
     Messages.PaymentRequest.parseFrom(this)
 } catch (exception: Exception) {
     exception.printStackTrace()
-    throw InvalidObjectException(
-        PARSE_BINARY_MESSAGE_INVALID_INPUT.format(
-            "paymentRequest",
-            exception.message
-        )
-    )
+    throw InvalidObjectException(PARSE_BINARY_MESSAGE_INVALID_INPUT.format("paymentRequest", exception.message))
 }
 
 /**
@@ -150,10 +143,5 @@ internal fun ByteString.toMessagePaymentDetails(): Messages.PaymentDetails = try
     Messages.PaymentDetails.parseFrom(this)
 } catch (exception: Exception) {
     exception.printStackTrace()
-    throw InvalidObjectException(
-        PARSE_BINARY_MESSAGE_INVALID_INPUT.format(
-            "paymentDetails",
-            exception.message
-        )
-    )
+    throw InvalidObjectException(PARSE_BINARY_MESSAGE_INVALID_INPUT.format("paymentDetails", exception.message))
 }

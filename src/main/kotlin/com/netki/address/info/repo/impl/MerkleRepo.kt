@@ -9,8 +9,6 @@ import com.netki.exceptions.ExceptionInformation.ADDRESS_INFORMATION_INTERNAL_ER
 import com.netki.exceptions.ExceptionInformation.ADDRESS_INFORMATION_NOT_AUTHORIZED_ERROR_PROVIDER
 import com.netki.model.AddressCurrency
 import com.netki.model.AddressInformation
-import com.netki.util.ErrorInformation.ADDRESS_INFORMATION_INTERNAL_ERROR_PROVIDER
-import com.netki.util.ErrorInformation.ADDRESS_INFORMATION_NOT_AUTHORIZED_ERROR_PROVIDER
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.request.*

@@ -9,19 +9,27 @@ import com.netki.exceptions.ExceptionInformation.CERTIFICATE_VALIDATION_CLIENT_C
 import com.netki.exceptions.InvalidCertificateChainException
 import com.netki.exceptions.InvalidCertificateException
 import com.netki.model.PkiType
+import com.netki.security.Parameters.SIGNATURE_ALGORITHM
 import org.bouncycastle.asn1.ASN1InputStream
+import org.bouncycastle.asn1.ASN1ObjectIdentifier
 import org.bouncycastle.asn1.DERIA5String
 import org.bouncycastle.asn1.DEROctetString
+import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers
+import org.bouncycastle.asn1.x500.X500Name
 import org.bouncycastle.asn1.x509.*
+import org.bouncycastle.asn1.x509.Extension
+import org.bouncycastle.openssl.PEMWriter
+import org.bouncycastle.operator.ContentSigner
+import org.bouncycastle.pkcs.PKCS10CertificationRequest
+import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequestBuilder
+import org.bouncycastle.util.io.pem.PemObject
 import sun.security.util.ObjectIdentifier
 import sun.security.x509.CertificatePoliciesExtension
 import sun.security.x509.PolicyInformation
 import sun.security.x509.X509CertImpl
-import java.io.ByteArrayInputStream
-import java.io.IOException
+import java.io.*
 import java.net.URL
-import java.security.InvalidKeyException
-import java.security.SignatureException
+import java.security.*
 import java.security.cert.*
 import java.util.*
 import javax.naming.Context
@@ -288,6 +296,102 @@ object Certificate {
         val certificates = certificatesPem.toCertificates()
         return getClientCertificate(certificates)
     }
+
+    /**
+     * Transform a CSR object to a PEM string format.
+     *
+     * @param csr to transform.
+     * @return string in PEM format.
+     */
+    fun csrObjectToPem(csr: PKCS10CertificationRequest): String {
+        val pemObject = PemObject("CERTIFICATE REQUEST", csr.encoded)
+        val str = StringWriter()
+        val pemWriter = PEMWriter(str)
+        pemWriter.writeObject(pemObject)
+        pemWriter.close()
+        str.close()
+        return str.toString()
+    }
+
+    /**
+     * Generate a signed CSR for the provided principal.
+     *
+     * @param principal with the string for the CN in the CSR.
+     * @param keyPair to sign the CSR.
+     * @return the CSR generated.
+     */
+    fun generateCSR(principal: String, keyPair: KeyPair): PKCS10CertificationRequest {
+        val signer = JCESigner(keyPair.private, SIGNATURE_ALGORITHM)
+
+        val csrBuilder = JcaPKCS10CertificationRequestBuilder(
+            X500Name(principal), keyPair.public
+        )
+        val extensionsGenerator = ExtensionsGenerator()
+        extensionsGenerator.addExtension(
+            Extension.basicConstraints, true, BasicConstraints(
+                false
+            )
+        )
+        csrBuilder.addAttribute(
+            PKCSObjectIdentifiers.pkcs_9_at_extensionRequest,
+            extensionsGenerator.generate()
+        )
+
+        return csrBuilder.build(signer)
+    }
+
+
+    /**
+     * Method to create signature configuration for CSR.
+     */
+    private class JCESigner(privateKey: PrivateKey, signatureAlgorithm: String) : ContentSigner {
+        private val algorithm: String = signatureAlgorithm.toLowerCase()
+        private var signature: java.security.Signature? = null
+        private var outputStream: ByteArrayOutputStream? = null
+
+        init {
+            try {
+                this.outputStream = ByteArrayOutputStream()
+                this.signature = java.security.Signature.getInstance(signatureAlgorithm)
+                this.signature!!.initSign(privateKey)
+            } catch (gse: GeneralSecurityException) {
+                throw IllegalArgumentException(gse.message)
+            }
+        }
+
+        override fun getAlgorithmIdentifier(): AlgorithmIdentifier {
+            return ALGORITHMS[algorithm] ?: throw IllegalArgumentException("Does not support algorithm: $algorithm")
+        }
+
+        override fun getOutputStream(): OutputStream? {
+            return outputStream
+        }
+
+        override fun getSignature(): ByteArray? {
+            return try {
+                signature!!.update(outputStream!!.toByteArray())
+                signature!!.sign()
+            } catch (gse: GeneralSecurityException) {
+                gse.printStackTrace()
+                null
+            }
+        }
+
+        companion object {
+
+            private val ALGORITHMS = HashMap<String, AlgorithmIdentifier>()
+
+            init {
+                ALGORITHMS["SHA256withRSA".toLowerCase()] = AlgorithmIdentifier(
+                    ASN1ObjectIdentifier("1.2.840.113549.1.1.11")
+                )
+                ALGORITHMS["SHA1withRSA".toLowerCase()] = AlgorithmIdentifier(
+                    ASN1ObjectIdentifier("1.2.840.113549.1.1.5")
+                )
+            }
+        }
+    }
+
 }
 
 /**

@@ -27,4 +27,9 @@ object Parameters {
      * Maximum length for string in encryption.
      */
     const val MAXIMUM_LENGTH_PAD_ENCRYPTION = 64
+
+    /**
+     * Key generation algorithm
+     */
+    const val KEY_ALGORITHM = "RSA"
 }

@@ -1,5 +1,6 @@
 package com.netki.security
 
+import com.netki.security.Parameters.KEY_ALGORITHM
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo
 import org.bouncycastle.cert.X509CertificateHolder
@@ -7,15 +8,30 @@ import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import org.bouncycastle.openssl.PEMParser
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter
+import org.bouncycastle.util.io.pem.PemObject
+import org.bouncycastle.util.io.pem.PemWriter
 import java.io.ByteArrayInputStream
 import java.io.StringReader
-import java.security.PrivateKey
-import java.security.PublicKey
-import java.security.Security
+import java.io.StringWriter
+import java.security.*
 import java.security.cert.Certificate
 import java.security.cert.CertificateFactory
 import java.security.cert.X509Certificate
 import java.util.*
+
+object Keys {
+
+    /**
+     * Generate a keypair.
+     *
+     * @return key pair generated.
+     */
+    fun generateKeyPair(): KeyPair {
+        val kpg = KeyPairGenerator.getInstance(KEY_ALGORITHM)
+        kpg.initialize(2048)
+        return kpg.generateKeyPair()
+    }
+}
 
 /**
  * Transform PrivateKey in PEM format to object.
@@ -75,4 +91,47 @@ fun String.toCertificates(): List<X509Certificate> {
 fun String.isECDSAKey(): Boolean {
     val key = this.toPrivateKey()
     return key.algorithm == "ECDSA"
+}
+
+/**
+ * Transform PrivateKey to String in PEM format.
+ *
+ * @param privateKey to transform.
+ * @return String in PEM format.
+ */
+fun PrivateKey.toPemFormat() = objectToPemString(this)
+
+/**
+ * Transform PublicKey to String in PEM format.
+ *
+ * @param publicKey to transform.
+ * @return String in PEM format.
+ */
+fun PublicKey.toPemFormat() = objectToPemString(this)
+
+/**
+ * Transform Certificate to String in PEM format.
+ *
+ * @param certificate to transform.
+ * @return String in PEM format.
+ */
+fun Certificate.toPemFormat() = objectToPemString(this)
+
+/**
+ * Transform Object to String in PEM format.
+ *
+ * @param objectToParse one of PrivateKey / PublicKey / Certificate.
+ * @return String in PEM format.
+ */
+private fun objectToPemString(objectToParse: Any): String {
+    val stringWriter = StringWriter()
+    val pemWriter = PemWriter(stringWriter)
+    when (objectToParse) {
+        is PrivateKey -> pemWriter.writeObject(PemObject("PRIVATE KEY", objectToParse.encoded))
+        is PublicKey -> pemWriter.writeObject(PemObject("PUBLIC KEY", objectToParse.encoded))
+        is Certificate -> pemWriter.writeObject(PemObject("CERTIFICATE", objectToParse.encoded))
+    }
+    pemWriter.flush()
+    pemWriter.close()
+    return stringWriter.toString()
 }

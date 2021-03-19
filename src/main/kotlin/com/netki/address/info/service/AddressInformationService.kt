@@ -5,7 +5,7 @@ import com.netki.exceptions.AddressProviderUnauthorizedException
 import com.netki.model.AddressCurrency
 import com.netki.model.AddressInformation
 
-internal interface AddressInformationService {
+interface AddressInformationService {
 
     /**
      * Fetch the information of a given address.

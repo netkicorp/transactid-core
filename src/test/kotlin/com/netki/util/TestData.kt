@@ -44,7 +44,6 @@ import java.time.Duration
 import java.time.Instant
 import java.util.*
 
-
 internal object TestData {
 
     object Keys {
@@ -1003,4 +1002,3 @@ internal object TestData {
 
     fun <T> any(type: Class<T>): T = Mockito.any<T>(type)
 }
-

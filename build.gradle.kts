@@ -1,6 +1,8 @@
 plugins {
     java
     kotlin("jvm") version "1.4.30"
+    `maven-publish`
+    signing
 }
 
 val groupId = "com.netki"
@@ -49,6 +51,25 @@ dependencies {
     testImplementation("io.ktor:ktor-client-mock-jvm:$ktorVersion")
     testImplementation("io.ktor:ktor-client-mock-js:$ktorVersion")
     testImplementation("io.ktor:ktor-client-mock-native:$ktorVersion")
+}
+
+publishing {
+    publications {
+
+        create<MavenPublication>("maven") {
+            groupId = groupId
+            artifactId = artifactId
+            version = versionRelease
+
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+        }
+    }
 }
 
 tasks {

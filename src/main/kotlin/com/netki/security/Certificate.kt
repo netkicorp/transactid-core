@@ -75,7 +75,7 @@ object Certificate {
      */
     fun isEvCertificate(clientCertificatesPem: String): Boolean {
         val certificates = clientCertificatesPem.toCertificates()
-        val cert = getClientCertificate(certificates)
+        val cert = certificates.getClientCertificate()
         val ext = (cert as X509CertImpl).certificatePoliciesExtension
         ext?.let {
             val policies = it[CertificatePoliciesExtension.POLICIES]
@@ -95,19 +95,6 @@ object Certificate {
             }
         }
         return false
-    }
-
-    /**
-     * Extract client certificate from a list of certificates.
-     *
-     * @param certificates including the client certificate.
-     * @return Client certificate.
-     * @throws InvalidCertificateException if the client certificate is not found
-     */
-    fun getClientCertificate(certificates: List<X509Certificate>) = try {
-        certificates.first { it.isClientCertificate() }
-    } catch (exception: NoSuchElementException) {
-        throw InvalidCertificateException(CERTIFICATE_VALIDATION_CLIENT_CERTIFICATE_NOT_FOUND)
     }
 
     /**
@@ -156,7 +143,7 @@ object Certificate {
     @Throws(InvalidCertificateException::class)
     fun validateCertificateExpiration(clientCertificatesPem: String): Boolean {
         val certificates = clientCertificatesPem.toCertificates()
-        val clientCertificate = getClientCertificate(certificates)
+        val clientCertificate = certificates.getClientCertificate()
         try {
             clientCertificate.checkValidity()
         } catch (exception: CertificateNotYetValidException) {
@@ -187,7 +174,7 @@ object Certificate {
     @Throws(InvalidCertificateException::class)
     fun validateCertificateRevocation(clientCertificatesPem: String): Boolean {
         val certificates = clientCertificatesPem.toCertificates()
-        val clientCertificate = getClientCertificate(certificates)
+        val clientCertificate = certificates.getClientCertificate()
         val distributionPoints = getCrlDistributionPoints(clientCertificate)
         distributionPoints?.forEach { distributionPoint ->
             val crl = downloadCRL(distributionPoint!!)
@@ -195,7 +182,7 @@ object Certificate {
                 throw InvalidCertificateException(
                     String.format(
                         CERTIFICATE_VALIDATION_CERTIFICATE_REVOKED,
-                        crl
+                        distributionPoint
                     )
                 )
             }
@@ -294,7 +281,7 @@ object Certificate {
      */
     fun certificatePemToClientCertificate(certificatesPem: String): X509Certificate {
         val certificates = certificatesPem.toCertificates()
-        return getClientCertificate(certificates)
+        return certificates.getClientCertificate()
     }
 
     /**
@@ -397,25 +384,25 @@ object Certificate {
 /**
  * Determine if a X509Certificate is root certificate.
  */
-internal fun X509Certificate.isRootCertificate() =
+fun X509Certificate.isRootCertificate() =
     this.isSelfSigned() && this.keyUsage != null && this.keyUsage[5] && this.basicConstraints != -1
 
 /**
  * Determine if a X509Certificate is intermediate certificate.
  */
-internal fun X509Certificate.isIntermediateCertificate() =
+fun X509Certificate.isIntermediateCertificate() =
     !this.isSelfSigned() && this.keyUsage != null && this.keyUsage[5] && this.basicConstraints != -1
 
 /**
  * Determine if a X509Certificate is client certificate.
  */
-internal fun X509Certificate.isClientCertificate() =
+fun X509Certificate.isClientCertificate() =
     !this.isSelfSigned() && (this.keyUsage == null || !this.keyUsage[5]) && this.basicConstraints == -1
 
 /**
  * Validate if a X509Certificate is self signed or not.
  */
-internal fun X509Certificate.isSelfSigned() = try {
+fun X509Certificate.isSelfSigned() = try {
     val key = this.publicKey
     this.verify(key)
     true
@@ -423,4 +410,26 @@ internal fun X509Certificate.isSelfSigned() = try {
     false
 } catch (ex: InvalidKeyException) {
     false
+}
+
+/**
+ * Extract intermediate certificates from a list of certificates.
+ *
+ * @param certificates including the intermediate certificates.
+ * @return list of intermediate certificates.
+ */
+fun List<X509Certificate>.getIntermediateCertificates() =
+    this.filter { it.isIntermediateCertificate() }
+
+/**
+ * Extract client certificate from a list of certificates.
+ *
+ * @param certificates including the client certificate.
+ * @return Client certificate.
+ * @throws InvalidCertificateException if the client certificate is not found
+ */
+fun List<X509Certificate>.getClientCertificate() = try {
+    this.first { it.isClientCertificate() }
+} catch (exception: NoSuchElementException) {
+    throw InvalidCertificateException(CERTIFICATE_VALIDATION_CLIENT_CERTIFICATE_NOT_FOUND)
 }

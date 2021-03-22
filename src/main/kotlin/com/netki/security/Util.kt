@@ -5,6 +5,13 @@ import java.security.MessageDigest
 
 object Util {
 
+    /**
+     * Hash string with SHA-256 algorithm.
+     *
+     * @param stringToHash plain string to be hashed.
+     * @return hash string.
+     */
+    fun getHash256(stringToHash: String) = getHash256(stringToHash.toByteArray(Charsets.UTF_8))
 
     /**
      * Hash string with SHA-256 algorithm.

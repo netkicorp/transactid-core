@@ -14,7 +14,8 @@ import com.netki.security.Keys
 import com.netki.security.toPemFormat
 
 internal class KeyGenerationNetkiService(
-    private val keyProvider: KeyProvider
+    private val keyProvider: KeyProvider,
+    private val certificate: Certificate
 ) : KeyGenerationService {
 
     /**
@@ -28,7 +29,7 @@ internal class KeyGenerationNetkiService(
 
         val csrsAttestations = attestationsInformation.map {
             CsrAttestation(
-                Certificate.csrObjectToPem(
+                certificate.csrObjectToPem(
                     Certificate.generateCSR(it.attestation.toPrincipal(it.data, it.ivmsConstraint), keyPair)
                 ),
                 it.attestation,

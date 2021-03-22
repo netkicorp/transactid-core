@@ -9,6 +9,7 @@ import com.netki.keygeneration.service.impl.KeyGenerationNetkiService
 import com.netki.model.Attestation
 import com.netki.model.AttestationInformation
 import com.netki.model.IvmsConstraint
+import com.netki.security.Certificate
 import com.netki.util.TestData.CertificateGeneration.ATTESTATIONS_INFORMATION
 import com.netki.util.TestData.CertificateGeneration.ATTESTATIONS_REQUESTED
 import com.netki.util.TestData.CertificateGeneration.CERTIFICATE_ATTESTATION_RESPONSE
@@ -32,7 +33,7 @@ internal class KeyGenerationNetkiTest {
     @BeforeAll
     fun setUp() {
         mockNetkiKeyProvider = Mockito.mock(NetkiKeyProvider::class.java)
-        val keyManagementService = KeyGenerationNetkiService(mockNetkiKeyProvider)
+        val keyManagementService = KeyGenerationNetkiService(mockNetkiKeyProvider, Certificate)
         keyGeneration = KeyGenerationNetki(keyManagementService)
     }
 

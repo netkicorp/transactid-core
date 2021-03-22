@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package payments;
 
-option java_package = "com.netki.bip75.protocol";
+option java_package = "com.netki.message.protocol";
 option java_outer_classname = "Messages";
 
 message InvoiceRequest {

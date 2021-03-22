@@ -6,6 +6,7 @@ import com.netki.keygeneration.repo.KeyProvider
 import com.netki.keygeneration.repo.impl.NetkiKeyProvider
 import com.netki.keygeneration.service.KeyGenerationService
 import com.netki.keygeneration.service.impl.KeyGenerationNetkiService
+import com.netki.security.Certificate
 import io.ktor.client.*
 import io.ktor.client.engine.okhttp.*
 import io.ktor.client.features.*
@@ -14,7 +15,7 @@ import io.ktor.client.features.json.*
 /**
  * Factory to generate KeyGeneration instance.
  */
-internal object KeyGenerationFactory {
+object KeyGenerationFactory {
 
     /**
      * Get an instance of KeyGeneration.
@@ -42,7 +43,7 @@ internal object KeyGenerationFactory {
         val keyProvider: KeyProvider =
             NetkiKeyProvider(client, authorizationCertificateProviderKey, authorizationCertificateProviderUrl)
 
-        val keyGenerationService: KeyGenerationService = KeyGenerationNetkiService(keyProvider)
+        val keyGenerationService: KeyGenerationService = KeyGenerationNetkiService(keyProvider, Certificate)
 
         return KeyGenerationNetki(keyGenerationService)
     }

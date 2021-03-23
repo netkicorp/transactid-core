@@ -1525,6 +1525,7 @@ public final class Messages {
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 7;</code>
+     * @param value The attestationsRequested to add.
      */
     public int getAttestationsRequestedCount() {
       return attestationsRequested_.size();
@@ -4855,6 +4856,7 @@ public final class Messages {
      * </pre>
      *
      * <code>repeated .payments.AttestationType attestationsRequested = 4;</code>
+     * @param value The attestationsRequested to add.
      */
     public int getAttestationsRequestedCount() {
       return attestationsRequested_.size();

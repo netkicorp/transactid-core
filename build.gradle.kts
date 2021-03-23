@@ -3,6 +3,7 @@ plugins {
     kotlin("jvm") version "1.4.30"
     `maven-publish`
     signing
+    id("org.jetbrains.dokka") version "1.4.30"
 }
 
 val groupId = "com.netki"
@@ -53,22 +54,81 @@ dependencies {
     testImplementation("io.ktor:ktor-client-mock-native:$ktorVersion")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+val javaComponent = components["java"] as AdhocComponentWithVariants
+javaComponent.withVariantsFromConfiguration(configurations["sourcesElements"]) {
+    skip()
+}
+
 publishing {
     publications {
-
-        create<MavenPublication>("maven") {
+        create<MavenPublication>("mavenJava") {
             groupId = groupId
             artifactId = artifactId
             version = versionRelease
 
             from(components["java"])
+
+            pom {
+                withXml {
+                    val root = asNode()
+                    root.appendNode("name", "Transactid-Core Java Library")
+                    root.appendNode("description", "Core components for TransactId")
+                    root.appendNode("url", "https://github.com/netkicorp/transactid-core")
+
+                    organization {
+                        name.set("com.netki")
+                        url.set("https://netki.com")
+                    }
+                    issueManagement {
+                        system.set("GitHub")
+                        url.set("https://github.com/netkicorp/transactid-core/issues")
+                    }
+
+                    licenses {
+                        license {
+                            name.set("BSD 3-Clause")
+                            url.set("https://github.com/netkicorp/transactid-core/blob/master/LICENSE")
+                            distribution.set("repo")
+                        }
+                    }
+                    developers {
+                        developer {
+                            name.set("Netki Development")
+                        }
+                    }
+                    scm {
+                        url.set("https://github.com/netkicorp/transactid-core")
+                        connection.set("scm:git:git://github.com/netkicorp/transactid-core.git")
+                        developerConnection.set("scm:git:ssh://git@github.com:/netkicorp/transactid-core.git")
+                    }
+                }
+            }
         }
     }
 
     repositories {
         maven {
             url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+            credentials {
+                username = project.property("sonatypeUsername") as String
+                password = project.property("sonatypePassword") as String
+            }
         }
+    }
+}
+
+signing {
+    sign(publishing.publications["mavenJava"])
+}
+
+tasks.javadoc {
+    if (JavaVersion.current().isJava9Compatible) {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 }
 

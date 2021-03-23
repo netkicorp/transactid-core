@@ -3,7 +3,6 @@ plugins {
     kotlin("jvm") version "1.4.30"
     `maven-publish`
     signing
-    id("org.jetbrains.dokka") version "1.4.30"
 }
 
 val groupId = "com.netki"

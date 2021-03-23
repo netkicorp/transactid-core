@@ -1,8 +1,12 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     java
     kotlin("jvm") version "1.4.30"
     `maven-publish`
     signing
+    id("org.jetbrains.dokka") version "0.9.17" apply false
 }
 
 val groupId = "com.netki"
@@ -54,13 +58,32 @@ dependencies {
 }
 
 java {
-    withJavadocJar()
-    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-val javaComponent = components["java"] as AdhocComponentWithVariants
-javaComponent.withVariantsFromConfiguration(configurations["sourcesElements"]) {
-    skip()
+tasks.named<KotlinCompile>("compileKotlin") {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.named<KotlinCompile>("compileTestKotlin") {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+val dokka = tasks.withType<DokkaTask> {
+    outputFormat = "html"
+    outputDirectory = "$buildDir/javadoc"
+}
+
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+}
+
+val javadocJar by tasks.registering(Jar::class) {
+    dependsOn(dokka)
+    archiveClassifier.set("javadoc")
+    from(buildDir.resolve("javadoc"))
 }
 
 publishing {
@@ -71,41 +94,45 @@ publishing {
             version = versionRelease
 
             from(components["java"])
+            artifact(sourcesJar)
+            artifact(javadocJar)
 
             pom {
+                description.set("Core components for TransactId")
+                name.set("Transactid-Core Java Library")
+                url.set("https://github.com/netkicorp/transactid-core")
+
                 withXml {
-                    val root = asNode()
-                    root.appendNode("name", "Transactid-Core Java Library")
-                    root.appendNode("description", "Core components for TransactId")
-                    root.appendNode("url", "https://github.com/netkicorp/transactid-core")
+                    asNode().appendNode("packaging", "jar")
+                }
 
-                    organization {
-                        name.set("com.netki")
-                        url.set("https://netki.com")
-                    }
-                    issueManagement {
-                        system.set("GitHub")
-                        url.set("https://github.com/netkicorp/transactid-core/issues")
-                    }
+                organization {
+                    name.set("com.netki")
+                    url.set("https://netki.com")
+                }
+                issueManagement {
+                    system.set("GitHub")
+                    url.set("https://github.com/netkicorp/transactid-core/issues")
+                }
 
-                    licenses {
-                        license {
-                            name.set("BSD 3-Clause")
-                            url.set("https://github.com/netkicorp/transactid-core/blob/master/LICENSE")
-                            distribution.set("repo")
-                        }
-                    }
-                    developers {
-                        developer {
-                            name.set("Netki Development")
-                        }
-                    }
-                    scm {
-                        url.set("https://github.com/netkicorp/transactid-core")
-                        connection.set("scm:git:git://github.com/netkicorp/transactid-core.git")
-                        developerConnection.set("scm:git:ssh://git@github.com:/netkicorp/transactid-core.git")
+                licenses {
+                    license {
+                        name.set("BSD 3-Clause")
+                        url.set("https://github.com/netkicorp/transactid-core/blob/master/LICENSE")
+                        distribution.set("repo")
                     }
                 }
+                developers {
+                    developer {
+                        name.set("Netki Development")
+                    }
+                }
+                scm {
+                    url.set("https://github.com/netkicorp/transactid-core")
+                    connection.set("scm:git:git://github.com/netkicorp/transactid-core.git")
+                    developerConnection.set("scm:git:ssh://git@github.com:/netkicorp/transactid-core.git")
+                }
+
             }
         }
     }

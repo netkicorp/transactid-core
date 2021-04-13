@@ -11,12 +11,12 @@ plugins {
 
 val groupId = "com.netki"
 val artifactId = "transactid-core"
-val versionRelease = "2.0.0-beta1"
+val versionRelease = "2.0.0-beta2"
 
 val protoVersion = "3.10.0"
 val ktorVersion = "1.3.2"
 val jacksonVersion = "2.11.3"
-val bouncyCastleVersion = "1.67"
+val bouncyCastleVersion = "1.65"
 val kotlinReflectVersion = "1.4.30"
 val junitVersion = "5.3.1"
 val mockitoVersion = "3.4.6"

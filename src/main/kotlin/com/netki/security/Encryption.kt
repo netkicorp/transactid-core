@@ -84,9 +84,6 @@ object Encryption {
             val privateKeyReceiver = privateKeyReceiverPem.toPrivateKey()
             val publicKeySender = publicKeySenderPem.toPublicKey() as ECPublicKey
 
-            val parameters = AlgorithmParameters.getInstance("EC")
-            parameters.init(ECGenParameterSpec("secp256k1"))
-
             val iv = ByteBuffer.allocate(16).putInt(0).array()
             val ivSpec = IvParameterSpec(iv)
 

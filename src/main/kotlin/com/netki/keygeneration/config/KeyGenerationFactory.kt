@@ -43,7 +43,7 @@ object KeyGenerationFactory {
         val keyProvider: KeyProvider =
             NetkiKeyProvider(client, authorizationCertificateProviderKey, authorizationCertificateProviderUrl)
 
-        val keyGenerationService: KeyGenerationService = KeyGenerationNetkiService(keyProvider, Certificate)
+        val keyGenerationService: KeyGenerationService = KeyGenerationNetkiService(keyProvider)
 
         return KeyGenerationNetki(keyGenerationService)
     }

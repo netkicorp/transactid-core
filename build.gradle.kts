@@ -11,7 +11,7 @@ plugins {
 
 val groupId = "com.netki"
 val artifactId = "transactid-core"
-val versionRelease = "2.0.0-beta2"
+val versionRelease = "3.0.0-beta1"
 
 val protoVersion = "3.10.0"
 val ktorVersion = "1.3.2"

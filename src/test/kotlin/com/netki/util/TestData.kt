@@ -1013,6 +1013,24 @@ internal object TestData {
                 "This is the ADDRESS_ADDRESS_LINE"
             )
         )
+
+        val ATTESTATION_CERTIFICATE = listOf(
+            AttestationCertificate(
+                attestation = Attestation.LEGAL_PERSON_NAME,
+                csr = "csr_1",
+                publicKeyPem = "public_key_1"
+            ),
+            AttestationCertificate(
+                attestation = Attestation.ADDRESS_STREET_NAME,
+                csr = "csr_2",
+                publicKeyPem = "public_key_2"
+            ),
+            AttestationCertificate(
+                attestation = Attestation.ADDRESS_ADDRESS_LINE,
+                csr = "csr_3",
+                publicKeyPem = "public_key_3"
+            )
+        )
     }
 
     object MessageInformationData {

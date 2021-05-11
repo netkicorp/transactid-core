@@ -54,30 +54,6 @@ internal class KeyGenerationNetkiTest {
         assertEquals(attestationCertificate.size, CERTIFICATE_ATTESTATION_RESPONSE.count)
     }
 
-//    @Test
-//    fun `Generate certificate for attestations with invalid data`() {
-//        val attestationInformation = AttestationInformation(
-//            Attestation.LEGAL_PERSON_NAME,
-//            IvmsConstraint.LEGL,
-//            "This is invalid data #$#$#$"
-//        )
-//        val attestationInformationInvalid = listOf(attestationInformation)
-//
-//        val exception = assertThrows(CertificateProviderException::class.java) {
-//            keyGeneration.generateCertificates(attestationInformationInvalid)
-//        }
-//
-//        assert(
-//            exception.message != null && exception.message!!.contains(
-//                String.format(
-//                    CERTIFICATE_INFORMATION_STRING_NOT_CORRECT_ERROR_PROVIDER,
-//                    attestationInformation.data,
-//                    attestationInformation.attestation
-//                )
-//            )
-//        )
-//    }
-
     @Test
     fun `Generate certificate for attestations returning empty list of certificates`() {
         `when`(mockNetkiKeyProvider.requestTransactionId(ATTESTATIONS_REQUESTED)).thenReturn(TRANSACTION_ID)
@@ -94,4 +70,3 @@ internal class KeyGenerationNetkiTest {
         assertTrue(attestationCertificate.isEmpty())
     }
 }
-

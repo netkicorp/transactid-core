@@ -24,8 +24,8 @@ internal class KeyGenerationNetkiService(
         } else {
             certificates.certificates.map {
                 AttestationCertificate(
-                    it.attestation!!,
-                    it.certificate!!
+                    attestation = it.attestation!!,
+                    certificatePem = it.certificate!!
                 )
             }
         }

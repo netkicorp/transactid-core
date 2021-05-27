@@ -1,7 +1,7 @@
 package com.netki.model
 
 /**
- * Contains the data associated to an specific attestation.
+ * Contains a certificate associated to an specific attestation.
  */
 data class AttestationCertificate constructor(
 
@@ -22,7 +22,17 @@ data class AttestationCertificate constructor(
     val csr: String? = null,
 
     /**
-     * PublicKey associated to the CSR.
+     * PublicKey.
      */
-    val publicKeyPem: String? = null
+    val publicKeyPem: String? = null,
+
+    /**
+     * Unique identifier for this AttestationCertificate.
+     */
+    val identifier: String? = null,
+
+    /**
+     * PrivateKey.
+     */
+    val privateKeyPem: String? = null,
 )

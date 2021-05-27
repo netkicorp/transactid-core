@@ -42,6 +42,9 @@ object ExceptionInformation {
         "The IvmConstraint: %s, for the attestation: %s, is not valid."
     const val CERTIFICATE_INFORMATION_STRING_NOT_CORRECT_ERROR_PROVIDER =
         "The data: %s, for the attestation: %s, is not valid, the valid characters for the data are a-zA-Z0-9_. -"
+    const val CERTIFICATE_INFORMATION_NOT_UNIQUE_IDENTIFIER =
+        "You need to set a unique identifier for each attestation."
+    const val KEY_PAIR_EXISITING = "There is already a KeyPair stored with identifier: %S. Choose another name."
     const val ENCRYPTION_MISSING_RECIPIENT_KEYS_ERROR =
         "To encrypt the message you need to have the recipient's public key in your RecipientParameters.EncryptionParameters object."
     const val ENCRYPTION_MISSING_SENDER_KEYS_ERROR =

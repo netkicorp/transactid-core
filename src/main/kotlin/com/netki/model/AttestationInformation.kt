@@ -18,5 +18,10 @@ data class AttestationInformation constructor(
     /**
      * Data associated to the attestation.
      */
-    val data: String
+    val data: String,
+
+    /**
+     * Unique identifier for this AttestationInformation.
+     */
+    val identifier: String? = null
 )

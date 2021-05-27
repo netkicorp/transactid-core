@@ -8,4 +8,4 @@ private val PATTERN: Pattern = Pattern.compile(REGEX)
 /**
  * Validate if an string contains only alphanumeric and white spaces characters
  */
-internal fun String.isAlphaNumeric() = PATTERN.matcher(this).matches()
+fun String.isAlphaNumeric() = PATTERN.matcher(this).matches()

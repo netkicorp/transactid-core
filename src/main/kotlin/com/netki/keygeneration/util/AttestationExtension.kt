@@ -7,7 +7,7 @@ import com.netki.model.IvmsConstraint
 
 private const val DATA_LIMIT_LENGTH = 64
 private const val PRINCIPAL_STRING = "CN=%s, C=%s, L=%s, O=%s, OU=%s, ST=%s"
-internal fun Attestation.toPrincipal(data: String, ivmsConstraint: IvmsConstraint): String {
+fun Attestation.toPrincipal(data: String, ivmsConstraint: IvmsConstraint): String {
 
     val data64Characters: String
     var extraData = ""
